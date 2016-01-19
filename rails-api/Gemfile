@@ -9,7 +9,8 @@ gem 'spring', :group => :development
 
 
 gem 'pg'
-
+gem 'devise'
+gem 'puma'
 
 
 # To use ActiveModel has_secure_password
@@ -26,3 +27,8 @@ gem 'pg'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+group :test, :development  do	
+	gem 'rspec-rails'
+	gem 'pry'
+	gem 'factory_girl_rails'
+end
