@@ -1,0 +1,22 @@
+{
+  "name": "lli-frontend",
+  "version": "1.0.0",
+  "description": "Locals Love It NUVention",
+  "main": "app.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuvention-web/kaleberry.git"
+  },
+  "author": "NUVention LLI Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nuvention-web/kaleberry/issues"
+  },
+  "homepage": "https://github.com/nuvention-web/kaleberry#readme"
+  "dependencies": {
+    
+  }
+}
