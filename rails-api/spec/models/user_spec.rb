@@ -17,4 +17,26 @@ describe User, type: :model do
 	end
 
 	it "has an access token after creation"
+
+	it "has a first_name" do
+		expect(FactoryGirl.build(:user, first_name: "Hank")).to be_valid
+	end
+
+	it "has a last_name" do
+		expect(FactoryGirl.create(:user, last_name: "The Pug")).to be_valid
+	end
+
+	describe "Relationship With Influencer" do
+		let(:new_user) { FactoryGirl.create(:user) }
+		let!(:new_influencer) { FactoryGirl.create(:influencer, user: new_user) }
+
+		it "destroys influencer when it is also destroyed" do
+			expect(new_user.influencer).to eq(new_influencer)
+			new_user.destroy!
+			expect{Influencer.find(new_influencer)}.to raise_error(ActiveRecord::RecordNotFound)
+
+		end
+
+	end
+		
 end
