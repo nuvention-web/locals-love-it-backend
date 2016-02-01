@@ -15,8 +15,11 @@
   "bugs": {
     "url": "https://github.com/nuvention-web/kaleberry/issues"
   },
-  "homepage": "https://github.com/nuvention-web/kaleberry#readme"
+  "homepage": "https://github.com/nuvention-web/kaleberry#readme",
   "dependencies": {
-    
+
+  },
+  "devDependencies": {
+
   }
 }
