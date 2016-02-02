@@ -1,0 +1,292 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<!-- Download these later  https://github.com/marcoceppi/bootstrap-glyphicons-->
+
+<link rel="stylesheet" href = "css/index-stylesheet.css">
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Locals Love It</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <nav class="navbar navbar-default navbar-fixed-top" id = "myNavbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Locals Love It</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+          	<li><a href="#">Dashboard</a></li>
+          	<li><a href="#">Inbox <span class="badge" id = "InboxNotifications">5</span></a></li>
+          	<li class="dropdown">
+         		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+          		<ul class="dropdown-menu">
+            		<li><a href="#">History</a></li>
+            		<li><a href="#">Settings</a></li>
+            		<li role="separator" class="divider"></li>
+            		<li><a href="#">Logout</a></li>
+          		</ul>
+        </li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+ <div class="container">
+  <div class="row">
+    <div class="col-md-3">
+   			<ul class="list-group">
+  				<li class="list-group-item">
+            <h4> Platform </h4>
+  					<div class="checkbox"><label><input type="checkbox" value="" checked>Twitter</label></div>
+  					<div class="checkbox"><label><input type="checkbox" value="">Facebook</label></div>
+  					<div class="checkbox"><label><input type="checkbox" value="" checked>Instagram</label></div>
+				</li>
+  				<li class="list-group-item">
+            <h4> Number of Followers </h4>
+  					<div class="radio"><label><input type="radio" name="numFollowers">&lt; 1,000</label></div>
+  					<div class="radio"><label><input type="radio" name="numFollowers">1,000-2,500</label></div>
+  					<div class="radio"><label><input type="radio" name="numFollowers">2,500-5,000</label></div>
+  					<div class="radio"><label><input type="radio" name="numFollowers">5,000-10,000</label></div>
+  					<div class="radio"><label><input type="radio" name="numFollowers">10,000+</label></div>
+  				</li>
+  				<li class="list-group-item">
+            <h4>Tags</h4>
+
+            <div class = "input-group">
+              <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Enter tags...">
+              </form>
+            </div>
+            <br>
+            <span class ="tag">Food</span>
+          </li>
+			</ul>
+  	</div>
+    <div class="col-md-9">
+      <div class = "row">
+        <div class = "col-md-3">
+      	<div class = "panel panel-default" id = "panelSearchResult">
+      		<div class = "panel-body">
+     	 		<a href = "profile.html"><img src="images/ReshaProfilePicture.jpg" class="img-responsive img-circle" alt="Resha"></a>
+     		</div>
+     		<div class = "panel-footer" id = "panelSearchResultFooter">
+     			<div class = "influencer-name">
+     				<a href = "profile.html"><h4>Resha</h4></a>
+     			</div>
+     			<div class = "influencer-extra-info">
+     				<ul>
+     					<li> <a href="https://twitter.com/kanYeBreast">42.5k Twitter</a></li>
+     					<li> <a href = "https://www.instagram.com/carnaldish/">2.2k Instagram</a></li>
+     				</ul>
+            <center><span class = "tag">Food</span> <span class = "tag">Cooking</span></center>
+     			</div>
+     		</div>
+     	  </div>
+        </div>
+     	  <div class = "col-md-3">
+        <div class="panel panel-default" id = "panelSearchResult">
+  				<div class="panel-body">
+    				<a href = "profile.html"><img src="images/DanProfilePicture.jpeg" class="img-responsive img-circle" alt="Dan"></a>
+  				</div>
+  				<div class="panel-footer" id ="panelSearchResultFooter">
+  					<div class = "influencer-name">
+     					<a href = "profile.html"><h4>Dan</h4></a>
+     				</div>
+     				<div class = "influencer-extra-info">
+     					<ul>
+     						<li><a href = "https://twitter.com/DansReview">195k Twitter</a></li>
+                <li><a href = "https://www.instagram.com/dansreview/">138k Instagram</a></li>
+     					</ul>
+              <center><span class = "tag">Food</span> <span class = "tag">Reviews</span> <span class = "tag">Restaurant</span></center>
+     				</div>
+  				</div>
+	 		  </div>
+        </div>
+        <div class = "col-md-3">
+        <div class="panel panel-default" id = "panelSearchResult">
+  				<div class="panel-body">
+    				<a href = "profile.html"><img src="images/CultureInTheoryProfilePicture.jpg" class="img-responsive img-circle" alt="Culture In Theory"></a>
+  				</div>
+  				<div class="panel-footer" id ="panelSearchResultFooter">
+  					<div class = "influencer-name">
+     					<a href = "profile.html"><h4>Janiece</h4></a>
+     				</div>
+     			<div class = "influencer-extra-info">
+     				<ul>
+     					<li><a href = "https://twitter.com/CultureInTheory">1.7k Twitter</a></li>
+     					<li><a href = "https://www.instagram.com/CultureInTheory/">1.1k Instagram</a></li>
+     				</ul>
+            <center><span class = "tag">Travel</span> <span class = "tag">Lifestyle</span> <span class = "tag">Food</span></center>
+     			</div>
+  				</div>
+	 		  </div>
+  	    </div>
+	    </div>
+
+
+      <div class = "row">
+        <div class = "col-md-3">
+        <div class = "panel panel-default" id = "panelSearchResult">
+          <div class = "panel-body">
+          <a href = "profile.html"><img src="images/SherrieProfilePicture.jpg" class="img-responsive img-circle" alt="Sherrie"></a>
+        </div>
+        <div class = "panel-footer" id = "panelSearchResultFooter">
+          <div class = "influencer-name">
+            <a href = "profile.html"><h4>Sherrie</h4></a>
+          </div>
+          <div class = "influencer-extra-info">
+            <ul>
+              <li><a href = "https://twitter.com/shersavorschi">1.7k Twitter</a></li>
+              <li><a href = "https://www.instagram.com/sherriesavorsthecity/">1.1k Instagram</a></li>
+            </ul>
+            <center><span class = "tag">Food</span> <span class = "tag">Baking</span> <span class = "tag">Pastry</span></center>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div class = "col-md-3">
+        <div class="panel panel-default" id = "panelSearchResult">
+          <div class="panel-body">
+            <a href = "profile.html"><img src="images/maggieProfilePicture.jpg" class="img-responsive img-circle" alt="Maggie"></a>
+          </div>
+          <div class="panel-footer" id ="panelSearchResultFooter">
+            <div class = "influencer-name">
+              <a href = "profile.html"><h4>Maggie</h4></a>
+            </div>
+            <div class = "influencer-extra-info">
+              <ul>
+              <li><a href = "https://www.instagram.com/maggieats/">1.1k Instagram</a></li>
+            </ul>
+            <center><span class = "tag">Food</span> <span class = "tag">Restaurant</span></center>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class = "col-md-3">
+        <div class="panel panel-default" id = "panelSearchResult">
+          <div class="panel-body">
+            <a href = "profile.html"><img src="images/mushroomStewPicture.jpg" class="img-responsive img-circle" alt="Mushroom Stew"></a>
+          </div>
+          <div class="panel-footer" id ="panelSearchResultFooter">
+            <div class = "influencer-name">
+              <a href = "profile.html"><h4>Mushroom Stew</h4></a>
+            </div>
+          <div class = "influencer-extra-info">
+            <ul>
+              <li><a href = "https://www.instagram.com/MushroomStew/">34.3 Instagram</a></li>
+            </ul>
+            <center><span class = "tag">Food</span> <span class = "tag">Beauty</span> <span class = "tag">Cooking</span></center>
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col-md-3">
+        <div class = "panel panel-default" id = "panelSearchResult">
+          <div class = "panel-body">
+          <a href = "profile.html"><img src="images/JamesProfilePicture.jpg" class="img-responsive img-circle" alt="James"></a>
+        </div>
+        <div class = "panel-footer" id = "panelSearchResultFooter">
+          <div class = "influencer-name">
+            <a href = "profile.html"><h4>James</h4></a>
+          </div>
+          <div class = "influencer-extra-info">
+            <ul>
+              <li><a href = "https://twitter.com/anicerestaurant">117 Twitter</a></li>
+              <li><a href = "https://www.instagram.com/jamesmalnati/">2.8k Instagram</a></li>
+            </ul>
+            <center><span class = "tag">Food</span> <span class = "tag">Restaurant</span> <span class = "tag">Brunch</span></center>
+          </div>
+        </div>
+        </div>
+        </div>
+        <div class = "col-md-3">
+        <div class="panel panel-default" id = "panelSearchResult">
+          <div class="panel-body">
+           <a href = "profile.html"><img src="images/StarProfilePicture.jpg" class="img-responsive img-circle" alt="Starr"></a>
+          </div>
+          <div class="panel-footer" id ="panelSearchResultFooter">
+            <div class = "influencer-name">
+              <a href = "profile.html"><h4>Starr</h4></a>
+            </div>
+            <div class = "influencer-extra-info">
+              <ul>
+              <li><a href = "https://twitter.com/chicagofoodieg">2.5k Twitter</a></li>
+              <li><a href = "https://www.instagram.com/chicagofoodiegirl/">16.5k Instagram</a></li>
+            </ul>
+            <center><span class = "tag">Food</span> <span class = "tag">Restaurant</span></center>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class = "col-md-3">
+        <div class="panel panel-default" id = "panelSearchResult">
+          <div class="panel-body">
+            <a href = "profile.html"><img src="images/ChefRobleProfilePicture.jpg" class="img-responsive img-circle" alt="Cute Puppy 3"></a>
+          </div>
+          <div class="panel-footer" id ="panelSearchResultFooter">
+            <div class = "influencer-name">
+              <a href = "profile.html"><h4>Chef Roblé</h4></a>
+            </div>
+          <div class = "influencer-extra-info">
+            <ul>
+              <li><a href = "https://twitter.com/ChefRoble">107k Twitter</a></li>
+              <li><a href = "https://www.instagram.com/chefroble/">211k Instagram</a></li>
+            </ul>
+            <center><span class = "tag">Food</span> <span class = "tag">Chef</span> <span class = "tag">Cooking</span></center>
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+
+
+
+   </div>
+
+   </div>
+ </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
