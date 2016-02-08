@@ -1,7 +1,7 @@
 require 'faker'
 FactoryGirl.define do
 	factory :influencer do
-		user
+		association :user, factory: :user, role: :influencer
 		short_bio Faker::Lorem.paragraph
 		twitter_handle "MyString"
 

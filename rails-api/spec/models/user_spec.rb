@@ -33,7 +33,7 @@ describe User, type: :model do
 		it "destroys influencer when it is also destroyed" do
 			expect(new_user.influencer).to eq(new_influencer)
 			new_user.destroy!
-			expect{Influencer.find(new_influencer)}.to raise_error(ActiveRecord::RecordNotFound)
+			expect{Influencer.find(new_influencer.id)}.to raise_error(ActiveRecord::RecordNotFound)
 
 		end
 
