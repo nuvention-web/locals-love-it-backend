@@ -1,8 +1,13 @@
 require 'spec_helper'
+require 'pry'
 
 describe Influencer, type: :model do
 	it "has a valid factory" do
 		expect(FactoryGirl.create(:influencer)).to be_valid
+	end
+
+	it "has role as influencer" do
+		expect(FactoryGirl.build(:influencer).user.role).to eql('influencer')
 	end
 
 	it "Does not allow for influencer without User" do
