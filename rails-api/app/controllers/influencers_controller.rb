@@ -6,6 +6,6 @@ class InfluencersController < ApplicationController
 
 	def show
 		@influencer = Influencer.find(params[:id])
-		render json: @influencer
+		render json: @influencer, serializer: InfluencersSerializer, adapter: :json, is_single: true
 	end
 end
