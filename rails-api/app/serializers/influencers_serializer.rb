@@ -21,11 +21,11 @@ class InfluencersSerializer < ActiveModel::Serializer
 	private
 
 	def profile_pic
-		'I am a URL'
+		object.pic_url_from_twitter	
 	end
 	
 	def twitter_followers
-		1 + rand(1000)
+		object.num_followers_on_twitter
 	end
 
 	def twitter_handle
