@@ -1,7 +1,37 @@
-module TwitterHelper
-require 'rubygems'
-require 'oauth'
-require 'json'
+require 'twitter'
+
+module Twitterable
+	extend ActiveSupport::Concern
+
+	class TwitterAPI
+		def self.client
+			@@client ||= Twitter::REST::Client.new do |config|
+				config.consumer_key = ENV['TWITTER_CONSUMER_KEY']
+  				config.consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
+  				config.access_token = ENV['TWITTER_ACCESS_TOKEN']
+  				config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']
+			end
+	
+		end
+
+	end
+
+	def num_followers_on_twitter
+		TwitterAPI.client.user(twitter_handle).followers_count
+	end
+
+	def pic_url_from_twitter
+		TwitterAPI.client.user(twitter_handle).profile_image_url_https
+
+	end
+
+end
+
+__END__
+TODO: Remove this comment chunk
+Everything from here on out is code written by Heather.
+I will let her choose what code to delete. All sensisitve
+info has been redacted.
 
 #https://github.com/oauth-xx/oauth-ruby
 #http://www.drcoen.com/2011/12/oauth-1-0-in-ruby-without-a-gem/
@@ -130,11 +160,9 @@ def autho(consumer_key, http)
 	address = URI("https://api.twitter.com/oauth/authenticate")
 end
 
-#access_token = prepare_access_token(LLI_oauth_token, LLI_oath_token_secret)
+access_token = prepare_access_token(LLI_oauth_token, LLI_oath_token_secret)
 
-#user = parse_user_response(consumer_key, access_token, http)
+user = parse_user_response(consumer_key, access_token, http)
 
 #tweets = getTimelime(user["screen_name"], 5, consumer_key, access_token, http)
-#printTweets(tweets)
-
-end
+printTweets(tweets)
