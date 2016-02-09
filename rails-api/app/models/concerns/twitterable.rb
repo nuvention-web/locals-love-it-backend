@@ -52,7 +52,7 @@ end
 
 # Fetch a user access token 
 def prepare_access_token(oauth_token, oauth_token_secret)
-	consumer = OAuth::Consumer.new("6y7Gb4QDT3uVPhZgUHWtf2CTR", "OASQp2b8azWSUP8LjMhnVDYcGSPSZJfXzNBMuK7DlRGQmOVOBz", { :site => "https://api.twitter.com", :scheme => :header })
+	consumer = OAuth::Consumer.new("REDACTED", "REDACTED", { :site => "https://api.twitter.com", :scheme => :header })
 	token_hash = { :oauth_token => oauth_token, :oauth_token_secret => oauth_token_secret }
 	access_token = OAuth::AccessToken.from_hash(consumer, token_hash )
 	return access_token
@@ -135,12 +135,12 @@ end
 # The consumer key identifies the application making the request.
 # The access token identifies the user making the request.
 consumer_key = OAuth::Consumer.new(
-    "6y7Gb4QDT3uVPhZgUHWtf2CTR",
-    "OASQp2b8azWSUP8LjMhnVDYcGSPSZJfXzNBMuK7DlRGQmOVOBz")
+    "REDACTED",
+    "REDACTED")
 
 #This is the oath access token and oath access token secret of the account LLI is linked to
-LLI_oauth_token  = "1167809658-3zaRoWrJgO5w3tSgOUzEfSe2P7ZhpixTMse9hAW"  
-LLI_oath_token_secret = "SUPgYQmaxpF2aedFi6Ov1hGaZuqTDR7hSyxTIyRLn4oWL"  
+LLI_oauth_token  = "REDACTED"  
+LLI_oath_token_secret = "REDACTED"  
 
 def set_upHTTP()
 	baseurl = "https://api.twitter.com"
