@@ -16,13 +16,23 @@ module Twitterable
 
 	end
 
-	def num_followers_on_twitter
-		TwitterAPI.client.user(twitter_handle).followers_count
+	class EmptyUser
+		def followers_count
+			nil
+		end
+
+		def profile_image_url_https
+			nil
+		end
 	end
 
-	def pic_url_from_twitter
-		TwitterAPI.client.user(twitter_handle).profile_image_url_https
-
+	def twitter_user
+		if twitter_handle
+			TwitterAPI.client.user(twitter_handle)
+		else
+			EmptyUser.new
+			
+		end
 	end
 
 end
