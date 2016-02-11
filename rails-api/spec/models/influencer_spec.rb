@@ -2,6 +2,10 @@ require 'spec_helper'
 require 'pry'
 
 describe Influencer, type: :model do
+	describe "social media info", :integration do
+		it_behaves_like "twitterable"
+	end
+
 	it "has a valid factory" do
 		expect(FactoryGirl.create(:influencer)).to be_valid
 	end

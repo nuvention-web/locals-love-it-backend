@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pry'
 
 describe InfluencersSerializer do
 	let(:resource) { FactoryGirl.create(:influencer_with_industry) }
@@ -35,10 +36,12 @@ describe InfluencersSerializer do
 	end
 
 	describe "social_media_info" do
+		let(:resource) { FactoryGirl.create(:influencer_with_industry, twitter_handle: ENV["TWITTER_TEST_HANDLE"]) }
 		let(:social_media_info) { influencer['social_media_info'] }
 
 		it "has a profile_pic url" do
-			expect(social_media_info['profile_pic']).to be_a(String)
+			expect(social_media_info['profile_pic']['host']).to be_a(String)
+			expect(social_media_info['profile_pic']['path']).to be_a(String)
 		end
 
 		it "has a twitter_handle" do

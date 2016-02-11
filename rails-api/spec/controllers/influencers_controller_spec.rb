@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'pry'
 
 describe InfluencersController, type: :controller do
 	let!(:influencer0) { FactoryGirl.create(:influencer) }
