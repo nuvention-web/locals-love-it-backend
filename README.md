@@ -45,7 +45,7 @@ There is a flux+react frontend client. Please go into the react-frontend folder.
     1. run `npm install`
 * Local Deployment:
   1. Run the rails server first `rails s`
-  1. React-frontend not yet implemented. In the future `node server.js` should work.
+  1. Run the client end with `node server.js`. Localhost:5000 should have the page. It does not yet communicate with the backend. 
 * Tests:
   * Testing in rails folder:
     * To run all the rails tests, please run the following command `rake spec:all`.
@@ -53,3 +53,5 @@ There is a flux+react frontend client. Please go into the react-frontend folder.
     * To run all the unit tests, please run the following command `rake`.
   * Testing in the react folder:
     * Has yet to be implemented. But, `jasmine-node spec` should work in the future.
+
+wikiPage:https://en.wikipedia.org/wiki/Locals_love_it
