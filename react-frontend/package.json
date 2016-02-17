@@ -4,7 +4,7 @@
   "description": "Locals Love It NUVention",
   "main": "app.jsx",
   "scripts": {
-    "start": "node server.js",
+    "start": "watchify src/main.jsx -v -t [ babelify --presets [ react ] ] -o public/js/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
