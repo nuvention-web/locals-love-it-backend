@@ -19036,7 +19036,6 @@ var React = require('react');
 var NavBar = React.createClass({
   displayName: "NavBar",
 
-
   render: function () {
     return React.createElement(
       "div",
@@ -19061,7 +19060,7 @@ var NavBar = React.createClass({
           ),
           React.createElement(
             "a",
-            { className: "navbar-brand", href: "#" },
+            { className: "navbar-brand", href: this.props.links['home'] },
             " Locals Love It "
           )
         ),
@@ -19076,7 +19075,7 @@ var NavBar = React.createClass({
               null,
               React.createElement(
                 "a",
-                { href: "#" },
+                { href: this.props.links['dashboard'] },
                 "Dashboard"
               )
             ),
@@ -19085,12 +19084,12 @@ var NavBar = React.createClass({
               null,
               React.createElement(
                 "a",
-                { href: "#" },
+                { href: this.props.links['inbox'] },
                 "Inbox ",
                 React.createElement(
                   "span",
                   { className: "badge", id: "InboxNotifications" },
-                  "5"
+                  this.props.messageNum
                 )
               )
             ),
@@ -19111,7 +19110,7 @@ var NavBar = React.createClass({
                   null,
                   React.createElement(
                     "a",
-                    { href: "#" },
+                    { href: this.props.links['history'] },
                     "History"
                   )
                 ),
@@ -19120,7 +19119,7 @@ var NavBar = React.createClass({
                   null,
                   React.createElement(
                     "a",
-                    { href: "#" },
+                    { href: this.props.links['settings'] },
                     "Settings"
                   )
                 ),
@@ -19130,7 +19129,7 @@ var NavBar = React.createClass({
                   null,
                   React.createElement(
                     "a",
-                    { href: "#" },
+                    { href: this.props.links['logout'] },
                     "Logout"
                   )
                 )
@@ -19155,6 +19154,8 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var NavBar = require('./components/NavBar.jsx');
 
-ReactDOM.render(React.createElement(NavBar, null), document.getElementById('content'));
+var navBarLinks = { 'home': "#", "dashboard": "#", "inbox": "#", "history": "#", "settings": "#", "logout": "#" };
+
+ReactDOM.render(React.createElement(NavBar, { messageNum: 3, links: navBarLinks }), document.getElementById('nav-bar-div'));
 
 },{"./components/NavBar.jsx":159,"react":158,"react-dom":29}]},{},[160]);
