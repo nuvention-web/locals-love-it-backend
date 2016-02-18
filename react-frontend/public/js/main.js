@@ -19032,19 +19032,129 @@ module.exports = require('./lib/React');
 
 },{"./lib/React":53}],159:[function(require,module,exports){
 var React = require('react');
-var ReactDOM = require('react-dom');
-var Hi = React.createClass({
-    displayName: 'Hi',
 
-    render: function () {
-        return React.createElement(
-            'h4',
-            null,
-            'Hello, World!'
-        );
-    }
+var NavBar = React.createClass({
+  displayName: "NavBar",
+
+
+  render: function () {
+    return React.createElement(
+      "div",
+      { className: "navbar navbar-default navbar-fixed-top" },
+      React.createElement(
+        "div",
+        { className: "container-fluid" },
+        React.createElement(
+          "div",
+          { className: "navbar-header" },
+          React.createElement(
+            "button",
+            { type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#navbar", "aria-expanded": "false", "aria-controls": "navbar" },
+            React.createElement(
+              "span",
+              { className: "sr-only" },
+              "Toggle navigation"
+            ),
+            React.createElement("span", { className: "icon-bar" }),
+            React.createElement("span", { className: "icon-bar" }),
+            React.createElement("span", { className: "icon-bar" })
+          ),
+          React.createElement(
+            "a",
+            { className: "navbar-brand", href: "#" },
+            " Locals Love It "
+          )
+        ),
+        React.createElement(
+          "div",
+          { id: "navbar", className: "navbar-collapse collapse" },
+          React.createElement(
+            "ul",
+            { className: "nav navbar-nav navbar-right" },
+            React.createElement(
+              "li",
+              null,
+              React.createElement(
+                "a",
+                { href: "#" },
+                "Dashboard"
+              )
+            ),
+            React.createElement(
+              "li",
+              null,
+              React.createElement(
+                "a",
+                { href: "#" },
+                "Inbox ",
+                React.createElement(
+                  "span",
+                  { className: "badge", id: "InboxNotifications" },
+                  "5"
+                )
+              )
+            ),
+            React.createElement(
+              "li",
+              { className: "dropdown" },
+              React.createElement(
+                "a",
+                { href: "#", className: "dropdown-toggle", "data-toggle": "dropdown", role: "button", "aria-haspopup": "true", "aria-expanded": "false" },
+                "Profile",
+                React.createElement("span", { "class": "caret" })
+              ),
+              React.createElement(
+                "ul",
+                { className: "dropdown-menu" },
+                React.createElement(
+                  "li",
+                  null,
+                  React.createElement(
+                    "a",
+                    { href: "#" },
+                    "History"
+                  )
+                ),
+                React.createElement(
+                  "li",
+                  null,
+                  React.createElement(
+                    "a",
+                    { href: "#" },
+                    "Settings"
+                  )
+                ),
+                React.createElement("li", { role: "separator", "class": "divider" }),
+                React.createElement(
+                  "li",
+                  null,
+                  React.createElement(
+                    "a",
+                    { href: "#" },
+                    "Logout"
+                  )
+                )
+              )
+            )
+          ),
+          React.createElement(
+            "form",
+            { className: "navbar-form navbar-right" },
+            React.createElement("input", { type: "text", className: "form-control", placeholder: "Search..." })
+          )
+        )
+      )
+    );
+  }
 });
 
-ReactDOM.render(React.createElement(Hi, null), document.getElementById('content'));
+module.exports = NavBar;
 
-},{"react":158,"react-dom":29}]},{},[159]);
+},{"react":158}],160:[function(require,module,exports){
+var React = require('react');
+var ReactDOM = require('react-dom');
+var NavBar = require('./components/NavBar.jsx');
+
+ReactDOM.render(React.createElement(NavBar, null), document.getElementById('content'));
+
+},{"./components/NavBar.jsx":159,"react":158,"react-dom":29}]},{},[160]);

@@ -1,11 +1,5 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Hi = React.createClass({
-    render: function() {
-        return (
-            <h4>Hello, World!</h4>
-        );
-    }
-});
+var NavBar = require('./components/NavBar.jsx')
 
-ReactDOM.render(<Hi />, document.getElementById('content'));
+ReactDOM.render(<NavBar />, document.getElementById('content'));
