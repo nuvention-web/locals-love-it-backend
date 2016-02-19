@@ -1,4 +1,21 @@
 var React = require('react');
-var Router = require('react-router');
-var Route = Router.Route;
-var DefaultRoute = Router.DefaultRoute;
+var ReactRouter = require('react-router');
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+
+
+var Base = require('./components/Base.jsx');
+var Index = require('./components/Index.jsx');
+var SearchResults = require('./components/SearchResults.jsx');
+
+var Routes = (
+    <Router>
+        <Route path="/" component={Base} >
+            <Route path="/index" component={Index} />
+            <Route path="/searchResults" component={SearchResults} />
+        </Route>
+    </Router>
+);
+
+
+module.exports = Routes;
