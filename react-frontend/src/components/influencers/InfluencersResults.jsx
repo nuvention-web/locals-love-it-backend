@@ -1,8 +1,8 @@
 var React = require('react');
 
-var InfuencersFilters = require('./InfuencersFilters.jsx');
-var InfuencersResultsContent = require('./InfuencersResultsContent.jsx');
-var InfuencersResults = React.createClass({
+var InfluencersFilters = require('./InfluencersFilters.jsx');
+var InfluencersResultsContent = require('./InfluencersResultsContent.jsx');
+var InfluencersResults = React.createClass({
 
   render: function() {
 
@@ -12,9 +12,9 @@ var InfuencersResults = React.createClass({
 
     return (
       <div id = "mainContainer" className = "container" style = {mainContainerStyle}>
-        <InfuencersFilters />
+        <InfluencersFilters />
       <hr/>
-        <InfuencersResultsContent />
+        <InfluencersResultsContent />
       </div>
     );
   }
@@ -22,4 +22,4 @@ var InfuencersResults = React.createClass({
 
 
 
-module.exports = InfuencersResults;
+module.exports = InfluencersResults;

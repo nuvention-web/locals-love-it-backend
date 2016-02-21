@@ -1,21 +1,12 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Index = require('./components/Index.jsx');
-var ReactRouter = require('react-router');
-var Router2 = ReactRouter.Router;
-var Route = ReactRouter.Route;
-var browserHistory=require('react-router/lib/browserHistory');
+var Routes = require('./routes.jsx');
 window.React = React;
 
-var Routes = (
-  React.createElement(Route, {name: "app", component: Index, path: "/"}
-  )
-);
+ReactDOM.render(Routes, document.getElementById('content'));
 
-ReactDOM.render((React.createElement(Router2, {history: browserHistory}, Routes)), document.getElementById('content'));
-
-},{"./components/Index.jsx":220,"react":217,"react-dom":4,"react-router":32,"react-router/lib/browserHistory":23}],2:[function(require,module,exports){
+},{"./routes.jsx":226,"react":217,"react-dom":4}],2:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -23897,6 +23888,46 @@ module.exports = require('./lib/React');
 
 },{"./lib/React":85}],218:[function(require,module,exports){
 var React = require('react');
+
+var NavBar = require('./NavBar.jsx');
+var InfluencersResults = require('./influencers/InfluencersResults.jsx');
+
+var Index = React.createClass({displayName: "Index",
+
+  render: function() {
+    return (
+      React.createElement("div", null, 
+        React.createElement(NavBar, null), 
+        React.createElement(InfluencersResults, null)
+      )
+    );
+  }
+});
+
+module.exports = Index;
+
+},{"./NavBar.jsx":219,"./influencers/InfluencersResults.jsx":223,"react":217}],219:[function(require,module,exports){
+var React = require('react');
+
+var NavBar = React.createClass({displayName: "NavBar",
+  render: function(){
+    return (
+      React.createElement("div", {className: "navbar navbar-default navbar-fixed-top"}, 
+        React.createElement("div", {className: "container-fluid"}, 
+          React.createElement("div", {className: "navbar-header"}, 
+            React.createElement("a", {className: "navbar-brand", href: "#"}, " Locals Love It ")
+          )
+        )
+      )
+
+    );
+  }
+});
+
+module.exports = NavBar;
+
+},{"react":217}],220:[function(require,module,exports){
+var React = require('react');
 var classNames = require('classnames');
 
 var Button = React.createClass({displayName: "Button",
@@ -23944,7 +23975,7 @@ var ButtonGroup = React.createClass({displayName: "ButtonGroup",
 
 module.exports = ButtonGroup;
 
-},{"classnames":3,"react":217}],219:[function(require,module,exports){
+},{"classnames":3,"react":217}],221:[function(require,module,exports){
 var React = require('react');
 
 var ListItemWithLink = React.createClass({displayName: "ListItemWithLink",
@@ -23987,53 +24018,13 @@ var DropDownFormGroup = React.createClass({displayName: "DropDownFormGroup",
 
 module.exports = DropDownFormGroup;
 
-},{"react":217}],220:[function(require,module,exports){
-var React = require('react');
-
-var NavBar = require('./NavBar.jsx');
-var SearchResults = require('./SearchResults.jsx');
-
-var Index = React.createClass({displayName: "Index",
-
-  render: function() {
-    return (
-      React.createElement("div", null, 
-        React.createElement(NavBar, null), 
-        React.createElement(SearchResults, null)
-      )
-    );
-  }
-});
-
-module.exports = Index;
-
-},{"./NavBar.jsx":221,"./SearchResults.jsx":223,"react":217}],221:[function(require,module,exports){
-var React = require('react');
-
-var NavBar = React.createClass({displayName: "NavBar",
-  render: function(){
-    return (
-      React.createElement("div", {className: "navbar navbar-default navbar-fixed-top"}, 
-        React.createElement("div", {className: "container-fluid"}, 
-          React.createElement("div", {className: "navbar-header"}, 
-            React.createElement("a", {className: "navbar-brand", href: "#"}, " Locals Love It ")
-          )
-        )
-      )
-
-    );
-  }
-});
-
-module.exports = NavBar;
-
 },{"react":217}],222:[function(require,module,exports){
 var React = require('react');
 
-var DropDownFormGroup = require('./DropDownFormGroup.jsx');
-var ButtonGroup = require('./ButtonGroup.jsx');
+var DropDownFormGroup = require('../common/DropDownFormGroup.jsx');
+var ButtonGroup = require('../common/ButtonGroup.jsx');
 
-var SearchFilters = React.createClass({displayName: "SearchFilters",
+var InfluencersFilters = React.createClass({displayName: "InfluencersFilters",
   render: function(){
     return (
 
@@ -24049,14 +24040,14 @@ var SearchFilters = React.createClass({displayName: "SearchFilters",
 });
 
 
-module.exports = SearchFilters;
+module.exports = InfluencersFilters;
 
-},{"./ButtonGroup.jsx":218,"./DropDownFormGroup.jsx":219,"react":217}],223:[function(require,module,exports){
+},{"../common/ButtonGroup.jsx":220,"../common/DropDownFormGroup.jsx":221,"react":217}],223:[function(require,module,exports){
 var React = require('react');
 
-var SearchFilters = require('./SearchFilters.jsx');
-var SearchResultsContent = require('./SearchResultsContent.jsx');
-var SearchResults = React.createClass({displayName: "SearchResults",
+var InfluencersFilters = require('./InfluencersFilters.jsx');
+var InfluencersResultsContent = require('./InfluencersResultsContent.jsx');
+var InfluencersResults = React.createClass({displayName: "InfluencersResults",
 
   render: function() {
 
@@ -24066,9 +24057,9 @@ var SearchResults = React.createClass({displayName: "SearchResults",
 
     return (
       React.createElement("div", {id: "mainContainer", className: "container", style: mainContainerStyle}, 
-        React.createElement(SearchFilters, null), 
+        React.createElement(InfluencersFilters, null), 
       React.createElement("hr", null), 
-        React.createElement(SearchResultsContent, null)
+        React.createElement(InfluencersResultsContent, null)
       )
     );
   }
@@ -24076,31 +24067,31 @@ var SearchResults = React.createClass({displayName: "SearchResults",
 
 
 
-module.exports = SearchResults;
+module.exports = InfluencersResults;
 
-},{"./SearchFilters.jsx":222,"./SearchResultsContent.jsx":224,"react":217}],224:[function(require,module,exports){
+},{"./InfluencersFilters.jsx":222,"./InfluencersResultsContent.jsx":224,"react":217}],224:[function(require,module,exports){
 var React = require('react');
-var SearchResultsProfile = require('./SearchResultsProfile.jsx');
+var InfluencersResultsProfile = require('./InfluencersResultsProfile.jsx');
 
-var SearchResultsContent = React.createClass({displayName: "SearchResultsContent",
+var InfluencersResultsContent = React.createClass({displayName: "InfluencersResultsContent",
 
   render: function(){
 
     return(
       React.createElement("div", {className: "container"}, 
-        React.createElement(SearchResultsProfile, null), 
-        React.createElement(SearchResultsProfile, null)
+        React.createElement(InfluencersResultsProfile, null), 
+        React.createElement(InfluencersResultsProfile, null)
       )
     );
   }
 });
 
-module.exports = SearchResultsContent;
+module.exports = InfluencersResultsContent;
 
-},{"./SearchResultsProfile.jsx":225,"react":217}],225:[function(require,module,exports){
+},{"./InfluencersResultsProfile.jsx":225,"react":217}],225:[function(require,module,exports){
 var React = require('react');
 
-var SearchResultsProfile = React.createClass({displayName: "SearchResultsProfile",
+var InfluencersResultsProfile = React.createClass({displayName: "InfluencersResultsProfile",
 
   render: function(){
 
@@ -24129,6 +24120,29 @@ var SearchResultsProfile = React.createClass({displayName: "SearchResultsProfile
   }
 });
 
-module.exports = SearchResultsProfile;
+module.exports = InfluencersResultsProfile;
 
-},{"react":217}]},{},[1]);
+},{"react":217}],226:[function(require,module,exports){
+var React = require('react');
+var ReactRouter = require('react-router');
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+var DefaultRoute = ReactRouter.DefaultRoute;
+var BrowserHistory=require('react-router/lib/browserHistory');
+
+var Index = require('./components/Index.jsx');
+var InfluencersResults = require('./components/influencers/InfluencersResults.jsx');
+debugger;
+var Routes = (
+    React.createElement(Router, {history: BrowserHistory}, 
+          React.createElement(DefaultRoute, {handler: Index})
+    )
+);
+/*
+          <Route path = "/index" component = {Index} />
+
+          <!--Route path = "/influencersresults" component = {InfluencersResults} /! -->
+          */
+module.exports = Routes;
+
+},{"./components/Index.jsx":218,"./components/influencers/InfluencersResults.jsx":223,"react":217,"react-router":32,"react-router/lib/browserHistory":23}]},{},[1]);

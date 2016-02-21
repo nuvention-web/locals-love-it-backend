@@ -1,7 +1,7 @@
 var React = require('react');
 
-var DropDownFormGroup = require('./DropDownFormGroup.jsx');
-var ButtonGroup = require('./ButtonGroup.jsx');
+var DropDownFormGroup = require('../common/DropDownFormGroup.jsx');
+var ButtonGroup = require('../common/ButtonGroup.jsx');
 
 var InfluencersFilters = React.createClass({
   render: function(){

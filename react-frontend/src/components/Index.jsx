@@ -1,7 +1,7 @@
 var React = require('react');
 
 var NavBar = require('./NavBar.jsx');
-var InfluencersResults = require('./InfluencersResults.jsx');
+var InfluencersResults = require('./influencers/InfluencersResults.jsx');
 
 var Index = React.createClass({
 
