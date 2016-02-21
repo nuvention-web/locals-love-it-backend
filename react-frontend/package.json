@@ -1,36 +1,43 @@
 {
   "name": "lli-frontend",
   "version": "1.0.0",
+  "author": "NUVention LLI Team",
   "description": "Locals Love It NUVention",
   "main": "app.jsx",
-  "scripts": {
-    "start": "watchify src/main.jsx -v -t [ babelify --presets [ react ] ] -o public/js/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nuvention-web/kaleberry.git"
   },
-  "author": "NUVention LLI Team",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nuvention-web/kaleberry/issues"
   },
   "homepage": "https://github.com/nuvention-web/kaleberry#readme",
   "dependencies": {
-    "babel-preset-react": "^6.5.0",
-    "babelify": "^7.2.0",
-    "browserify": "^13.0.0",
     "express": "^4.12.3",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
-    "react-router": "^2.0.0",
-    "watchify": "^3.7.0"
+    "react-router": "^2.0.0-rc4",
+    "flux": "^2.0.0",
+    "node-sass": "^3.0.0",
+    "object-assign": "^1.0.0"
+  },
+  "engines": {
+    "node": "5.0.0",
+    "npm": "2.8.3"
   },
   "devDependencies": {
+    "browser-sync": "^1.9.0",
+    "browserify": "^8.1.0",
+    "del": "^1.1.0",
     "es6ify": "^1.6.0",
     "gulp": "^3.9.1",
-    "gulp-util": "~3.0.7",
+    "gulp-cache": "~0.2.4",
+    "gulp-util": "latest",
     "gulp-ruby-sass": "~2.0.4",
     "gulp-bower": "0.0.6",
     "gulp-flatten": "0.0.4",
@@ -39,19 +46,20 @@
     "gulp-csso": "^0.2.9",
     "gulp-changed": "^1.0.0",
     "gulp-autoprefixer": "2.1.0",
+    "gulp-imagemin": "latest",
     "gulp-notify": "^2.1.0",
-    "browser-sync": "^1.9.0",
-    "browserify": "^8.1.0",
+    "gulp-uglify": "^1.0.1",
     "jasmine-node": "^1.14.5",
     "jasmine-react": "1.1.0",
-    "react": "^0.12.0",
+    "main-bower-files": "^2.5.0",
+    "react": "^0.14.7",
     "react-router": "^2.0.0",
     "reactify": "^0.17.1",
     "proxyquire": "^1.7.3",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^3.7.0",
-    "del": "^1.1.0",
-    "yargs": "^3.30.0"
+    "yargs": "^3.30.0",
+    "classnames": "^2.2.3"
   }
 }

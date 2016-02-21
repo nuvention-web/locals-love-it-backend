@@ -8,8 +8,8 @@ var Index = React.createClass({
   render: function() {
     return (
       <div>
-        <NavBar />
-        <SearchResults />
+        <NavBar/>
+        <SearchResults/>
       </div>
     );
   }
