@@ -1,8 +1,8 @@
 var React = require('react');
 
-var SearchFilters = require('./SearchFilters.jsx');
-var SearchResultsContent = require('./SearchResultsContent.jsx');
-var SearchResults = React.createClass({
+var InfuencersFilters = require('./InfuencersFilters.jsx');
+var InfuencersResultsContent = require('./InfuencersResultsContent.jsx');
+var InfuencersResults = React.createClass({
 
   render: function() {
 
@@ -12,9 +12,9 @@ var SearchResults = React.createClass({
 
     return (
       <div id = "mainContainer" className = "container" style = {mainContainerStyle}>
-        <SearchFilters />
+        <InfuencersFilters />
       <hr/>
-        <SearchResultsContent />
+        <InfuencersResultsContent />
       </div>
     );
   }
@@ -22,4 +22,4 @@ var SearchResults = React.createClass({
 
 
 
-module.exports = SearchResults;
+module.exports = InfuencersResults;

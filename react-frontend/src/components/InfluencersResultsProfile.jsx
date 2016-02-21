@@ -1,6 +1,6 @@
 var React = require('react');
 
-var SearchResultsProfile = React.createClass({
+var InfluencersResultsProfile = React.createClass({
 
   render: function(){
 
@@ -29,4 +29,4 @@ var SearchResultsProfile = React.createClass({
   }
 });
 
-module.exports = SearchResultsProfile;
+module.exports = InfluencersResultsProfile;
