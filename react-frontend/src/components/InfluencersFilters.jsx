@@ -3,7 +3,7 @@ var React = require('react');
 var DropDownFormGroup = require('./DropDownFormGroup.jsx');
 var ButtonGroup = require('./ButtonGroup.jsx');
 
-var SearchFilters = React.createClass({
+var InfluencersFilters = React.createClass({
   render: function(){
     return (
 
@@ -19,4 +19,4 @@ var SearchFilters = React.createClass({
 });
 
 
-module.exports = SearchFilters;
+module.exports = InfluencersFilters;

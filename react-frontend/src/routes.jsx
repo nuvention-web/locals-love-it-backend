@@ -6,13 +6,13 @@ var Route = ReactRouter.Route;
 
 var Base = require('./components/Base.jsx');
 var Index = require('./components/Index.jsx');
-var SearchResults = require('./components/SearchResults.jsx');
+var InfluencersResults = require('./components/InfluencersResults.jsx');
 
 var Routes = (
     <Router>
         <Route path="/" component={Base} >
             <Route path="/index" component={Index} />
-            <Route path="/searchResults" component={SearchResults} />
+            <Route path="/influencersresults" component={InfluencersResults} />
         </Route>
     </Router>
 );

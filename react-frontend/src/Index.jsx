@@ -1,7 +1,7 @@
 var React = require('react');
 
 var NavBar = require('./NavBar.jsx');
-var SearchResults = require('./SearchResults.jsx');
+var InfluencersResults = require('./InfluencersResults.jsx');
 
 var Index = React.createClass({
 
@@ -9,7 +9,7 @@ var Index = React.createClass({
     return (
       <div>
         <NavBar/>
-        <SearchResults/>
+        <InfluencersResults/>
       </div>
     );
   }
