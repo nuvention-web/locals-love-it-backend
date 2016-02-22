@@ -15,11 +15,11 @@ class InfluencersActions {
         });
     }
   }
-/*
+
   updateInfluencers(influencers) {
     return influencers;
   }
-  */
+  
 
   influencersFailed(errorMessage) {
     return errorMessage;
