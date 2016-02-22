@@ -1,7 +1,0 @@
-Place for code to revisit.
-Package.json[
-
-"babel-preset-react": "^6.5.0",
-"babelify": "^7.2.0",
-"start": "watchify src/main.jsx -v -t [ babelify --presets [ react ] ] -o public/js/main.js",
-]
