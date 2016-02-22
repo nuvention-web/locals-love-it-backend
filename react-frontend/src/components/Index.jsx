@@ -1,7 +1,5 @@
 var React = require('react');
-
 var NavBar = require('./NavBar.jsx');
-var InfluencersResults = require('./influencers/InfluencersResults.jsx');
 
 var Index = React.createClass({
 
@@ -9,7 +7,7 @@ var Index = React.createClass({
     return (
       <div>
         <NavBar/>
-        <InfluencersResults/>
+				{this.props.children}
       </div>
     );
   }
