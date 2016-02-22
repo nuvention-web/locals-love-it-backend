@@ -96,7 +96,7 @@ gulp.task('rebundle_on_jsx_change', function () {
       .pipe(reload({ stream: true }));
   }
 
-  bundler.transform(reactify)
+  bundler.transform('reactify', {stripTypes: true, es6: true})
   .on('update', rebundle);
   return rebundle();
 }
@@ -104,7 +104,7 @@ gulp.task('rebundle_on_jsx_change', function () {
 
 gulp.task('browserify_JSXfile', function () {
   browserify(p.jsx)
-    .transform(reactify)
+    .transform('reactify', {stripTypes: true, es6: true})
     .bundle()
     .pipe(source(p.bundle))
     .pipe(buffer())
