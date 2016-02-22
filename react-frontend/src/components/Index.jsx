@@ -3,14 +3,14 @@ var NavBar = require('./NavBar.jsx');
 
 var Index = React.createClass({
 
-  render: function() {
+  render: function () {
     return (
       <div>
         <NavBar/>
 				{this.props.children}
       </div>
     );
-  }
+  },
 });
 
 module.exports = Index;
