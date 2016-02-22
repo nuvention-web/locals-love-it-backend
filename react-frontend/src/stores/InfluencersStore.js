@@ -1,7 +1,6 @@
 "use strict";
 var alt = require('../alt.js');
-debugger;
-//var InfluencersActions = require('../actions/InfluencersActions.js');
+var InfluencersActions = require('../actions/InfluencersActions.js');
 
 
 //var FilterActions = require('../actions/FilterActions');
@@ -15,10 +14,10 @@ class InfluencersStore {
 
     //this.influencers_to_be_viewed = [];
     this.bindListeners({
-    handleUpdateInfluencers: InfluencersActions.UPDATE_INFLUENCERS,
-    handleInfluencersFailed: InfluencersActions.INFLUENCERS_FAILED,
-  });
-}
+    	handleUpdateInfluencers: InfluencersActions.UPDATE_INFLUENCERS,
+    	handleInfluencersFailed: InfluencersActions.INFLUENCERS_FAILED,
+  	});
+	}
 
     handleUpdateInfluencers(influencers) {
       this.influencers = influencers;

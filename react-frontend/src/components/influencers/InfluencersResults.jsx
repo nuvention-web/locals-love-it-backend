@@ -2,7 +2,6 @@ var React = require('react');
 
 //var InfluencersFilters = require('./InfluencersFilters.jsx');
 var InfluencersResultsContent = require('./InfluencersResultsContent.jsx');
-debugger;
 var InfluencersStore = require('../../stores/InfluencersStore.js');
 var InfluencersActions = require('../../actions/InfluencersActions.js');
 
