@@ -3,7 +3,7 @@ var config = require('./SuperAgentMockConfig.js');
 var superagentMock = require('superagent-mock')(superAgent, config);
 var InfluencersSource = require('../src/sources/InfluencersSource.js');
 
-var disgust =  {"influencers":
+var influencersGetResult =  {"influencers":
 [{"user":
 {"id":5491,
 "email":"person7@example.com",
@@ -36,10 +36,12 @@ describe('InfluencersSource', function () {
     describe('getInfluencers', function () {
       it("returns influencers", function(done){
         var testInfluencers = function (influencers) {
-          expect(influencers).toBe(disgust);
+          expect(influencers).toBe(influencersGetResult);
         }
-        InfluencersSource.getInfluencers().then(testInfluencers)
-        .finally(done);
+        InfluencersSource.getInfluencers()
+				.then(testInfluencers)
+				.catch();
+				done();
       });
     });
 });
