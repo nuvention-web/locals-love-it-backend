@@ -1,57 +1,31 @@
-#Locals Love It
-
-##The purpose of the application
-
-Locals Love It seeks to connect influencers, individuals with a large following on social media, with local businesses that the influencers can promote.
+This is the Rails api for "KaleBerry"
 
 
+== README
 
-##The Scenario you are solving
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-A resource-restricted local business that wants to efficiently advertise their product to a target market can use Locals Love It to connect to influencers whose  social platform consists of members in that target range. 
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
 
 
-
-##The team members
-
-* Juan David Dominguez
-
-* Helen Foster 
-
-* Alexandria Anderson
-
-* Abigail Staplea
-
-* Lucia Liu
-
-* Taslima Din
-
-* Claudeson Azurin
-
-##The current state of what has been implemented
-
-There is a rails api. Please go into the rails-backend folder.
-There is a flux+react frontend client. Please go into the react-frontend folder.
-
-##A guide to the files and structure of the product
-* Development:
-  * Preparing rails folder:
-    1. Install ruby
-    1. Install bundler
-    1. run `bundle install`
-  * Preparing react folder:
-    1. Install node
-    1. Install npm
-    1. run `npm install`
-* Local Deployment:
-  1. Run the rails server first `rails s`
-  1. Run the client end with `node server.js`. Localhost:5000 should have the page. It does not yet communicate with the backend. 
-* Tests:
-  * Testing in rails folder:
-    * To run all the rails tests, please run the following command `rake spec:all`.
-    * To run all the integration tests, please run the following command `rake spec:integration`. Please keep in mind that it hits 3rd party APIs.
-    * To run all the unit tests, please run the following command `rake`.
-  * Testing in the react folder:
-    * Has yet to be implemented. But, `jasmine-node spec` should work in the future.
-
-wikiPage:https://en.wikipedia.org/wiki/Locals_love_it
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
