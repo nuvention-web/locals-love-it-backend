@@ -13,3 +13,5 @@ var InfluencersSource = {
     });
   },
 };
+
+module.exports = InfluencersSource;
