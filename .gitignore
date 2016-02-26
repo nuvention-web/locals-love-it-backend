@@ -36,3 +36,6 @@ bower.json
 
 # Ignore local environment settings
 local_env.yml
+
+# Ignoring all node modules
+node_modules
