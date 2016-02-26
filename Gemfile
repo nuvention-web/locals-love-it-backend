@@ -18,6 +18,10 @@ gem 'puma'
 gem 'twitter'
 gem 'oauth'
 
+gem 'react-rails', '~> 1.0'
+
+gem 'browserify-rails', '~> 0.9.1'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
