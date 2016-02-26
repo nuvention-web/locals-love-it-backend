@@ -1,7 +1,12 @@
 class InfluencersController < ApplicationController
-	def index
-		@influencers = Influencer.all
-		render json: @influencers, each_serializer: InfluencersSerializer, adapter: :json
+	def index 
+		#serializer = ActiveModel::Serializer::ArraySerializer.new(Influencer.all, serializer: InfluencersSerializer)
+		@influencers = Influencer.all.collect do |i|
+			serializer = InfluencersSerializer.new(i)
+			serialization = ActiveModel::Serializer::Adapter.create(serializer)
+			serialization.as_json
+		end
+		render component: 'InfluencersResults', props: {influencers: @influencers}
 	end
 
 	def show
