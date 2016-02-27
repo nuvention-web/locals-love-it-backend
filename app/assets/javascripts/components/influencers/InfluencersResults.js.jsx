@@ -1,7 +1,7 @@
 var InfluencersResultsContent = require('./InfluencersResultsContent.js.jsx');
 var InfluencersFilters = require('./InfluencersFilters.js.jsx');
 
-window.InfluencersResults = React.createClass({
+var InfluencersResults = React.createClass({
   render: function() {
 		if (this.props.errorMessage) {
 			return (
@@ -21,3 +21,5 @@ window.InfluencersResults = React.createClass({
     );
   }
 });
+
+module.exports = InfluencersResults;
