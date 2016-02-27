@@ -6,7 +6,7 @@ class InfluencersController < ApplicationController
 			serialization = ActiveModel::Serializer::Adapter.create(serializer)
 			serialization.as_json
 		end
-		render component: 'InfluencersResults', props: {influencers: @influencers}
+		render 
 	end
 
 	def show
