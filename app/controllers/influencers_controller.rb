@@ -1,16 +1,27 @@
 class InfluencersController < ApplicationController
 	def index 
-		#serializer = ActiveModel::Serializer::ArraySerializer.new(Influencer.all, serializer: InfluencersSerializer)
 		@influencers = Influencer.all.collect do |i|
-			serializer = InfluencersSerializer.new(i)
-			serialization = ActiveModel::Serializer::Adapter.create(serializer)
-			serialization.as_json
+			serialize i, is_single: false
 		end
+
 		render 
+
 	end
 
 	def show
-		@influencer = Influencer.find(params[:id])
-		render json: @influencer, serializer: InfluencersSerializer, adapter: :json, is_single: true
+		@influencer = serialize Influencer.find(params[:id])
+
+		render 
+
+	end
+
+	private
+
+	def serialize(influencer, options = {})
+			options[:is_single] ||= true
+
+			serializer = InfluencersSerializer.new(influencer, is_single: options[:is_single])
+			serialization = ActiveModel::Serializer::Adapter.create(serializer)
+			serialization.as_json
 	end
 end
