@@ -2,7 +2,6 @@
   "name": "locals_love_it",
   "version": "1.0.0",
   "description": "Where Local Businesses Meet Influencers",
-  "main": "",
   "scripts": {
     "test": "rake spec:all"
   },
@@ -10,9 +9,6 @@
     "type": "git",
     "url": "git+https://github.com/nuvention-web/locals-love-it-backend.git"
   },
-  "keywords": [
-    ""
-  ],
   "author": "''",
   "license": "ISC",
   "bugs": {
@@ -23,6 +19,6 @@
     "browserify": "^6.3.4",
     "browserify-incremental": "^1.5.0",
     "classnames": "^2.2.3",
-		"reactify": "^1.1.0"
+    "reactify": "^1.1.0"
   }
 }
