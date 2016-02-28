@@ -1,10 +1,4 @@
-var React = require('react');
-
 var NavBar = React.createClass({
-  propTypes: {
-  	name:React.propTypes.string
-  },
-
   render: function(){
     return (
       <div className = "navbar navbar-default navbar-fixed-top">
@@ -14,7 +8,6 @@ var NavBar = React.createClass({
           </div>
         </div>
       </div>
-
     );
   }
 });
