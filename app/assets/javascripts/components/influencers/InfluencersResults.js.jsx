@@ -16,7 +16,7 @@ var InfluencersResults = React.createClass({
       <div id = "mainContainer" className = "container" style = {mainContainerStyle}>
 				<InfluencersFilters/>
 				<hr/>
-        <InfluencersResultsContent />
+        <InfluencersResultsContent influencers={this.props.influencers} />
       </div>
     );
   }
