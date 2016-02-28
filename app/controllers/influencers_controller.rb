@@ -15,6 +15,13 @@ class InfluencersController < ApplicationController
 
 	end
 
+	def search
+
+		render
+
+	end
+
+
 	private
 
 	def serialize(influencer, options = {})
