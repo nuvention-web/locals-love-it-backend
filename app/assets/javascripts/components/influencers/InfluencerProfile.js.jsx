@@ -30,7 +30,7 @@ render: function(){
   return (
     <div style = {contentStyle} className = "container contentContainer">
       <div className = "row">
-        <ProfileSidebar />
+        <ProfileSidebar name={JSON.stringify(this.props.influencer)} />
       </div>
     </div>
   );
