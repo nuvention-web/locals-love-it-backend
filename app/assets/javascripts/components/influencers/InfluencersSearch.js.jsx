@@ -44,7 +44,7 @@ var InfluencersSearch = React.createClass({
 
 				 <div className = "row">
 					<div className = "col-md-3 col-md-offset-6">
-						<a className="btn btn-default btn-lg btn-block" style = {btnStyle} href="#" role="button" id = "findInfluencers" onClick = {this.props.onSubmit}>Find me influencers!</a>
+						<a className="btn btn-default btn-lg btn-block" style = {btnStyle} href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit}>Find me influencers!</a>
 					</div>
 				 </div>
 				</div>
