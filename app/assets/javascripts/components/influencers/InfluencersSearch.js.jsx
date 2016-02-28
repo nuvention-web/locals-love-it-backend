@@ -1,3 +1,15 @@
+var SearchField = React.createClass({
+  render: function(){
+    return(
+      <div className = "col-md-2">
+        <div className="form-group form-group-lg">
+          <input type="text" className="form-control" placeholder={this.props.name} onChange={this.onChange} value = {this.props.value}/>
+        </div>
+      </div>
+    );
+  }
+});
+
 var InfluencersSearch = React.createClass({
 	render: function(){
 			var titleStyle = {
@@ -24,6 +36,8 @@ var InfluencersSearch = React.createClass({
 
 					<div className ="row">
 						<div className = "col-md-5"></div>
+							<SearchField name = {"Location"} ref = "location" />
+							<SearchField name = {"Industry"} ref = "industry" />
 						<br/>
 						<br/>
 				 </div>
