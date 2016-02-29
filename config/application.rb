@@ -22,6 +22,7 @@ module LLIApi
 		
 		#precompiling all assets
 		#config.assets.precompile += [/.*\.js/,/.*\.css/]
+		config.serve_static_assets = true
 		config.assets.precompile += [/.*\.js/]
 		config.assets.precompile += %w( influencers/search.css )
 
