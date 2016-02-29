@@ -20,7 +20,6 @@ var ListOfLinks = React.createClass({
 
     return (
       <ul>
-        {this.props.links.map(createListItem)}
       </ul>
     );
   }
@@ -29,7 +28,6 @@ var ListOfLinks = React.createClass({
 
 var InfluencersResultsProfile = React.createClass({
   render: function(){
-
     var panelStyle = {
       padding: 0,
     }
@@ -61,12 +59,14 @@ var InfluencersResultsProfile = React.createClass({
 var InfluencersResultsRow = React.createClass({
   render: function(){
 
+   var InfluencerInfo = this.props.influencers;
+	console.log(InfluencerInfo);
     var createInfluencerProfile = function(inf, index){
       return <InfluencersResultsProfile
-				key = {index}
+	key = {index}
         name = {inf.name}
         imageLink = {inf.imageLink}
-        badges = {inf.badges}
+        badges = {["Grumpy", "Sneezy"]}
         socialLinks = {inf.socialLinks}
         industry = {inf.industry}
 
@@ -75,7 +75,7 @@ var InfluencersResultsRow = React.createClass({
 
     return (
       <div className = "row">
-        {this.props.influencers.map(createInfluencerProfile)}
+        {InfluencerInfo.map(createInfluencerProfile)}
       </div>
     );
   }
