@@ -53,4 +53,4 @@ group :production do
 	gem 'uglifier'
 	gem 'rails_12factor'
 end
-ruby '2.2.3'
+ruby '2.2.4'
