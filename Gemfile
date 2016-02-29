@@ -42,7 +42,10 @@ gem 'autoprefixer-rails'
 group :test  do	
 	gem 'rspec-rails'
 	gem 'pry'
-	gem 'factory_girl_rails'
 	gem 'faker'
 	gem 'webmock'
+end
+
+group :development, :test do 
+	gem 'factory_girl_rails'
 end
