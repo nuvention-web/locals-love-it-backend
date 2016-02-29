@@ -49,5 +49,8 @@ group :development, :test do
 	gem 'factory_girl_rails'
 end
 
-gem 'rails_12factor', group: :production
+group :production do
+	gem 'uglifier'
+	gem 'rails_12factor'
+end
 ruby '2.2.3'
