@@ -6,6 +6,7 @@ def seedInfluencers
 
 	puts Dir.pwd
 	influencers_text = File.read('./data/influencers.csv');
+	influencers_text.encode!(universal_newline: true)
 	influencers = CSV.parse(influencers_text, headers: true);
 
 	influencers.each do |influencer|
