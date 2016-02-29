@@ -23,8 +23,7 @@ module LLIApi
 		#precompiling all assets
 		#config.assets.precompile += [/.*\.js/,/.*\.css/]
 		config.serve_static_assets = true
-		config.assets.precompile += [/.*.react-server.js/]
-		config.assets.precompile += [/.*\.js/]
+		config.assets.precompile += [/.*\.js/, /.*\.css/]
 		config.assets.precompile += %w( influencers/search.css )
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
