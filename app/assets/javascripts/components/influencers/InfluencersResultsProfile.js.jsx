@@ -35,16 +35,18 @@ var InfluencersResultsProfile = React.createClass({
     var nameStyle = {
       textDecoration: "none",
       textAlign: "center"
-    }
+    };
+   var smi=this.props.imageLink;
+   var photoToView=smi.scheme+'://'+smi.host+smi.path
     return(
       <div className = "col-md-3">
         <div className="panel panel-default">
           <div className="panel-body" style = {panelStyle}>
-            <a href = "profile.html"><img src={this.props.imageLink} className="img-responsive"/></a>
+            <a href = "profile.html"><img src={photoToView} className="img-responsive"/></a>
           </div>
           <div className="panel-footer">
 
-            <a href = "profile.html" style = {nameStyle}><h3>{this.props.name}</h3></a>
+            <a href = "profile.html" style = {nameStyle}><h3>{this.props.first_name}</h3></a>
             <h5 style = {nameStyle}>{this.props.industry}</h5>
             <ListOfLinks links = {this.props.socialLinks} />
             <BadgeList tags = {this.props.badges} />
@@ -64,11 +66,12 @@ var InfluencersResultsRow = React.createClass({
     var createInfluencerProfile = function(inf, index){
       return <InfluencersResultsProfile
 	key = {index}
-        name = {inf.name}
-        imageLink = {inf.imageLink}
+        first_name = {inf.user.first_name}
+	imageLink = {inf.social_media_info.profile_pic}
+        //imageLink = smi.schema+'://'+smi.host+smi.path 
         badges = {["Grumpy", "Sneezy"]}
         socialLinks = {inf.socialLinks}
-        industry = {inf.industry}
+        industry = {inf.industries[0].name}
 
       />;
     };
