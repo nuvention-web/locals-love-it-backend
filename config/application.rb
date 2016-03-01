@@ -21,8 +21,7 @@ module LLIApi
     # config.i18n.default_locale = :de
 		
 		#precompiling all assets
-		config.assets.precompile += [/.*.assests.*\.js/,/.*.assets.*\.css/]
-		config.assets.precompile += %w( influencers/search.css )
+		config.assets.precompile += [/.*\.js/,/.*\.css/]
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
