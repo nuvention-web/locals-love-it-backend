@@ -20,12 +20,6 @@ module LLIApi
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 		
-		#precompiling all assets
-		#config.assets.precompile += [/.*\.js/,/.*\.css/]
-		config.assets.precompile += %w( application.css)
-		config.assets.precompile += %w( my_app.css.scss)
-		config.assets.precompile += %w( influencers/search.css )
-
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 		
