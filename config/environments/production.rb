@@ -80,4 +80,9 @@ Rails.application.configure do
 	# react info
   config.react.variant = :production
 
+	config.react.server_renderer_options = {
+		files: ["application.js"], # files to load for prerendering
+		replay_console: true,                 # if true, console.* will be replayed client-side
+	}
+
 end
