@@ -31,19 +31,23 @@ var InfluencersResultsProfile = React.createClass({
     var panelStyle = {
       padding: 0,
     }
-
+   
+    var stripSize = {
+      height: 100,
+      width: 100
+    }
     var nameStyle = {
       textDecoration: "none",
       textAlign: "center"
     };
    var smi=this.props.imageLink;
-   var photoToView=smi.scheme+'://'+smi.host+smi.path
+   var photoToView=smi.scheme+'://'+smi.host+smi.path.replace('_nomral.jpg','.jpg')
 	 var influencer_page = '/influencers/' + this.props.influencer_id
     return(
       <div className = "col-md-3">
         <div className="panel panel-default">
           <div className="panel-body" style = {panelStyle}>
-            <a href = {influencer_page}><img src={photoToView} className="img-responsive"/></a>
+            <a href = {influencer_page}><img src={photoToView} className="img-responsive" style={stripSize}/></a>
           </div>
           <div className="panel-footer">
 
