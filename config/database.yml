@@ -80,8 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: LLI_db
-  username: LLI_prod
+  database: d2p0a1i1m0hojc 
+  username: fiemlnikmnlcpu
   host: <%= ENV['DB_HOST']%>
-  url: <%= ENV['DB_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
   password: <%= ENV['LLI_DB_PASSWORD'] %>
