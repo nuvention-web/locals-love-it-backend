@@ -2,7 +2,6 @@
 //= require react
 //= require react_ujs
 
-// require bootstrap-sprockets
 // require_self
 // require_tree .
 
