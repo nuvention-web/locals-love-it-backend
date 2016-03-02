@@ -33,16 +33,22 @@ var InfluencersResultsProfile = React.createClass({
     }
    
     var stripSize = {
-      height: 100,
-      width: 100
+      height: 300,
+      width: 300
+    }
+    var fixAllSize = {
+      '_normal.jpg':'.jpg',
+      '_normal.jpeg':'.jpeg',
+      '_normal.png': '.png'
     }
     var nameStyle = {
       textDecoration: "none",
       textAlign: "center"
     };
    var smi=this.props.imageLink;
-   var photoToView=smi.scheme+'://'+smi.host+smi.path.replace('_nomral.jpg','.jpg')
-	 var influencer_page = '/influencers/' + this.props.influencer_id
+   var prePhotoToView=smi.scheme+'://'+smi.host+smi.path.replace('_nomral.jpg','.jpg')
+   var photoToView=prePhotoToView.replace(/_normal.jpg|_normal.jpeg|_normal.png/gi, (ending)=>{return fixAllSize[ending];})
+   var influencer_page = '/influencers/' + this.props.influencer_id
     return(
       <div className = "col-md-3">
         <div className="panel panel-default">
