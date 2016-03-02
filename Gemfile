@@ -24,6 +24,8 @@ gem 'browserify-rails', '~> 0.9.1'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 gem 'autoprefixer-rails'
+
+gem 'uglifier'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
