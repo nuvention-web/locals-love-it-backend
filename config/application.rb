@@ -19,13 +19,17 @@ module LLIApi
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-		#
 		
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 		
 		#For rendering react components
 		config.browserify_rails.commandline_options = "-t reactify --extension=\".js.jsx\""
+		config.react.server_renderer_options = {
+			    files: ["application.js"], # files to load for prerendering
+					replay_console: true,                 # if true, console.* will be replayed client-side
+		}
 
     config.before_configuration do
         env_file = File.join(Rails.root, 'config', 'local_env.yml')
