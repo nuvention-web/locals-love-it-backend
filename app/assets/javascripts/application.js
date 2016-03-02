@@ -1,5 +1,5 @@
+//= require react-server
 //= require react
-//= require react_ujs
 
 // require bootstrap-sprockets
 // require_self
