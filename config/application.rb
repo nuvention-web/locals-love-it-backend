@@ -26,6 +26,10 @@ module LLIApi
 		
 		#For rendering react components
 		config.browserify_rails.commandline_options = "-t reactify --extension=\".js.jsx\""
+		config.react.server_renderer_options = {
+			    files: ["application.js"], # files to load for prerendering
+					replay_console: true,                 # if true, console.* will be replayed client-side
+		}
 
     config.before_configuration do
         env_file = File.join(Rails.root, 'config', 'local_env.yml')
