@@ -12,6 +12,8 @@ var BadgeList = React.createClass({
 
 });
 
+
+
 var ListOfLinks = React.createClass({
   render: function(){
     var createListItem = function(linkSet, index){
