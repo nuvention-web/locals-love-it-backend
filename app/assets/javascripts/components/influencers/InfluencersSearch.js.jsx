@@ -18,12 +18,17 @@ var InfluencersSearch = React.createClass({
 
 			var btnStyle = {
 			};
+			
+			var padding = {
+				topPadding: "10%",
+				bottomPadding: "10%",
+			};
 
 			return(
-				<div className = "container contentContainer"  id = "topContainer">
-				<br />
-				<br />
-				<br />
+				<div className = "contentContainer"  id = "topContainer">
+
+
+
 
 					<div className ="row" id = "topRow">
 						 <div className = "col-md-6 col-md-offset-3">
@@ -32,7 +37,7 @@ var InfluencersSearch = React.createClass({
 
 				     <div className ="row">
 				      <div className = "col-md-4 col-md-offset-4">
-				       <div className = "panel panel-default">
+				       <div className = "panel panel-default" style={padding}>
 				        <div className = "panel-heading">
 				         <p className = "lead" > There's strength in the small </p>
 				        </div>
@@ -54,6 +59,10 @@ var InfluencersSearch = React.createClass({
 
 				        </div>
 				       </div>
+				       </div>
+				       <div className = "row">
+				       </div>
+				       <div className = "row">
 				       </div>
 		       		       <br/>
 				 </div>
