@@ -17,7 +17,6 @@ var InfluencersSearch = React.createClass({
 			};
 
 			var btnStyle = {
-				borderColor: "#ED005F"
 			};
 
 			return(
@@ -32,7 +31,7 @@ var InfluencersSearch = React.createClass({
 					</div>
 
 				     <div className ="row">
-				      <div className = "col-md-6 col-md-offset-3">
+				      <div className = "col-md-4 col-md-offset-4">
 				       <div className = "panel panel-default">
 				        <div className = "panel-heading">
 				         <p className = "lead" > There's strength in the small </p>
@@ -47,17 +46,16 @@ var InfluencersSearch = React.createClass({
 					     <SearchField name = {"Industry"} ref = "industry" />
 			  		   </div>
 		       		          </div>
+					  <div className = "row">
+					<div className = "col-md-6 col-md-offset-3">
+						<input className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "find influencers"/>
+					</div>
+				 </div>
+
 				        </div>
 				       </div>
 				       </div>
 		       		       <br/>
-						<br/>
-				 </div>
-
-				 <div className = "row">
-					<div className = "col-md-3 col-md-offset-6">
-						<a className="btn btn-default btn-lg btn-block" style = {btnStyle} href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit}>Find me influencers!</a>
-					</div>
 				 </div>
 				</div>
 
