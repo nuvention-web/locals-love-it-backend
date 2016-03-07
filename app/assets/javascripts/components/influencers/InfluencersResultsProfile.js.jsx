@@ -35,8 +35,8 @@ var InfluencersResultsProfile = React.createClass({
     }
    
     var stripSize = {
-      height: 300,
-      width: 300
+      height: 200,
+      width: 200,
     }
     var fixAllSize = {
       '_normal.jpg':'.jpg',
@@ -53,9 +53,9 @@ var InfluencersResultsProfile = React.createClass({
    var influencer_page = '/influencers/' + this.props.influencer_id
     return(
       <div className = "col-md-3">
-        <div className="panel panel-default">
+        <div className="panel panel-default panel-horizontal">
           <div className="panel-body" style = {panelStyle}>
-            <a href = {influencer_page}><img src={photoToView} className="img-responsive" style={stripSize}/></a>
+            <a href = {influencer_page}><img src={photoToView} className="img-responsive img-circle" style={stripSize}/></a>
           </div>
           <div className="panel-footer">
 

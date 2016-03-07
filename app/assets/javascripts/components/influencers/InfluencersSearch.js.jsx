@@ -1,11 +1,11 @@
 var SearchField = React.createClass({
   render: function(){
     return(
-      <div className = "col-md-2">
+
         <div className="form-group form-group-lg">
           <input type="text" className="form-control" placeholder={this.props.name} onChange={this.onChange} value = {this.props.value}/>
         </div>
-      </div>
+
     );
   }
 });
@@ -27,18 +27,30 @@ var InfluencersSearch = React.createClass({
 				<br />
 
 					<div className ="row" id = "topRow">
-						<div className = "col-md-5"></div>
-						 <div className = "col-md-6">
-							 <h1 style = {titleStyle}> Locals Love It </h1>
-								<p className = "lead" > Connecting small businesses with local level influencers </p>
-							</div>
+						 <div className = "col-md-6 col-md-offset-3">
+					       	 </div>
 					</div>
 
-					<div className ="row">
-						<div className = "col-md-5"></div>
-							<SearchField name = {"Location"} ref = "location" />
-							<SearchField name = {"Industry"} ref = "industry" />
-						<br/>
+				     <div className ="row">
+				      <div className = "col-md-6 col-md-offset-3">
+				       <div className = "panel panel-default">
+				        <div className = "panel-heading">
+				         <p className = "lead" > There's strength in the small </p>
+				        </div>
+
+				        <div className = "panel panel-body">
+				         <div className = "row">
+			  	           <div className = "col-md-6 col-lg-6">
+					     <SearchField name = {"Location"} ref = "location" />
+					     </div>
+			         	   <div className = "col-md-6 col-lg-6">
+					     <SearchField name = {"Industry"} ref = "industry" />
+			  		   </div>
+		       		          </div>
+				        </div>
+				       </div>
+				       </div>
+		       		       <br/>
 						<br/>
 				 </div>
 
