@@ -24,7 +24,7 @@ html, body {
 	height: 100%;
 }
 .yieldContentRow {
-	height: 85%;
+	height: 90%;
 }
 .container.mainContainer {
 	width: 100%;
@@ -33,18 +33,20 @@ html, body {
 }
 
 .navRow {
-	height:15%;
+	height:10%;
 	box-shadow:1px 1px 12px #888888;
 }
 
 .navbar.navbar-default.navbar-fixed-top.topNavBar{
-	height: 15%;
+	height: 10%;
 	margin-bottom: 0px;
 	background-color: #FFFFFF;
+	box-shadow:1px 1px 12px #888888;
 }
 
 .frontColumns {
 	height:50%;
+	padding-bottom: 1%;
 }
 
 .howItWorks {
@@ -53,7 +55,7 @@ html, body {
 }
 
 .frontSecondRow {
-	padding-top: 2%;
+	padding-top: 1%;
 	height: 100%;
 }
 
@@ -75,7 +77,30 @@ html, body {
 	padding-top: 10px;
 	text-align: center;
 }
+.weHelpBy {
+	text-align: left;
+}
 
-.panel.panel-default>.panel-heading {
-	text-align: center;
+
+
+.panel-default>.panel-heading {
+	color: #00415d;
+	background-color: #fff;
+	border-color: #fff;
+	text-align:center;
+}
+
+.btn-default {
+	background-color: #59B2E0;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #59B2E6;}
+
+.mainFooter {
+	background-color: rgba(255,255,255,0.3);
 }

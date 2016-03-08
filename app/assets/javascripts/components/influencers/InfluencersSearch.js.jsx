@@ -74,7 +74,7 @@ var InfluencersSearch = React.createClass({
 		       		          </div>
 					  <div className = "row">
 					<div className = "col-md-6 col-md-offset-3">
-						<input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "find influencers"/>
+						<form action = "/influencers" method = "get"><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "find influencers"/>
 					</div>
 				 </div>
 
@@ -167,12 +167,48 @@ var InfluencersSearch = React.createClass({
 	 </div>
 	 <div className = "row frontThirdRow" id = "thirdRow">
 	 <div className = "col-md-12 col-lg-12 col-sm-12 hereToHelp">
-          <h2>Locals Love It Can Help Your Business</h2>
+          <h2>Locals Love It Can Help Your Business:</h2>
 	 </div>
-         <div className = "col-md-12 col-lg-12 col-sm-12 frontFooter">
+         <div className = "col-md-12 col-lg-12 col-sm-12 weHelpBy">
+	  <div className = "row">
+	   <div className = "col-md-6 col-lg-6">
+	    <div className = "row">
+	    <div className = "col-md-12 col-lg-12">
+	    <h3> Increase foot traffic during a specific time of day</h3>
+	    </div>
+	    </div>
+	    <div className = "row">
+	    <div className = "col-md-12 col-lg-12">
+	    <h3>Align with a personality to reinforce brand positioning</h3>
+	    </div>
+	    </div>
+	    <div className = "row">
+	    <div className = "col-md-12 col-lg-12">
+	    <h3>Stand out from big businesses by communicating quality</h3>
+	    </div>
+	    </div>
+	   </div>
+	   <div className = "col-md-6 col-lg-6">
+	    <div className = "row">
+	    <div className = "col-md-12 col-lg-12">
+	    <h3>Appeal to a new type of customer to increase sales</h3>
+	    </div>
+	    </div>
+	    <div className = "row">
+	    <div className = "col-md-12 col-lg-12">
+	    <h3>Amplify an existing social media campaign</h3>
+	    </div>
+	    </div>
+	   </div>
+	  </div>
 	   </div>
 	   </div>
-
+        <div className = "row mainFooter">
+	 <div className = "col-md-12 col-lg-12">
+	  <br/>
+	  <br/>
+	 </div>
+	</div>
 	</div>
 
 	);
