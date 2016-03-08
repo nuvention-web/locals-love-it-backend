@@ -68,39 +68,67 @@ var InfluencersSearch = React.createClass({
 				       </div>
 		       		       <br/>
 				 </div>
-                                 <div className = "row frontSecondRow" id = "secondRow">
-				  <div className = "col-md-4 frontColumns">
-				      <div className = "row">
-				  	<div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style = {fauxColor1}>
-					</div>
-					<div id = "row">
-					 <h3>Info1</h3>
-					 <p>Info about more</p>
-					</div>
-				       </div>
-				  </div>
+           <div className = "row frontSecondRow" id = "secondRow">
+           <div className = "col-md-4 frontColumns" >
+           <div className = "row">
+             <div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style = {fauxColor1}>
+           <br/>
+           </div>
+           <div id = "row">
+           <div className = "col-md-12">
+           <div className = "row">
+           <h3>Info1</h3>
+           </div>
+           <div className = "row">
+           <div className = "col-md-8 col-md-offset-2">
+           <p>Info about more</p>
+           </div>
+           </div>
+           </div>
+           </div>
+                </div>
+
+           </div>
 				  <div className = "col-md-4 frontColumns" >
 				  <div className = "row">
 				  	<div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style = {fauxColor2}>
+					<br/>
 					</div>
 					<div id = "row">
+					<div className = "col-md-12">
+					<div className = "row">
 					<h3>Info1</h3>
+					</div>
+					<div className = "row">
+					<div className = "col-md-8 col-md-offset-2">
 					<p>Info about more</p>
+					</div>
+					</div>
+					</div>
 					</div>
 				       </div>
 
 				  </div>
-				  <div className = "col-md-4 frontColumns" >
-				  <div className = "row">
-				  	<div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style = {fauxColor3}>
-					</div>
-					<div id = "row">
-					<h3>Info2</h3>
-					<p>Info about more</p>
-					</div>
-				       </div>
+          <div className = "col-md-4 frontColumns" >
+          <div className = "row">
+            <div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style = {fauxColor3}>
+          <br/>
+          </div>
+          <div id = "row">
+          <div className = "col-md-12">
+          <div className = "row">
+          <h3>Info1</h3>
+          </div>
+          <div className = "row">
+          <div className = "col-md-8 col-md-offset-2">
+          <p>Info about more</p>
+          </div>
+          </div>
+          </div>
+          </div>
+               </div>
 
-				  </div>
+          </div>
 				 </div>
 				 <div className = "row" id = "thirdRow">
                                    <div className = "col-md-12 col-lg-12 col-sm-12 frontFooter">
