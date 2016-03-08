@@ -6,12 +6,12 @@
 	</head>
 	<body>
 	<div class='container mainContainer'>
-	      <div class = 'row'>
-		<div id = 'NavBar'>
+	      <div class = 'row navRow'>
+		<div id = 'NavBar' class = 'navContainer'>
 			<%= react_component('NavBar', {} ,{prerender: true}) %>
 		</div>
               </div>
-	      <div class = 'row'>
+	      <div class = 'row yieldContentRow'>
 		<div id = 'content' class = 'yieldContent'>
 			<%= yield %>
 		</div>

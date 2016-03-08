@@ -20,8 +20,7 @@ var InfluencersSearch = React.createClass({
 			};
 			
 			var padding = {
-				topPadding: "10%",
-				bottomPadding: "10%",
+				paddingTop: "6%",
 			};
 
 			return(
@@ -36,8 +35,8 @@ var InfluencersSearch = React.createClass({
 					</div>
 
 				     <div className ="row">
-				      <div className = "col-md-4 col-md-offset-4">
-				       <div className = "panel panel-default" style={padding}>
+				      <div className = "col-md-4 col-md-offset-4" style={padding}>
+				       <div className = "panel panel-default">
 				        <div className = "panel-heading">
 				         <p className = "lead" > There's strength in the small </p>
 				        </div>
@@ -60,12 +59,17 @@ var InfluencersSearch = React.createClass({
 				        </div>
 				       </div>
 				       </div>
-				       <div className = "row">
+				       <div className = "row" id = "secondRow">
 				       </div>
-				       <div className = "row">
+				       <div className = "row" id = "thirdRow">
 				       </div>
 		       		       <br/>
 				 </div>
+                                 <div className = "row" id = "secondRow">
+				       </div>
+				       <div className = "row" id = "thirdRow">
+				       </div>
+
 				</div>
 
 			);
