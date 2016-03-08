@@ -1,7 +1,11 @@
-#topContainer {
-  background-image: url("http://images.freeimages.com/images/previews/949/small-town-1445441.jpg");
+#majorRow {
+  background-image: url("http://www.hiatec.org/images/Business_Incubation_Startup.jpg");
   width: 100%;
   background-size: cover;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
   /*color: #ED005F;
   padding-top: 50px;
   padding-bottom: 500px;*/

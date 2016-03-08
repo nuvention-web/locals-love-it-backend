@@ -18,27 +18,34 @@ var InfluencersSearch = React.createClass({
 
 			var btnStyle = {
 			};
-			
+                        var fauxColor1 = {
+				backgroundColor:"#ea4c8d",
+			};
+			var fauxColor2 = {
+				backgroundColor:"#00abf0",
+			};
+			var fauxColor3 = {
+				backgroundColor:"#df4a32",
+			};
 			var padding = {
 				paddingTop: "6%",
 			};
-
+			var mainStyle = {
+				height:"100%",
+			};
+			this.style={mainStyle};
 			return(
-				<div className = "contentContainer"  id = "topContainer">
-
-
-
-
+				<div className = "contentContainer"  id = "topContainer" style = {mainStyle}>
 					<div className ="row" id = "topRow">
 						 <div className = "col-md-6 col-md-offset-3">
 					       	 </div>
 					</div>
 
-				     <div className ="row">
+				     <div className ="row" id = "majorRow">
 				      <div className = "col-md-4 col-md-offset-4" style={padding}>
 				       <div className = "panel panel-default">
 				        <div className = "panel-heading">
-				         <p className = "lead" > There's strength in the small </p>
+				         <p className = "lead" > There is strength in the small </p>
 				        </div>
 
 				        <div className = "panel panel-body">
@@ -52,23 +59,50 @@ var InfluencersSearch = React.createClass({
 		       		          </div>
 					  <div className = "row">
 					<div className = "col-md-6 col-md-offset-3">
-						<input className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "find influencers"/>
+						<input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "find influencers"/>
 					</div>
 				 </div>
 
 				        </div>
 				       </div>
 				       </div>
-				       <div className = "row" id = "secondRow">
-				       </div>
-				       <div className = "row" id = "thirdRow">
-				       </div>
 		       		       <br/>
 				 </div>
-                                 <div className = "row" id = "secondRow">
+                                 <div className = "row frontSecondRow" id = "secondRow">
+				  <div className = "col-md-4 frontColumns">
+				      <div className = "row">
+				  	<div className = "col-md-6 col-md-offset-3" style = {fauxColor1}>
+					<div id = "row">
+					 <h3>Info1</h3>
+					</div>
+					</div>
 				       </div>
-				       <div className = "row" id = "thirdRow">
+				  </div>
+				  <div className = "col-md-4 frontColumns" >
+				  <div className = "row">
+				  	<div className = "col-md-6 col-md-offset-3" style = {fauxColor2}>
+					</div>
+					<div id = "row">
+					<h3>Info1</h3>
+					</div>
 				       </div>
+
+				  </div>
+				  <div className = "col-md-4 frontColumns" >
+				  <div className = "row">
+				  	<div className = "col-md-6 col-md-offset-3" style = {fauxColor3}>
+					</div>
+					<div id = "row">
+					<h3>Info2</h3>
+					</div>
+				       </div>
+
+				  </div>
+				 </div>
+				 <div className = "row" id = "thirdRow">
+                                   <div className = "col-md-12 col-lg-12 col-sm-12 frontFooter">
+				   </div>
+				   </div>
 
 				</div>
 

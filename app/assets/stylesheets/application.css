@@ -21,7 +21,7 @@ html, body {
 	width: 100%;
 }
 .yieldContent {
-	/*padding-top:50px;*/
+	height:100%;
 }
 .yieldContentRow {
 	height:85%;
@@ -34,9 +34,23 @@ html, body {
 
 .navRow {
 	height:15%;
+	box-shadow:1px 1px 12px #888888;
 }
 
 .navbar.navbar-default.navbar-fixed-top.topNavBar{
 	height: 15%;
 	margin-bottom: 0px;
+}
+
+.frontColumns {
+	height:50%;
+}
+
+.frontSecondRow {
+	padding-top:4%;
+	height:100%;
+}
+
+.frontColumns>h3 {
+	text-align: center;
 }
