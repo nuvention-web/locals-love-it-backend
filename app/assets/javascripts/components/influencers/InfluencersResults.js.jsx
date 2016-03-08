@@ -9,15 +9,23 @@ var InfluencersResults = React.createClass({
 			);
 		}
     mainContainerStyle = {
-      marginTop: 70
+	height:"100%",
     };
 
     return (
-      <div id = "mainContainer" className = "container" style = {mainContainerStyle}>
-				<InfluencersFilters/>
+      <div id = "mainContainer" className = "row" style = {mainContainerStyle}>
+      			       <div className = "col-md-3">
+			        <div className = "row">
+				<div className = "col-md-10 col-md-offset-1">
+				<InfluencersFilters />
+				</div>
+				</div>
+				</div>
 				<hr/>
+				<div className = "col-md-9">
         <InfluencersResultsContent Influencers={this.props.influencers} />
-      </div>
+                                </div>
+	</div>
     );
   }
 });

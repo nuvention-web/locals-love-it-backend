@@ -4,7 +4,7 @@ var NavBar = React.createClass({
       <div className = "navbar navbar-default navbar-fixed-top topNavBar">
         <div className = "container-fluid">
           <div className = "navbar-header">
-            <a className = "navbar-brand" href = "#"> Locals Love It </a>
+            <a className = "navbar-brand" href = "#"> <img src = "" alt = "Locals Love It"/></a>
           </div>
         </div>
       </div>

@@ -30,7 +30,7 @@ var ButtonGroup = React.createClass({
 
     return(
       <div className = "row">
-        <div className = "col-md-2">
+        <div className = "col-md-4">
           <h5> {this.props.title}</h5>
         </div>
         <div className = "col-md-8">
