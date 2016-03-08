@@ -40,6 +40,7 @@ html, body {
 .navbar.navbar-default.navbar-fixed-top.topNavBar{
 	height: 15%;
 	margin-bottom: 0px;
+	background-color: #FFFFFF;
 }
 
 .frontColumns {
@@ -52,5 +53,9 @@ html, body {
 }
 
 .frontColumns>h3 {
+	text-align: center;
+}
+
+.panel.panel-default>.panel-heading {
 	text-align: center;
 }

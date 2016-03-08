@@ -71,29 +71,32 @@ var InfluencersSearch = React.createClass({
                                  <div className = "row frontSecondRow" id = "secondRow">
 				  <div className = "col-md-4 frontColumns">
 				      <div className = "row">
-				  	<div className = "col-md-6 col-md-offset-3" style = {fauxColor1}>
+				  	<div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style = {fauxColor1}>
+					</div>
 					<div id = "row">
 					 <h3>Info1</h3>
-					</div>
+					 <p>Info about more</p>
 					</div>
 				       </div>
 				  </div>
 				  <div className = "col-md-4 frontColumns" >
 				  <div className = "row">
-				  	<div className = "col-md-6 col-md-offset-3" style = {fauxColor2}>
+				  	<div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style = {fauxColor2}>
 					</div>
 					<div id = "row">
 					<h3>Info1</h3>
+					<p>Info about more</p>
 					</div>
 				       </div>
 
 				  </div>
 				  <div className = "col-md-4 frontColumns" >
 				  <div className = "row">
-				  	<div className = "col-md-6 col-md-offset-3" style = {fauxColor3}>
+				  	<div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style = {fauxColor3}>
 					</div>
 					<div id = "row">
 					<h3>Info2</h3>
+					<p>Info about more</p>
 					</div>
 				       </div>
 
