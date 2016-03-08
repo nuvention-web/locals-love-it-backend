@@ -2,6 +2,7 @@
   background-image: url("http://www.hiatec.org/images/Business_Incubation_Startup.jpg");
   width: 100%;
   background-size: cover;
+  background-attachment: fixed;
   padding-left: 0;
   padding-right: 0;
   margin-left: 0;
