@@ -57,7 +57,14 @@ var InfluencersSearch = React.createClass({
 					</div>
 
 				     <div className ="row" id = "majorRow">
-				      <div className = "col-md-4 col-md-offset-4" style={padding}>
+				     <div className = "col-md-4">
+				      <div className = "row explainer">
+				       <div className = "col-md-10 col-md-offset-1">
+				        <p1>Locals Love It provides an easy way for small businesses to discover, communicate with and pay local-level influencers</p1>
+				       </div>
+				      </div>
+				     </div>
+				      <div className = "col-md-4" style={padding}>
 				       <div className = "panel panel-default">
 				        <div className = "panel-heading">
 				         <p className = "lead" > There is strength in the small </p>
@@ -74,7 +81,7 @@ var InfluencersSearch = React.createClass({
 		       		          </div>
 					  <div className = "row">
 					<div className = "col-md-6 col-md-offset-3">
-						<form action = "/influencers" method = "get"><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "find influencers"/>
+						<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "find influencers"/></form>
 					</div>
 				 </div>
 
@@ -166,6 +173,7 @@ var InfluencersSearch = React.createClass({
           </div>
 	 </div>
 	 <div className = "row frontThirdRow" id = "thirdRow">
+	 <div className = "layer">
 	 <div className = "col-md-12 col-lg-12 col-sm-12 hereToHelp">
           <h2>Locals Love It Can Help Your Business:</h2>
 	 </div>
@@ -173,34 +181,35 @@ var InfluencersSearch = React.createClass({
 	  <div className = "row">
 	   <div className = "col-md-6 col-lg-6">
 	    <div className = "row">
-	    <div className = "col-md-12 col-lg-12">
+	    <div className = "col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 	    <h3> Increase foot traffic during a specific time of day</h3>
 	    </div>
 	    </div>
 	    <div className = "row">
-	    <div className = "col-md-12 col-lg-12">
+	    <div className = "col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 	    <h3>Align with a personality to reinforce brand positioning</h3>
 	    </div>
 	    </div>
 	    <div className = "row">
-	    <div className = "col-md-12 col-lg-12">
+	    <div className = "col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 	    <h3>Stand out from big businesses by communicating quality</h3>
 	    </div>
 	    </div>
 	   </div>
 	   <div className = "col-md-6 col-lg-6">
 	    <div className = "row">
-	    <div className = "col-md-12 col-lg-12">
+	    <div className = "col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 	    <h3>Appeal to a new type of customer to increase sales</h3>
 	    </div>
 	    </div>
 	    <div className = "row">
-	    <div className = "col-md-12 col-lg-12">
+	    <div className = "col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 	    <h3>Amplify an existing social media campaign</h3>
 	    </div>
 	    </div>
 	   </div>
 	  </div>
+	   </div>
 	   </div>
 	   </div>
         <div className = "row mainFooter">
