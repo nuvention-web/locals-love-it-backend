@@ -5,14 +5,17 @@
 	 <%= stylesheet_link_tag 'application', media: 'all','data-turbolinks-track' => true %>
 	</head>
 	<body>
-
-		<div id='NavBar'>
-			<%= react_component('NavBar', {} ,{prerender: true}) %>
-			</div>
-
-		<div id='content'>
+	<div class='container mainContainer'>
+	      <div class = 'row navRow'>
+		<div id = 'NavBar' class = 'navContainer'>
+			<%= react_component( 'NavBar', {} ,{prerender: true} ) %>
+		</div>
+              </div>
+	      <div class = 'row yieldContentRow'>
+		<div id = 'content' class = 'yieldContent'>
 			<%= yield %>
 		</div>
-
+	      </div>
+	    </div>
 	</body>
 </html>
