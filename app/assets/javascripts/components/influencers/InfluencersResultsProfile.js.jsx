@@ -52,7 +52,7 @@ var InfluencersResultsProfile = React.createClass({
    var photoToView=prePhotoToView.replace(/_normal.jpg|_normal.jpeg|_normal.png/gi, (ending)=>{return fixAllSize[ending];})
    var influencer_page = '/influencers/' + this.props.influencer_id
     return(
-      <div className = "col-md-4">
+      <div className = "col-md-6">
         <div className="panel panel-horizontal">
           <div className="panel-body" style = {panelStyle}>
             <a href = {influencer_page}><img src={photoToView} className="img-responsive img-circle" style={stripSize}/></a>

@@ -25,11 +25,14 @@ html, body {
 }
 .yieldContentRow {
 	height: 90%;
+	margin-left: 0;
+	margin-right: 0;
 }
 .container.mainContainer {
 	width: 100%;
 	height: 100%;
-	overflow-x: hidden;
+	/*overflow-x: hidden;*/
+
 }
 
 .navRow {
@@ -43,7 +46,13 @@ html, body {
 	background-color: #FFFFFF;
 	box-shadow:1px 1px 12px #888888;
 }
-
+/*
+.navbar-brand:after {
+	content: url("http://orig14.deviantart.net/e8e5/f/2016/072/0/a/lli_logo_final_by_thecazur-d9v0fno.png");
+	width: 50px;
+	height: 30px;
+}
+*/
 .frontColumns {
 	height:50%;
 	padding-bottom: 1%;
@@ -61,18 +70,21 @@ html, body {
 
 .frontThirdRow {
 	text-align: center;
-	padding-bottom: 2%;
-	padding-top: 2%;
+	/*padding-bottom: 2%;
+	padding-top: 2%;*/
 	background-image: url("http://s.hswstatic.com/gif/tax-tips-small-business-1-orig.jpg");
-	background-size: cover;
+	background-size: inherit;
 	background-attachment: fixed;
 	background-color:rgba(255,0,0,0.5);
 	color: white;
+	text-shadow: 1px 1px 1px #888;
 }
 .layer {
         background-color: rgba(46, 249, 155, 0.5);
 	width: 100%;
 	height:100%;
+	padding-top:3%;
+	padding-bottom:2%;
 }
 .glyphHolder {
 	text-align: center;
@@ -81,6 +93,9 @@ html, body {
 .frontColumns h3 {
 	padding-top: 10px;
 	text-align: center;
+}
+.explainerHolder {
+	background-color: rgba(30, 39, 36, 0.6);
 }
 .explainer {
 	color: white;
@@ -130,6 +145,7 @@ html, body {
     display:table;
     width:100%;
     box-shadow: none;
+    color:black;
 }
 .panel.panel-horizontal >.panel.panel-horizontal > .panel-body, .panel.panel-horizontal > .panel-footer {
     display:table-cell;
@@ -150,4 +166,11 @@ hr {
 
 .btn-info {
    margin:10px;
+}
+
+.filterFixed {
+ height:100%;
+ overflow:hidden;
+ background:lightgray;
+ position:fixed;
 }

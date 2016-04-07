@@ -57,7 +57,7 @@ var InfluencersSearch = React.createClass({
 					</div>
 
 				     <div className ="row" id = "majorRow">
-				     <div className = "col-md-4">
+				     <div className = "col-md-4 explainerHolder">
 				      <div className = "row explainer">
 				       <div className = "col-md-10 col-md-offset-1">
 				        <p1>Locals Love It provides an easy way for small businesses to discover, communicate with and pay local-level influencers</p1>
@@ -80,7 +80,7 @@ var InfluencersSearch = React.createClass({
 			  		   </div>
 		       		          </div>
 					  <div className = "row">
-					<div className = "col-md-6 col-md-offset-3">
+					<div className = "col-md-8 col-md-offset-2">
 						<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "find influencers"/></form>
 					</div>
 				 </div>
@@ -173,7 +173,7 @@ var InfluencersSearch = React.createClass({
           </div>
 	 </div>
 	 <div className = "row frontThirdRow" id = "thirdRow">
-	 <div className = "layer">
+	 <div className = "col-md-12 col-lg-12 col-sm-12 col-xs-12 layer">
 	 <div className = "col-md-12 col-lg-12 col-sm-12 hereToHelp">
           <h2>Locals Love It Can Help Your Business:</h2>
 	 </div>

@@ -16,7 +16,7 @@ var Button = React.createClass({
       'active': this.state.active
     });
     return (
-      <button type="button" className = {btnClass} onClick = {this.click}>{this.props.name}</button>
+      <button type="button" className = {btnClass} onClick = {this.props.click}>{this.props.name}</button>
     );
   }
 });
