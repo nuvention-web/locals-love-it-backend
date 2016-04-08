@@ -18,7 +18,7 @@ var InfluencersSearch = React.createClass({
 
 			var btnStyle = {
 			};
-                        var fauxColor1 = {
+      var fauxColor1 = {
 				backgroundColor:"#ea4c8d",
 			};
 			var fauxColor2 = {
@@ -36,9 +36,9 @@ var InfluencersSearch = React.createClass({
 			};
 
 			var styleforGlyph3 = {
-			        color:"#df4a32",
+			  color:"#df4a32",
 				fontSize: "50px",
-			}
+			};
 			var fauxColor3 = {
 				backgroundColor:"#df4a32",
 			};
