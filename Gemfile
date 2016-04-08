@@ -40,16 +40,16 @@ gem 'uglifier'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
-group :test  do	
+group :test  do
 	gem 'rspec-rails'
 	gem 'pry'
 	gem 'faker'
 	gem 'webmock'
 end
 
-group :development, :test do 
+group :development, :test do
 	gem 'factory_girl_rails'
 end
 
 gem 'rails_12factor', group: :production
-ruby '2.2.3'
+ruby '2.2.4'

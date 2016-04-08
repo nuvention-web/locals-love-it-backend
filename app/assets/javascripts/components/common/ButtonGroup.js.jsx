@@ -16,7 +16,7 @@ var Button = React.createClass({
       'active': this.state.active
     });
     return (
-      <button type="button" className = {btnClass} onClick = {this.click}>{this.props.name}</button>
+      <button type="button" className = {btnClass} onClick = {this.props.click}>{this.props.name}</button>
     );
   }
 });
@@ -30,7 +30,7 @@ var ButtonGroup = React.createClass({
 
     return(
       <div className = "row">
-        <div className = "col-md-2">
+        <div className = "col-md-4">
           <h5> {this.props.title}</h5>
         </div>
         <div className = "col-md-8">

@@ -12,6 +12,8 @@ var BadgeList = React.createClass({
 
 });
 
+
+
 var ListOfLinks = React.createClass({
   render: function(){
     var createListItem = function(linkSet, index){
@@ -32,18 +34,28 @@ var InfluencersResultsProfile = React.createClass({
       padding: 0,
     }
 
+    var stripSize = {
+      height: 170,
+      width: 170,
+    }
+    var fixAllSize = {
+      '_normal.jpg':'.jpg',
+      '_normal.jpeg':'.jpeg',
+      '_normal.png': '.png'
+    }
     var nameStyle = {
       textDecoration: "none",
       textAlign: "center"
     };
    var smi=this.props.imageLink;
-   var photoToView=smi.scheme+'://'+smi.host+smi.path
-	 var influencer_page = '/influencers/' + this.props.influencer_id
+   var prePhotoToView=smi.scheme+'://'+smi.host+smi.path.replace('_nomral.jpg','.jpg')
+   var photoToView=prePhotoToView.replace(/_normal.jpg|_normal.jpeg|_normal.png/gi, (ending)=>{return fixAllSize[ending];})
+   var influencer_page = '/influencers/' + this.props.influencer_id
     return(
-      <div className = "col-md-3">
-        <div className="panel panel-default">
+      <div className = "col-md-6">
+        <div className="panel panel-horizontal">
           <div className="panel-body" style = {panelStyle}>
-            <a href = {influencer_page}><img src={photoToView} className="img-responsive"/></a>
+            <a href = {influencer_page}><img src={photoToView} className="img-responsive img-circle" style={stripSize}/></a>
           </div>
           <div className="panel-footer">
 

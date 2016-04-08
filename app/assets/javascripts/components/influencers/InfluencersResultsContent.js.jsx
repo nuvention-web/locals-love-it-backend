@@ -6,7 +6,7 @@ var InfluencersResultsContent = React.createClass({
    //var someTestInfluencers = array(this.props.Influencers);
 
     return(
-      <div className = "container">
+      <div className = "containerX">
         <InfluencersResultsRow influencers = {this.props.Influencers}/>
       </div>
     );
