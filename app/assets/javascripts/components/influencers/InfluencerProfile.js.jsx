@@ -245,6 +245,10 @@ render: function(){
     marginRight: "auto"
   };
 
+  var imageStyle2 = {
+    padding: 10
+  };
+
   return (
     <div style = {contentStyle} className = "container contentContainer">
       <div className = "row">
@@ -264,11 +268,19 @@ render: function(){
           </div>
         </div>
       </div>
+      <div className = "row">
+        <div className = "col-md-12">
+          <div className = "panel panel-default">
+            <div className = "panel-heading"> <h3>Campaign Results </h3> </div>
+            <div className = "panel-body">
+              <img style = {imageStyle2} className = "img-responsive" src = {"http://s24.postimg.org/unj2geec5/temp.png"} />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
-
 });
 
 module.exports = Profile;
