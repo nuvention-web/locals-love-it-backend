@@ -1,5 +1,5 @@
-//= require react-server
 //= require react
+//= require react_ujs
 
 // require_self
 // require_tree .
