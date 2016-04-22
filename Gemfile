@@ -17,9 +17,10 @@ gem 'puma'
 gem 'twitter'
 gem 'oauth'
 
-gem 'react-rails', '~> 1.0'
+gem 'react-rails', '~> 1.6.1'
 
-gem 'browserify-rails', '~> 0.9.1'
+gem 'sprockets', '>= 3.5.2', '< 4.0'
+gem 'browserify-rails', '~> 3.0.1'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'sass-rails', '~> 5.0', '>= 5.0.4'
@@ -45,6 +46,10 @@ group :test  do
 	gem 'pry'
 	gem 'faker'
 	gem 'webmock'
+end
+gem "binding_of_caller"
+group :development do
+	  gem "better_errors"
 end
 
 group :development, :test do
