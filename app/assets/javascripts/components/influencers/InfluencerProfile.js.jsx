@@ -261,7 +261,7 @@ render: function(){
               </div>
               <div className = "row">
                 <div className = "col-md-2 col-md-offset-3" style = {colStyle}>
-                  <input className="btn btn-info btn-lg" type="submit" value="Message Influencer!" />
+                  <a href = "/signin"><input className="btn btn-info btn-lg" type="submit" value="Message Influencer!" /></a>
                 </div>
               </div>
             </div>
