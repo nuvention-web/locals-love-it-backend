@@ -15,8 +15,13 @@ var InfluencersResults = React.createClass({
 			);
 		}
     mainContainerStyle = {
-	height:"100%",
+	 height:"100%",
     };
+
+    for (i = 0; i< this.props.influencers.length;i++){
+      console.log(this.props.influencers[i].traits.type_of_promotion)
+
+    }
 
     return (
       <div id = "mainContainer" className = "row" style = {mainContainerStyle}>
@@ -30,8 +35,8 @@ var InfluencersResults = React.createClass({
 		<hr/>
 		<div className = "col-md-9 col-lg-9">
 			<InfluencersResultsContent Influencers={this.props.influencers} />
-         </div>
-	  </div>
+    </div>
+	 </div>
     );
   }
 });
