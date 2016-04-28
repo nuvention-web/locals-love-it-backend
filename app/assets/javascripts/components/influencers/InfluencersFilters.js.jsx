@@ -73,6 +73,11 @@ var DropDownForm = React.createClass({
 });
 
 var InfluencersFilters = React.createClass({
+
+  on_select: function(name) {
+    this.props.onSelect(name)
+  },
+
   render: function(){
 
     style = {
@@ -95,7 +100,7 @@ var InfluencersFilters = React.createClass({
           <FormGroup type = {"checkbox"} group = {"personality"} title = {"Personality"} options ={["Quirky", "Witty", "Bubbly", "Sassy", "Conservative"]}/>
           <hr />
 
-          <ButtonGroup title = {"Personality"} items ={["Quirky", "Witty", "Bubbly", "Sassy", "Conservative"]}/>
+          <ButtonGroup title = {"Personality"} items ={["Quirky", "Witty", "Bubbly", "Sassy", "Conservative"]} onSelect={this.on_select}/>
           <hr />
 
 
