@@ -12,6 +12,15 @@ function contains(a, obj) {
     return false;
 }
 
+function remove(a, obj) {
+  for (var i = 0; i < a.length; i++){
+    if (a[i] == obj) {
+      personality.splice(i, 1);
+      return;
+    }
+  }
+}
+
 var InfluencersResults = React.createClass({
 
 	getInitialState: function() {
@@ -24,27 +33,27 @@ var InfluencersResults = React.createClass({
 	},
 
   on_select: function(name){
-    console.log("on_select")
-    console.log(name)
-    console.log(this.state.personality)
-    personality.push(name)
+
+    if (contains(personality, name)){
+      console.log(personality)
+      remove(personality, name)
+      console.log(personality)
+    }else{
+      personality.push(name)
+    }
     this.filter_data()
   },
 
   filter_data: function(){
-    console.log(personality)
-    console.log(this.props.influencers)
+
     tmp = []
     console.log(tmp)
     for (i = 0; i< this.props.influencers.length;i++){
-      console.log(personality[0])
-      console.log("WHAT")
-      console.log(this.props.influencers[i].traits.personality)
       if (contains(personality, this.props.influencers[i].traits.personality)){
         tmp.push(this.props.influencers[i])
       }
     }
-    console.log(tmp)
+    console.log(personality)
     this.setState({data: tmp});
   },
 

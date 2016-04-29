@@ -7,7 +7,7 @@ var FormOption = React.createClass ({
       <div className = "row">
       <div className = "col-md-12">
         <label>
-          <input type= {this.props.type} name = {this.props.group} id = {this.props.group + this.props.option}/> {this.props.option}
+          <input type= {this.props.type} name = {this.props.group} id = {this.props.group + this.props.option} /> {this.props.option}
         </label>
       </div>
       </div>

@@ -14,6 +14,7 @@ var Button = React.createClass({
       console.log(this.props.key)
   },*/
 
+
   click: function(e){
     this.setState({active: !this.state.active});
     this.props.onSelect(this.props.name);
