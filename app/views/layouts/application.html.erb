@@ -1,3 +1,7 @@
+<% link = user_signed_in? ? '/users/sign_out' : 'users/sign_in'-%>
+
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,9 +15,17 @@
 	<div class='container mainContainer'>
 	      <div class = 'row navRow'>
 		<div id = 'NavBar' class = 'navContainer'>
-			<%= react_component( 'NavBar', {} ,{prerender: true} ) %>
+			<%= react_component( 'NavBar', {link: link} ,{prerender: true} ) %>
 		</div>
               </div>
+		<div class="container">
+			<% flash.each do |key, value| %>
+				<div class="alert alert-<%= key %> alert-info">
+					<%= value %>
+				</div>
+			<% end %>
+		</div>
+
 	      <div class = 'row yieldContentRow'>
 		<div id = 'content' class = 'yieldContent'>
 			<%= yield %>
