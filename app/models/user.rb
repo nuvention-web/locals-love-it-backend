@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	include Mailboxer::Models::Messageable
 	before_validation :set_role
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
