@@ -38,3 +38,6 @@ local_env.yml
 
 # Ignoring all node modules
 node_modules
+
+# Ignore all swap files
+*.swp

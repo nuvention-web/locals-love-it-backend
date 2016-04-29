@@ -1,6 +1,5 @@
 //= require_tree ./components
-
-window.InfluencersResults = require('./components/influencers/InfluencersResults.js.jsx');
-window.InfluencerProfile = require('./components/influencers/InfluencerProfile.js.jsx');
-window.NavBar = require('./components/NavBar.js.jsx');
-window.InfluencersSearch = require('./components/influencers/InfluencersSearch.js.jsx');
+window.NavBar = require('./components/NavBar');
+window.InfluencersSearch = require('./components/influencers/InfluencersSearch');
+window.InfluencersResults = require('./components/influencers/InfluencersResults');
+window.InfluencerProfile = require('./components/influencers/InfluencerProfile');
