@@ -8,8 +8,18 @@ class User < ActiveRecord::Base
   enum role: [:admin, :influencer, :business_owner]
   validates :role, presence: true
 
+	act_as_messageable
+
 	def set_role()
 		self.role ||= :business_owner
+	end
+
+	def name
+		self.first_name
+	end
+
+	def mailboxer_email(object)
+		self.email
 	end
 
 
