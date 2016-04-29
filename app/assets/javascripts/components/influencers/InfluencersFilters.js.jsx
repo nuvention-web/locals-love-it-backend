@@ -18,6 +18,8 @@ var FormOption = React.createClass ({
 var FormGroup = React.createClass ({
 
   createFormOption: function(option){
+
+
     return <FormOption type = {this.props.type} key = {option} option = {option} group = {this.props.group} />;
 
   },
@@ -71,6 +73,11 @@ var DropDownForm = React.createClass({
 });
 
 var InfluencersFilters = React.createClass({
+
+  on_select: function(name) {
+    this.props.onSelect(name)
+  },
+
   render: function(){
 
     style = {
@@ -92,6 +99,10 @@ var InfluencersFilters = React.createClass({
 
           <FormGroup type = {"checkbox"} group = {"personality"} title = {"Personality"} options ={["Quirky", "Witty", "Bubbly", "Sassy", "Conservative"]}/>
           <hr />
+
+          <ButtonGroup title = {"Personality"} items ={["Quirky", "Witty", "Bubbly", "Sassy", "Conservative"]} onSelect={this.on_select}/>
+          <hr />
+
 
           <DropDownForm title = {"Budget"} group = {"budget"} options = {["$0-$10", "$10-$30", "$30-$50", "$50-$75", "$75-$100", "100+"]}/>
         </div>

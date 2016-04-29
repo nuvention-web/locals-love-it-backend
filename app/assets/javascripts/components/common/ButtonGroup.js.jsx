@@ -1,13 +1,22 @@
 var classNames = require('classnames');
 
+var InfluencersResults = require('../influencers/InfluencersResults.js.jsx');
+
 var Button = React.createClass({
 
   getInitialState: function(){
     return {active: false};
   },
 
+/*
   click(){
       this.setState({active: !this.state.active});
+      console.log(this.props.key)
+  },*/
+
+  click: function(e){
+    this.setState({active: !this.state.active});
+    this.props.onSelect(this.props.name);
   },
 
   render: function(){
@@ -16,17 +25,27 @@ var Button = React.createClass({
       'active': this.state.active
     });
     return (
-      <button type="button" className = {btnClass} onClick = {this.props.click}>{this.props.name}</button>
+      <button type="button" className = {btnClass} onClick = {this.click}>{this.props.name}</button>
     );
   }
 });
 
 var ButtonGroup = React.createClass({
+
+  on_select: function(name){
+    this.props.onSelect(name)
+  },
+
+  createListItem: function(option){
+    return <Button key = {option} name = {option} onSelect = {this.on_select} />;
+  },
+
   render: function(){
 
+/*
     var createListItem = function(optionName){
       return <Button key = {optionName} name = {optionName} />;
-    };
+    };*/
 
     return(
       <div className = "row">
@@ -35,7 +54,7 @@ var ButtonGroup = React.createClass({
         </div>
         <div className = "col-md-8">
           <div className="btn-group" role="group" aria-label="...">
-            {this.props.items.map(createListItem)}
+            {this.props.items.map(this.createListItem)}
             </div>
         </div>
     </div>
