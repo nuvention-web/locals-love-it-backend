@@ -2,8 +2,8 @@ var NavBar = React.createClass({
 
 
   render: function(){
-    var text = this.props.link == '/users/sign_in' ? "Login" : "Logout";
-
+    var text = this.props.link == 'users/sign_in' ? 'Sign in' : 'Sign Out' ;
+    
     return (
       <div className = "navbar navbar-default navbar-fixed-top" id = "nav">
         <div className = "container-fluid">
