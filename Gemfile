@@ -27,6 +27,8 @@ gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 gem 'autoprefixer-rails'
 
 gem 'uglifier'
+
+gem 'mailboxer'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
