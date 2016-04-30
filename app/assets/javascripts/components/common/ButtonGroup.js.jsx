@@ -14,7 +14,6 @@ var Button = React.createClass({
       console.log(this.props.key)
   },*/
 
-
   render: function(){
     var btnClass = classNames({
       'btn btn-info': true,
@@ -34,10 +33,9 @@ var ButtonGroup = React.createClass({
 
   render: function(){
 
-/*
     var createListItem = function(optionName){
       return <Button key = {optionName} name = {optionName} />;
-    };*/
+    };
 
     return(
       <div className = "row">

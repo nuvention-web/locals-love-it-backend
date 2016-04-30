@@ -49,7 +49,7 @@ var InfluencersResults = React.createClass({
 
   onClick: function(name, group){
 
-    console.log("Name: %s, Group: %s", name, group);
+    console.log("clicked Name: %s, Group: %s", name, group);
 
     if (group == "personality"){
       if (contains(personality, name)){
@@ -81,11 +81,6 @@ var InfluencersResults = React.createClass({
     _frequency = frequency.slice()
     _promoType = promoType.slice()
 
-    console.log("___________")
-    console.log(_personality)
-    console.log(_frequency)
-    console.log(_promoType)
-
     if (_personality.length == 0){
       _personality = getValuesArray(m_personality)
     }
@@ -98,7 +93,7 @@ var InfluencersResults = React.createClass({
       _promoType = getValuesArray(m_promoType)
     }
 
-    console.log("***********")
+    console.log("currently applied filters")
     console.log(_personality)
     console.log(_frequency)
     console.log(_promoType)
@@ -106,7 +101,6 @@ var InfluencersResults = React.createClass({
     for (i = 0; i< this.props.influencers.length;i++){
 
       if (contains(_personality, this.props.influencers[i].traits.personality) && contains(_frequency, this.props.influencers[i].traits.frequency) && contains(_promoType, this.props.influencers[i].traits.type_of_promotion)){
-        console.log("in")
         tmp.push(this.props.influencers[i])
       }
     }

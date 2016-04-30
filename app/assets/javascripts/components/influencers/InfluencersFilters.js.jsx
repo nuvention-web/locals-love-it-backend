@@ -5,7 +5,6 @@ var ButtonGroup = require('../common/ButtonGroup.js.jsx');
 
 var FormOption = React.createClass ({
   click: function(e){
-    console.log(this.props.group)
     this.props.onClick(this.props.option, this.props.group)
   },
 
