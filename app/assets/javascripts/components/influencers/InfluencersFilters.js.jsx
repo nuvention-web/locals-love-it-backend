@@ -1,13 +1,20 @@
 var DropDownFormGroup = require('../common/DropDownFormGroup.js.jsx');
 var ButtonGroup = require('../common/ButtonGroup.js.jsx');
 
+/*personality, promoType, frequency*/
+
 var FormOption = React.createClass ({
+  click: function(e){
+    console.log(this.props.group)
+    this.props.onClick(this.props.option, this.props.group)
+  },
+
   render: function(){
     return(
       <div className = "row">
       <div className = "col-md-12">
         <label>
-          <input type= {this.props.type} name = {this.props.group} id = {this.props.group + this.props.option} /> {this.props.option}
+          <input type= {this.props.type} name = {this.props.group} id = {this.props.group + this.props.option} onClick = {this.click}/> {this.props.option}
         </label>
       </div>
       </div>
@@ -17,11 +24,12 @@ var FormOption = React.createClass ({
 
 var FormGroup = React.createClass ({
 
+  onClick: function(name, group){
+    this.props.onClick(name, group);
+  },
+
   createFormOption: function(option){
-
-
-    return <FormOption type = {this.props.type} key = {option} option = {option} group = {this.props.group} />;
-
+    return <FormOption type = {this.props.type} key = {option} option = {option} group = {this.props.group} onClick = {this.onClick}/>;
   },
 
   render: function(){
@@ -67,15 +75,14 @@ var DropDownForm = React.createClass({
             {this.props.options.map(this.createDropDownOption)}
           </select>
       </fieldset>
-
     );
   }
 });
 
 var InfluencersFilters = React.createClass({
 
-  on_select: function(name) {
-    this.props.onSelect(name)
+  onClick: function(name, group) {
+    this.props.onClick(name, group)
   },
 
   render: function(){
@@ -91,18 +98,14 @@ var InfluencersFilters = React.createClass({
           <h4>Filters</h4>
         </div>
         <div className = "panel-body">
-          <FormGroup type = {"checkbox"} group = {"promoType"} title = {"Type of Promotion"} options ={["Review", "Photo & Comment", "Sale for Fans"]}/>
+          <FormGroup type = {"checkbox"} group = {"promoType"} title = {"Type of Promotion"} options ={["Review", "Photo & Comment", "Sale for Fans"]}  onClick = {this.onClick}/>
           <hr />
 
-          <FormGroup type = {"radio"} group = {"frequency"} title = {"Frequency"} options ={["One-Time Shoutout", "On-going relationship"]}/>
+          <FormGroup type = {"radio"} group = {"frequency"} title = {"Frequency"} options ={["One-Time Shoutout", "On-going relationship"]} onClick = {this.onClick}/>
           <hr />
 
-          <FormGroup type = {"checkbox"} group = {"personality"} title = {"Personality"} options ={["Quirky", "Witty", "Bubbly", "Sassy", "Conservative"]}/>
+          <FormGroup type = {"checkbox"} group = {"personality"} title = {"Personality"} options ={["Quirky", "Witty", "Bubbly", "Sassy", "Conservative"]} onClick = {this.onClick}/>
           <hr />
-
-          <ButtonGroup title = {"Personality"} items ={["Quirky", "Witty", "Bubbly", "Sassy", "Conservative"]} onSelect={this.on_select}/>
-          <hr />
-
 
           <DropDownForm title = {"Budget"} group = {"budget"} options = {["$0-$10", "$10-$30", "$30-$50", "$50-$75", "$75-$100", "100+"]}/>
         </div>
