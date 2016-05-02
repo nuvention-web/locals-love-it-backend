@@ -17,7 +17,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <% if is_conversation %>
-            <%= render 'conversations/form' %>
+					<%= render partial: 'conversations/form', locals: { is_conversation: is_conversation } %>
         <% else %>
 						<%= render partial: 'conversations/conversation', collection: messages %>
         <% end %>
