@@ -19,28 +19,35 @@ var InfluencersSearch = React.createClass({
 			var btnStyle = {
 			};
       var fauxColor1 = {
-				backgroundColor:"#ea4c8d",
+				backgroundColor:"#bfd8d2",
 			};
 			var fauxColor2 = {
-				backgroundColor:"#00abf0",
+				backgroundColor:"#fedcd2",
 			};
 
 			var styleforGlyph1 = {
-				color:"#ea4c8d",
+				color:"#bfd8d2",
 				fontSize: "50px",
 			};
 
 			var styleforGlyph2 = {
-				color: "#00abf0",
+				color: "#fedcd2",
 				fontSize: "50px",
 			};
 
 			var styleforGlyph3 = {
-			  color:"#df4a32",
+			  color:"#df744a",
+				fontSize: "50px",
+			};
+			var styleforGlyph4 = {
+			  color:"#e5e338",
 				fontSize: "50px",
 			};
 			var fauxColor3 = {
-				backgroundColor:"#df4a32",
+				backgroundColor:"#df744a",
+			};
+			var fauxColor4 = {
+				backgroundColor:"#e5e338",
 			};
 			var padding = {
 				paddingTop: "6%",
@@ -52,14 +59,14 @@ var InfluencersSearch = React.createClass({
 			return(
 				<div className = "contentContainer"  id = "topContainer" style = {mainStyle}>
 					<div className ="row" id = "topRow">
-						 <div className = "col-md-6 col-md-offset-3">
+						 <div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 					       	 </div>
 					</div>
 
 				     <div className ="row" id = "majorRow">
-				     <div className = "col-md-4 explainerHolder">
+				     <div className = "col-md-4 col-lg-4 explainerHolder">
 				      <div className = "row explainer">
-				       <div className = "col-md-10 col-md-offset-1">
+				       <div className = "col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
 				        <p1>Locals Love It provides an easy way for small businesses to discover, communicate with and pay local-level influencers</p1>
 				       </div>
 				      </div>
@@ -91,29 +98,29 @@ var InfluencersSearch = React.createClass({
 		       		       <br/>
 				 </div>
            <div className = "row frontSecondRow" id = "secondRow">
-	   <div className = "row howItWorks">
-	    <div className = "col-md-12 col-lg-12 col-sm-12">
-	        <h1>How It Works!</h1>
-	    </div>
-	   </div>
-           <div className = "col-md-4 frontColumns" >
+		   <div className = "row howItWorks">
+			<div className = "col-md-12 col-lg-12 col-sm-12">
+				<h1>How It Works!</h1>
+			</div>
+		   </div>
+           <div className = "col-md-3 frontColumns" >
            <div className = "row">
              <div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style = {fauxColor1}>
            <br/>
            </div>
 	   <div className = "row glyphHolder">
 	     <div className = "col-md-12">
-	      <span className = "glyphicon glyphicon-cog" aria-hidden="true" style = {styleforGlyph1}></span>
+	      <span className = "glyphicon glyphicon-search" aria-hidden="true" style = {styleforGlyph1}></span>
 	     </div>
 	   </div>
            <div id = "row">
            <div className = "col-md-12">
            <div className = "row">
-           <h3>Algorithmic</h3>
+           <h3>Search</h3>
            </div>
            <div className = "row">
            <div className = "col-md-8 col-md-offset-2">
-           <p>Our unique algorithm matches your business with the perfect local influencer to satisfy your business needs</p>
+           <p>The customized search functionality helps you discover the influencer with the ideal personality</p>
            </div>
            </div>
            </div>
@@ -121,7 +128,7 @@ var InfluencersSearch = React.createClass({
                 </div>
 
            </div>
-				  <div className = "col-md-4 frontColumns" >
+				  <div className = "col-md-3 frontColumns" >
 				  <div className = "row">
 				  	<div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style = {fauxColor2}>
 					<br/>
@@ -134,11 +141,11 @@ var InfluencersSearch = React.createClass({
 					<div id = "row">
 					<div className = "col-md-12">
 					<div className = "row">
-					<h3>Interconnected</h3>
+					<h3>Communicate</h3>
 					</div>
 					<div className = "row">
 					<div className = "col-md-8 col-md-offset-2">
-					<p>Communicate with influencers through our simple guided templates and co-create branded content</p>
+					<p>Our platform provides a centralized location for messaging and templates so you can easily brief influencers on your business needs</p>
 					</div>
 					</div>
 					</div>
@@ -146,24 +153,50 @@ var InfluencersSearch = React.createClass({
 				       </div>
 
 				  </div>
-          <div className = "col-md-4 frontColumns" >
+
+				<div className = "col-md-3 frontColumns" >
+                   <div className = "row">
+                     <div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style = {fauxColor3}>
+                      <br/>
+                      </div>
+                      <div className = "row glyphHolder">
+      					  <div className = "col-md-12">
+      					  <span className = "glyphicon glyphicon-usd" aria-hidden="true" style = {styleforGlyph3}></span>
+      					  </div>
+      						</div>
+                      <div id = "row">
+                      <div className = "col-md-12">
+                      <div className = "row">
+                      <h3>Pay</h3>
+                      </div>
+                      <div className = "row">
+                      <div className = "col-md-8 col-md-offset-2">
+                      <p>Get complete transparency and benchmarks on what other small businesses are paying for campaigns</p>
+                      </div>
+                      </div>
+                      </div>
+                      </div>
+                   </div>
+
+                   </div>
+          <div className = "col-md-3 frontColumns" >
           <div className = "row">
-            <div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style = {fauxColor3}>
+            <div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style = {fauxColor4}>
           <br/>
           </div>
            <div className = "row glyphHolder">
 	     <div className = "col-md-12">
-	      <span className = "glyphicon glyphicon-briefcase" aria-hidden="true" style = {styleforGlyph3}></span>
+	      <span className = "glyphicon glyphicon-briefcase" aria-hidden="true" style = {styleforGlyph4}></span>
 	     </div>
 	   </div>
           <div id = "row">
           <div className = "col-md-12">
           <div className = "row">
-          <h3>Analytical</h3>
+          <h3>Measure</h3>
           </div>
           <div className = "row">
           <div className = "col-md-8 col-md-offset-2">
-          <p>Measure your campaign's success and benchmark against similar campaigns using our comprehensive analytics dashboard</p>
+          <p>Our measurement dashboard tracks the effectiveness of your campaigns and measures ROI</p>
           </div>
           </div>
           </div>
@@ -207,17 +240,65 @@ var InfluencersSearch = React.createClass({
 	    <h3>Amplify an existing social media campaign</h3>
 	    </div>
 	    </div>
+	    <div className = "row">
+	    <div className = "col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+	    <h3>Build buzz for the launch of a new product</h3>
+	    </div>
+	    </div>
 	   </div>
 	  </div>
 	   </div>
 	   </div>
-	   </div>
+     </div>
+
+     <div className = "row front4thRow" id = "thirdRow">
+    <div className = "col-md-12 col-lg-12 col-sm-12 col-xs-12">
+    <div className = "col-md-12 col-lg-12 col-sm-12 hereToHelp">
+            <h2>Why work with Locals Love It?:</h2>
+    </div>
+           <div className = "col-md-12 col-lg-12 col-sm-12 weHelpBy">
+     <div className = "row">
+      <div className = "col-md-12 col-lg-12">
+  	    <div className = "row">
+  	    <div className = "col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+  	    <h3>The Locals Love it Difference: We take the guess-work out of influencer marketing.
+        Locals Love It is the the only user-friendly digital tool connecting small business to local-level influencers.
+         The application was tailor-made for small businesses through dozens of customer interviews, we uncovered exactly what you’re looking for in an influencer marketing partner.
+</h3>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>
+
+       <div className = "row front5thRow" id = "thirdRow">
+      <div className = "col-md-12 col-lg-12 col-sm-12 col-xs-12">
+      <div className = "col-md-12 col-lg-12 col-sm-12 hereToHelp">
+              <h2>About us</h2>
+      </div>
+             <div className = "col-md-12 col-lg-12 col-sm-12 weHelpBy">
+       <div className = "row">
+        <div className = "col-md-12 col-lg-12">
+         <div className = "row">
+         <div className = "col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+         <h3>Locals Love It is a group of seven Northwestern University undergraduate and graduate students who are working to build their first business. We are deeply passionate about using technology to solve real problems. </h3>
+         </div>
+    	 </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+
         <div className = "row mainFooter">
 	 <div className = "col-md-12 col-lg-12">
 	  <br/>
 	  <br/>
 	 </div>
 	</div>
+
 	</div>
 
 	);
