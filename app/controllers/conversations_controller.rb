@@ -3,7 +3,7 @@ class ConversationsController < ApplicationController
 
 	def new
 		if params[:id]
-			@influencer = Influencer.find(params[:id]).user_id
+			@influencer = params[:id]
 		end
 	end
 
