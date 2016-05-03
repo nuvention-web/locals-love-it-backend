@@ -262,7 +262,7 @@ render: function(){
               </div>
               <div className = "row">
                 <div className = "col-md-2 col-md-offset-3" style = {colStyle}>
-                  <a href = '/mailbox/inbox'><input className="btn btn-info btn-lg" type="submit" value="Message Influencer!" /></a>
+                  <a href = {this.props.messageLink} ><input className="btn btn-info btn-lg" type="submit" value="Message Influencer!" /></a>
                 </div>
               </div>
             </div>
