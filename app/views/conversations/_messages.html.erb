@@ -4,7 +4,12 @@
       <div class="media-left">
         <!-- user avators can go here -->
         <a href="#">
-          <img class="media-object" src="http://placehold.it/64x64" alt="...">
+					<% if message.sender.influencer? %>
+						<%image_url = message.sender.influencer.twitter_user.profile_image_url_https -%>
+						<%= image_tag image_url, style:"height: 64; width: 64;" %>
+					<% else %>
+						<img class="media-object" src="http://s31.postimg.org/8zhj7as2f/LLI_logo_final_small.png">
+					<% end %>
         </a>
       </div>
       <div class="media-body">
