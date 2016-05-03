@@ -1,8 +1,8 @@
 var BadgeList = React.createClass({
   render: function(){
-
     var createBadge = function(tagName, index){
-      return <span className = "badge" key={index} >{tagName}</span> ;
+       console.log(tagName);
+	return <span className = "badge" key={index} >{tagName}</span> ;
     };
 
     return(
@@ -74,6 +74,7 @@ var InfluencersResultsProfile = React.createClass({
 var InfluencersResultsRow = React.createClass({
   render: function(){
 
+
    var InfluencerInfo = this.props.influencers;
     var createInfluencerProfile = function(inf, index){
       return <InfluencersResultsProfile
@@ -81,7 +82,7 @@ var InfluencersResultsRow = React.createClass({
 				influencer_id = {inf.user.id}
         first_name = {inf.user.first_name}
 				imageLink = {inf.social_media_info.profile_pic}
-        badges = {["Grumpy", "Sneezy"]}
+        badges = {[inf.traits.personality]}
         socialLinks = {inf.socialLinks}
         industry = {inf.industries[0].name}
 
