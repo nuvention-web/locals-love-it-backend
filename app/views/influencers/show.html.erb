@@ -1,3 +1,4 @@
 <% link = user_signed_in? ? '/' : '/users/sign_in'-%>
+<% messageLink = '/conversations/new?id=' + @influencer[:user][:id].to_s -%>
 
-<%= react_component('InfluencerProfile', {influencer: @influencer, link: link}, {prerender: true}) %>
+<%= react_component('InfluencerProfile', {influencer: @influencer, link: link, messageLink: messageLink }, {prerender: true}) %>
