@@ -1,16 +1,22 @@
 #majorRow {
   /*background-image: url("http://www.hiatec.org/images/Business_Incubation_Startup.jpg");*/
-  background-image: url("https://i.groupme.com/1280x720.jpeg.6c037ac97fdc4100b271492052e834b0");
-  width: 100%;
+  /*background-image: url("https://i.groupme.com/1280x720.jpeg.6c037ac97fdc4100b271492052e834b0");*/
+  /*background-image: url("http://fxo.moroch.com/wp-content/uploads/2014/01/master_bm_store_0110_203-211.jpg");*/
+  /*background-image: url("https://images.unsplash.com/photo-1418562624738-fbd0a48284e6?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1000);*/
+  /*background-image: url("http://static1.squarespace.com/static/56118309e4b0a677ddecf2e5/568ee994a128e65d0d399ab2/568ee994a12f4440c841c91d/1452206695837/Z50HOJW78Q.jpg");*/
+  /*background-image: url("http://i.huffpost.com/gen/1769521/images/o-SMALL-BUSINESS-CASH-REGISTER-facebook.jpg");*/
+  /*background-image: url("http://www.republiccountykansas.com/wp-content/uploads/2016/03/lrs.jpg");*/
+  background-image: url("https://capitalwithstrategy.com/wp-content/uploads/2015/03/SCP-Happy-Garden-Center-Owner.jpg");
+  /*width: 100%;*/
   background-size: cover;
   background-attachment: fixed;
-  padding-left: 0;
+  /*padding-left: 0;
   padding-right: 0;
   margin-left: 0;
-  margin-right: 0;
+  margin-right: 0;*/
   /*color: #ED005F;
-  padding-top: 50px;
-  padding-bottom: 500px;*/
+  padding-top: 50px;*/
+  padding-bottom: 110px;
 }
 
 #topRow h1{
