@@ -14,38 +14,28 @@ var Button = React.createClass({
       console.log(this.props.key)
   },*/
 
-  click: function(e){
-    this.setState({active: !this.state.active});
-    this.props.onSelect(this.props.name);
-  },
-
   render: function(){
     var btnClass = classNames({
       'btn btn-info': true,
       'active': this.state.active
     });
     return (
-      <button type="button" className = {btnClass} onClick = {this.click}>{this.props.name}</button>
+      <button type="button" className = {btnClass}> {this.props.name}</button>
     );
   }
 });
 
 var ButtonGroup = React.createClass({
 
-  on_select: function(name){
-    this.props.onSelect(name)
-  },
-
   createListItem: function(option){
-    return <Button key = {option} name = {option} onSelect = {this.on_select} />;
+    return <Button key = {option} name = {option}/>;
   },
 
   render: function(){
 
-/*
     var createListItem = function(optionName){
       return <Button key = {optionName} name = {optionName} />;
-    };*/
+    };
 
     return(
       <div className = "row">
