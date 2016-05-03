@@ -1,0 +1,21 @@
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+			<% if conversation.originator.influencer? %>
+				<%image_url = conversation.originator.influencer.twitter_user.profile_image_url_https -%>
+				<%= image_tag image_url, style:"height: 64; width: 64;" %>
+			<% else %>
+      	<img class="media-object" src="http://s31.postimg.org/8zhj7as2f/LLI_logo_final_small.png">
+			<% end %>
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">
+      <%= conversation.originator.name %> <br>
+      <small><b>Subject: </b><%= conversation.subject %></small><br>
+      <small><b>Date: </b><%=  conversation.messages.last.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></small>
+    </h4>
+    <%= truncate conversation.messages.last.body, length: 145 %>
+    <%= link_to "View", conversation_path(conversation)  %>
+  </div>
+</div>
