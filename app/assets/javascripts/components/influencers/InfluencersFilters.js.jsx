@@ -4,20 +4,40 @@ var ButtonGroup = require('../common/ButtonGroup.js.jsx');
 /*personality, promoType, frequency*/
 
 var FormOption = React.createClass ({
+
+  getInitialState: function() {
+      return {
+          reset : this.props.reset
+        }
+    },
+
   click: function(e){
     this.props.onClick(this.props.option, this.props.group)
+    this.setState( {reset : !this.state.rest})
+
   },
 
   render: function(){
-    return(
-      <div className = "row">
-      <div className = "col-md-12">
-        <label>
-          <input type= {this.props.type} name = {this.props.group} id = {this.props.group + this.props.option} onClick = {this.click}/> {this.props.option}
-        </label>
-      </div>
-      </div>
-    );
+    console.log(this.state.reset)
+      if (this.state.reset == true) {
+        return(
+        <div className = "row">
+        <div className = "col-md-12">
+          <label>
+            <input type= {this.props.type} name = {this.props.group} id = {this.props.group + this.props.option} onClick = {this.click} checked = {!this.state.reset}/> {this.props.option}
+          </label>
+        </div>
+        </div>);
+      } else {
+        return(
+        <div className = "row">
+        <div className = "col-md-12">
+          <label>
+            <input type= {this.props.type} name = {this.props.group} id = {this.props.group + this.props.option} onClick = {this.click}/> {this.props.option}
+          </label>
+        </div>
+        </div>);
+      }
   }
 });
 
@@ -28,7 +48,8 @@ var FormGroup = React.createClass ({
   },
 
   createFormOption: function(option){
-    return <FormOption type = {this.props.type} key = {option} option = {option} group = {this.props.group} onClick = {this.onClick}/>;
+    return <FormOption type = {this.props.type} key = {option} option = {option} group = {this.props.group} onClick = {this.onClick} reset = {this.props.reset} />;
+
   },
 
   render: function(){
@@ -80,8 +101,20 @@ var DropDownForm = React.createClass({
 
 var InfluencersFilters = React.createClass({
 
+  getInitialState: function() {
+    return {
+      reset : true
+    }
+  },
+
   onClick: function(name, group) {
     this.props.onClick(name, group)
+    this.setState({reset : false})
+  },
+
+  reset: function(e) {
+    this.props.onReset()
+    this.setState({reset : true})
   },
 
   render: function(){
@@ -97,16 +130,17 @@ var InfluencersFilters = React.createClass({
           <h4>Filters</h4>
         </div>
         <div className = "panel-body">
-          <FormGroup type = {"checkbox"} group = {"promoType"} title = {"Type of Promotion"} options ={["Review", "Photo & Comment", "Sale for Fans"]}  onClick = {this.onClick}/>
-          <hr />
+          <FormGroup type = {"checkbox"} group = {"promoType"} title = {"Type of Promotion"} options ={["Review", "Photo & Comment", "Sale for Fans"]} reset={this.state.reset}  onClick = {this.onClick}/>
+          <br />
 
-          <FormGroup type = {"radio"} group = {"frequency"} title = {"Frequency"} options ={["One-Time Shoutout", "On-going relationship"]} onClick = {this.onClick}/>
-          <hr />
+          <FormGroup type = {"radio"} group = {"frequency"} title = {"Frequency"} options ={["One-Time Shoutout", "On-going relationship"]} onClick = {this.onClick} reset={this.state.reset} />
+          <br />
 
-          <FormGroup type = {"checkbox"} group = {"personality"} title = {"Personality"} options ={["Quirky", "Witty", "Bubbly", "Sassy", "Conservative"]} onClick = {this.onClick}/>
-          <hr />
+          <FormGroup type = {"checkbox"} group = {"personality"} title = {"Personality"} options ={["Quirky", "Witty", "Bubbly", "Sassy", "Conservative"]} onClick = {this.onClick} reset={this.state.reset} />
+          <br />
 
-          <DropDownForm title = {"Budget"} group = {"budget"} options = {["$0-$10", "$10-$30", "$30-$50", "$50-$75", "$75-$100", "100+"]}/>
+          <button type="button" onClick = {this.reset}>Reset</button>
+
         </div>
       </div>
 	  </div>

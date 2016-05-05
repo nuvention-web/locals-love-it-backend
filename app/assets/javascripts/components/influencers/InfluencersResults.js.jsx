@@ -47,6 +47,14 @@ var InfluencersResults = React.createClass({
       }
 	},
 
+  onReset: function(e){
+    console.log("Reset")
+    personality = []
+    frequency = []
+    promoType = []
+    this.filter_data()
+  },
+
   onClick: function(name, group){
 
     console.log("clicked Name: %s, Group: %s", name, group);
@@ -127,7 +135,7 @@ var InfluencersResults = React.createClass({
       	 <div className = "col-md-3 col-lg-3">
 		     <div className = "row">
 				<div className = "col-md-10 col-md-offset-1">
-					<InfluencersFilters onClick={this.onClick}/>
+					<InfluencersFilters onClick={this.onClick} onReset={this.onReset}/>
 				 </div>
 			 </div>
    		 </div>
