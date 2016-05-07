@@ -8,12 +8,6 @@ var Button = React.createClass({
     return {active: false};
   },
 
-/*
-  click(){
-      this.setState({active: !this.state.active});
-      console.log(this.props.key)
-  },*/
-
   render: function(){
     var btnClass = classNames({
       'btn btn-info': true,

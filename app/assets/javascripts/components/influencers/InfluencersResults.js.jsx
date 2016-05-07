@@ -47,8 +47,7 @@ var InfluencersResults = React.createClass({
       }
 	},
 
-  onReset: function(e){
-    console.log("Reset")
+  onReset: function(){
     personality = []
     frequency = []
     promoType = []
@@ -56,8 +55,6 @@ var InfluencersResults = React.createClass({
   },
 
   onClick: function(name, group){
-
-    console.log("clicked Name: %s, Group: %s", name, group);
 
     if (group == "personality"){
       if (contains(personality, name)){
@@ -100,11 +97,6 @@ var InfluencersResults = React.createClass({
     if (_promoType.length == 0){
       _promoType = getValuesArray(m_promoType)
     }
-
-    console.log("currently applied filters")
-    console.log(_personality)
-    console.log(_frequency)
-    console.log(_promoType)
 
     for (i = 0; i< this.props.influencers.length;i++){
 

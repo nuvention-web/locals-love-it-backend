@@ -7,39 +7,31 @@ var FormOption = React.createClass ({
 
   getInitialState: function() {
       return {
-          reset : this.props.reset
+          on : false
         }
     },
 
   click: function(e){
     this.props.onClick(this.props.option, this.props.group)
-    this.setState( {reset : !this.state.rest})
+    this.setState( {on : !this.state.on} )
+  },
 
+  reset: function(e){
+    this.setState( {on : false} )
   },
 
   render: function(){
-    console.log(this.state.reset)
-      if (this.state.reset == true) {
-        return(
-        <div className = "row">
-        <div className = "col-md-12">
-          <label>
-            <input type= {this.props.type} name = {this.props.group} id = {this.props.group + this.props.option} onClick = {this.click} checked = {!this.state.reset}/> {this.props.option}
-          </label>
-        </div>
-        </div>);
-      } else {
-        return(
-        <div className = "row">
-        <div className = "col-md-12">
-          <label>
-            <input type= {this.props.type} name = {this.props.group} id = {this.props.group + this.props.option} onClick = {this.click}/> {this.props.option}
-          </label>
-        </div>
-        </div>);
-      }
+
+    return(
+      <div className = "row">
+      <div className = "col-md-12">
+        <label>
+          <input type= {this.props.type} name = {this.props.group} id = {this.props.group + this.props.option} onClick = {this.click} checked = {this.state.on}/> {this.props.option}
+        </label>
+      </div>
+      </div>);
   }
-});
+})
 
 var FormGroup = React.createClass ({
 
@@ -47,9 +39,15 @@ var FormGroup = React.createClass ({
     this.props.onClick(name, group);
   },
 
-  createFormOption: function(option){
-    return <FormOption type = {this.props.type} key = {option} option = {option} group = {this.props.group} onClick = {this.onClick} reset = {this.props.reset} />;
+  reset: function(e){
+    var children = this.refs
+    this.props.options.forEach(function(option) {
+      children[option].reset()
+    })
+  },
 
+  createFormOption: function(option){
+    return <FormOption ref = {option} type = {this.props.type} key = {option} option = {option} group = {this.props.group} onClick = {this.onClick}/>;
   },
 
   render: function(){
@@ -101,20 +99,15 @@ var DropDownForm = React.createClass({
 
 var InfluencersFilters = React.createClass({
 
-  getInitialState: function() {
-    return {
-      reset : true
-    }
-  },
-
   onClick: function(name, group) {
     this.props.onClick(name, group)
-    this.setState({reset : false})
   },
 
   reset: function(e) {
     this.props.onReset()
-    this.setState({reset : true})
+    this.refs['promotype'].reset()
+    this.refs['frequency'].reset()
+    this.refs['personality'].reset()
   },
 
   render: function(){
@@ -130,13 +123,13 @@ var InfluencersFilters = React.createClass({
           <h4>Filters</h4>
         </div>
         <div className = "panel-body">
-          <FormGroup type = {"checkbox"} group = {"promoType"} title = {"Type of Promotion"} options ={["Review", "Photo & Comment", "Sale for Fans"]} reset={this.state.reset}  onClick = {this.onClick}/>
+          <FormGroup type = {"checkbox"} ref = {"promotype"} group = {"promoType"} title = {"Type of Promotion"} options ={["Review", "Photo & Comment", "Sale for Fans"]} onClick = {this.onClick}/>
           <br />
 
-          <FormGroup type = {"radio"} group = {"frequency"} title = {"Frequency"} options ={["One-Time Shoutout", "On-going relationship"]} onClick = {this.onClick} reset={this.state.reset} />
+          <FormGroup type = {"checkbox"} ref = {"frequency"} group = {"frequency"} title = {"Frequency"} options ={["One-Time Shoutout", "On-going relationship"]} onClick = {this.onClick}/>
           <br />
 
-          <FormGroup type = {"checkbox"} group = {"personality"} title = {"Personality"} options ={["Quirky", "Witty", "Bubbly", "Sassy", "Conservative"]} onClick = {this.onClick} reset={this.state.reset} />
+          <FormGroup type = {"checkbox"} ref = {"personality"} group = {"personality"} title = {"Personality"} options ={["Quirky", "Witty", "Bubbly", "Sassy", "Conservative"]} onClick = {this.onClick} />
           <br />
 
           <button type="button" onClick = {this.reset}>Reset</button>
