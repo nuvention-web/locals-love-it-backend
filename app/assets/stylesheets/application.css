@@ -21,9 +21,6 @@ html, body {
 	width: 100%;
 	font-family: 'Raleway', sans-serif;
 }
-/*h1,h2,h3,h4,h5,h6{
-font-family: 'Shadows Into Light', cursive;
-}*/
 .yieldContent {
 	height: 100%;
 }
@@ -62,6 +59,7 @@ font-family: 'Shadows Into Light', cursive;
 	text-align: center;
 	padding-bottom: 2%;
 	font-family: 'Shadows Into Light', cursive;
+	font-weight: bold;
 }
 
 .frontSecondRow {
@@ -73,8 +71,14 @@ font-family: 'Shadows Into Light', cursive;
 	margin-right:0;
 }
 
+.frontSecondRow>h1{
+ font-weight: bold;
+ font-size: 100px;
+}
+
 .frontSecondRow>.frontColumns>h3{
 font-family: 'Shadows Into Light', cursive;
+font-weight: bold;
 }
 .frontThirdRow {
 	text-align: center;
