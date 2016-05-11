@@ -47,9 +47,14 @@ var InfluencersResults = React.createClass({
       }
 	},
 
-  onClick: function(name, group){
+  onReset: function(){
+    personality = []
+    frequency = []
+    promoType = []
+    this.filter_data()
+  },
 
-    console.log("clicked Name: %s, Group: %s", name, group);
+  onClick: function(name, group){
 
     if (group == "personality"){
       if (contains(personality, name)){
@@ -93,11 +98,6 @@ var InfluencersResults = React.createClass({
       _promoType = getValuesArray(m_promoType)
     }
 
-    console.log("currently applied filters")
-    console.log(_personality)
-    console.log(_frequency)
-    console.log(_promoType)
-
     for (i = 0; i< this.props.influencers.length;i++){
 
       if (contains(_personality, this.props.influencers[i].traits.personality) && contains(_frequency, this.props.influencers[i].traits.frequency) && contains(_promoType, this.props.influencers[i].traits.type_of_promotion)){
@@ -127,7 +127,7 @@ var InfluencersResults = React.createClass({
       	 <div className = "col-md-3 col-lg-3">
 		     <div className = "row">
 				<div className = "col-md-10 col-md-offset-1">
-					<InfluencersFilters onClick={this.onClick}/>
+					<InfluencersFilters onClick={this.onClick} onReset={this.onReset}/>
 				 </div>
 			 </div>
    		 </div>

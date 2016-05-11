@@ -4,22 +4,34 @@ var ButtonGroup = require('../common/ButtonGroup.js.jsx');
 /*personality, promoType, frequency*/
 
 var FormOption = React.createClass ({
+
+  getInitialState: function() {
+      return {
+          on : false
+        }
+    },
+
   click: function(e){
     this.props.onClick(this.props.option, this.props.group)
+    this.setState( {on : !this.state.on} )
+  },
+
+  reset: function(e){
+    this.setState( {on : false} )
   },
 
   render: function(){
+
     return(
       <div className = "row">
       <div className = "col-md-12">
         <label>
-          <input type= {this.props.type} name = {this.props.group} id = {this.props.group + this.props.option} onClick = {this.click}/> {this.props.option}
+          <input type= {this.props.type} name = {this.props.group} id = {this.props.group + this.props.option} onClick = {this.click} checked = {this.state.on}/> {this.props.option}
         </label>
       </div>
-      </div>
-    );
+      </div>);
   }
-});
+})
 
 var FormGroup = React.createClass ({
 
@@ -27,8 +39,15 @@ var FormGroup = React.createClass ({
     this.props.onClick(name, group);
   },
 
+  reset: function(e){
+    var children = this.refs
+    this.props.options.forEach(function(option) {
+      children[option].reset()
+    })
+  },
+
   createFormOption: function(option){
-    return <FormOption type = {this.props.type} key = {option} option = {option} group = {this.props.group} onClick = {this.onClick}/>;
+    return <FormOption ref = {option} type = {this.props.type} key = {option} option = {option} group = {this.props.group} onClick = {this.onClick}/>;
   },
 
   render: function(){
@@ -84,6 +103,13 @@ var InfluencersFilters = React.createClass({
     this.props.onClick(name, group)
   },
 
+  reset: function(e) {
+    this.props.onReset()
+    this.refs['promotype'].reset()
+    this.refs['frequency'].reset()
+    this.refs['personality'].reset()
+  },
+
   render: function(){
 
     style = {
@@ -97,16 +123,17 @@ var InfluencersFilters = React.createClass({
           <h4>Filters</h4>
         </div>
         <div className = "panel-body">
-          <FormGroup type = {"checkbox"} group = {"promoType"} title = {"Type of Promotion"} options ={["Review", "Photo & Comment", "Sale for Fans"]}  onClick = {this.onClick}/>
-          <hr />
+          <FormGroup type = {"checkbox"} ref = {"promotype"} group = {"promoType"} title = {"Type of Promotion"} options ={["Review", "Photo & Comment", "Sale for Fans"]} onClick = {this.onClick}/>
+          <br />
 
-          <FormGroup type = {"radio"} group = {"frequency"} title = {"Frequency"} options ={["One-Time Shoutout", "On-going relationship"]} onClick = {this.onClick}/>
-          <hr />
+          <FormGroup type = {"checkbox"} ref = {"frequency"} group = {"frequency"} title = {"Frequency"} options ={["One-Time Shoutout", "On-going relationship"]} onClick = {this.onClick}/>
+          <br />
 
-          <FormGroup type = {"checkbox"} group = {"personality"} title = {"Personality"} options ={["Quirky", "Witty", "Bubbly", "Sassy", "Conservative"]} onClick = {this.onClick}/>
-          <hr />
+          <FormGroup type = {"checkbox"} ref = {"personality"} group = {"personality"} title = {"Personality"} options ={["Quirky", "Witty", "Bubbly", "Sassy", "Conservative"]} onClick = {this.onClick} />
+          <br />
 
-          <DropDownForm title = {"Budget"} group = {"budget"} options = {["$0-$10", "$10-$30", "$30-$50", "$50-$75", "$75-$100", "100+"]}/>
+          <button type="button" onClick = {this.reset}>Reset</button>
+
         </div>
       </div>
 	  </div>
