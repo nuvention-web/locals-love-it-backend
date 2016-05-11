@@ -21,6 +21,10 @@ class InfluencersController < ApplicationController
 
 	end
 
+	def join
+
+	end
+
 
 	private
 
