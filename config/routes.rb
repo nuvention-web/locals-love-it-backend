@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'influencers#search'
 	get '/influencers/search', to: 'influencers#search'
-  resources :influencers, only: [:index, :show]
+	get '/influencers/join', to: 'influencers#join'
+  resources :influencers, only: [:index, :show, :new]
 
   # mailbox folder routes
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
