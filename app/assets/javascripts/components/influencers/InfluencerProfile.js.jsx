@@ -1,6 +1,8 @@
 
 var PricingResult = React.createClass({
   render: function(){
+    
+
     return(
       <div className = "row">
         <div className = "col-md-10">
@@ -23,27 +25,39 @@ var PricingContainer = React.createClass ({
       };
   },
 
-  addPrice: function(e){
-    this.setState({
-      price: this.state.price+5,
-      posts: ((this.state.price+5)/(this.props.numFollowers*.25)),
-      impressions: (this.state.impressions + this.props.numFollowers*.75)
-    });
-  },
 
-  decreasePrice: function(e){
-    this.setState({
-      price: this.state.price-5,
-      posts: ((this.state.price-5)/(this.props.numFollowers*.25)),
-      impressions: (this.state.impressions - this.props.numFollowers*.75)
-    });
+ addPost: function(e){
+   this.setState({
+     price: (this.state.posts+1) * (this.props.numFollowers*5/1000),
+     posts: this.state.posts + 1,
+     impressions: (this.state.posts+1) * this.props.numFollowers*.8
 
-  },
+   });
+ },
+
+ decreasePost: function(e){
+   if (this.state.posts == 0) {
+	return this.state;
+   };
+   this.setState({
+     price: (this.state.posts -1) * (this.props.numFollowers*5/1000),
+     posts: this.state.posts - 1,
+     impressions: (this.state.posts-1) * this.props.numFollowers*.8
+
+   });
+ },
+
 
   render: function(){
     var NoPadLeft = {
       paddingLeft: 0,
-    }
+    };
+
+
+    var style = {
+
+	margin: 0
+    };
 
     return(
       <div>
@@ -53,19 +67,19 @@ var PricingContainer = React.createClass ({
             <div className = "form-group">
               <br />
               <div className="input-group">
-                <div className="input-group-addon">$</div>
-                <input type="text" id="price" className="form-control" id="Price" placeholder={this.state.price}/>
+                <div className="input-group-addon">Posts</div>
+                <input type="text" id="posts" className="form-control" id="Posts" placeholder={this.state.posts}/>
               </div>
             </div>
           </div>
           <div className = "col-md-2" style = {NoPadLeft}>
             <div className="btn-group btn-group-vertical">
-              <button className="btn btn-info" onClick = {this.addPrice} > + </button>
-              <button className="btn btn-info" onClick = {this.decreasePrice}> - </button>
+              <button style= {style} className="btn btn-info" onClick = {this.addPost} > + </button>
+              <button style= {style} className="btn btn-info" onClick = {this.decreasePost}> - </button>
             </div>
           </div>
           <div className = "col-md-6">
-            <PricingResult name = {'Posts'} value = {this.state.posts} />
+            <PricingResult name = {'$'} value = {this.state.price} />
             <PricingResult name = {'Impressions'} value = {this.state.impressions} />
           </div>
       </div>
