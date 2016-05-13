@@ -1,8 +1,8 @@
 require 'csv'
 
 def seedInfluencers
-	food_industry = FactoryGirl.build(:industry, name: 'Food') 
-	food_industry.save! unless Industry.exists?(name: food_industry.name)
+	fashion_industry = FactoryGirl.build(:industry, name: 'Fashion') 
+	fashion_industry.save! unless Industry.exists?(name: fashion_industry.name)
 
 	puts Dir.pwd
 	influencers_text = File.read('./data/influencers.csv');
@@ -24,7 +24,7 @@ def seedInfluencers
 			i = FactoryGirl.build(:influencer, user: u, short_bio: bio, twitter_handle: t_h)
 			i.save! unless Influencer.exists?(i)
 
-			i.industries << food_industry
+			i.industries << fashion_industry
 
 			puts i.inspect
 		end
