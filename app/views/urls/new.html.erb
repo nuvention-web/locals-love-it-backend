@@ -7,7 +7,7 @@
       <div class="panel-body">
 
         <%= form_for "", url: urls_path, method: :post do |f| %>
-        <%= f.label :url %>
+        <%= f.label :url, "URL:" %>
         <%= f.text_field :url %>
         <%= f.submit "Create Url" %>
         <% end %>
@@ -23,13 +23,12 @@
       </div>
       <div class="panel-body">
 
-        <h1>stats for <%= @url.short_url %> </h1>
-        <ul>
-        <li>clicks: <%= @clicks %></li>
-        <li>by_day: <%= @by_day %></li>
-        <li>countries: <%= @countries %></li>
-        <li>referrers: <%= @referrers %></li>
-      </ul>
+        <%= form_for "", url: get_data_path, method: :get do |f| %>
+          <%= label_tag(:u, "URL:") %>
+          <%= text_field_tag(:u) %>
+          <%= submit_tag("Get Statistics") %>
+        <% end %>
+
       </div>
     </div>
   </div>

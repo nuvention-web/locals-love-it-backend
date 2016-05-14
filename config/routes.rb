@@ -17,8 +17,9 @@ Rails.application.routes.draw do
 		end
 	end
 
-
+  #Bitly Stuff
   resources :urls, only: [:new, :create]
+  get '/get_data', to: "urls#get_data"
   # root to: 'urls#new'
 
 end
