@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root 'influencers#search'
 	get '/influencers/search', to: 'influencers#search'
@@ -16,5 +17,8 @@ Rails.application.routes.draw do
 		end
 	end
 
+
+  resources :urls, only: [:new, :create]
+  # root to: 'urls#new'
 
 end

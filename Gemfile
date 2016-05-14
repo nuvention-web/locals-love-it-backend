@@ -14,6 +14,8 @@ gem 'devise'
 gem 'puma'
 
 
+gem 'bitly', '~> 0.10.0'
+
 gem 'twitter'
 gem 'oauth'
 

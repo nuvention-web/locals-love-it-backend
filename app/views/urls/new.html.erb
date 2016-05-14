@@ -1,0 +1,14 @@
+<h1>Create a new Bit.ly URL:</h1>
+
+<%= form_for "", url: urls_path, method: :post do |f| %>
+ <%= f.label :url %>
+ <%= f.text_field :url %>
+ <%= f.submit "Create Url" %>
+<% end %>
+
+<h1>stats for <%= @url.short_url %> </h1>
+<h1>clicks: <%= @clicks %> </h1>
+<h1>by_day: <%= @by_day %> </h1>
+<h1>countries: <%= @countries %> </h1>
+<h1>referrers: <%= @referrers %> </h1>
+
