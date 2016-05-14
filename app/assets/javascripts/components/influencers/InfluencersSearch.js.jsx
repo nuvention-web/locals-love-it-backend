@@ -72,8 +72,8 @@ var InfluencersSearch = React.createClass({
 				      </div>
 				     </div>
 				      <div className = "col-md-4" style={padding}>
-				       <div className = "panel panel-default">
-				        <div className = "panel-heading">
+				       <div className = "panel panel-default" id = "home_panel">
+				        <div className = "panel-heading" id = "home_panel_header">
 				         <p className = "lead" > There is strength in the small </p>
 				        </div>
 
