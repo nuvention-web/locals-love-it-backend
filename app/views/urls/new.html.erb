@@ -1,14 +1,36 @@
-<h1>Create a new Bit.ly URL:</h1>
+<div class = "row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Create a new Bit.ly URL:</h3>
+      </div>
+      <div class="panel-body">
 
-<%= form_for "", url: urls_path, method: :post do |f| %>
- <%= f.label :url %>
- <%= f.text_field :url %>
- <%= f.submit "Create Url" %>
-<% end %>
+        <%= form_for "", url: urls_path, method: :post do |f| %>
+        <%= f.label :url %>
+        <%= f.text_field :url %>
+        <%= f.submit "Create Url" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-<h1>stats for <%= @url.short_url %> </h1>
-<h1>clicks: <%= @clicks %> </h1>
-<h1>by_day: <%= @by_day %> </h1>
-<h1>countries: <%= @countries %> </h1>
-<h1>referrers: <%= @referrers %> </h1>
 
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Check the Statistics on a previous URL:</h3>
+      </div>
+      <div class="panel-body">
+
+        <h1>stats for <%= @url.short_url %> </h1>
+        <ul>
+        <li>clicks: <%= @clicks %></li>
+        <li>by_day: <%= @by_day %></li>
+        <li>countries: <%= @countries %></li>
+        <li>referrers: <%= @referrers %></li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
