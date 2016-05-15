@@ -22,7 +22,11 @@ class UrlsController < ApplicationController
       @by_day.each do |element|
         click_array.push(element.clicks)
       end
-      @graph_url = Gchart.bar(:data => click_array)
+      @graph_url = Gchart.sparkline(:title => "Clicks per Day",
+                               :data => click_array,
+                               :bar_colors => "F04993",
+                               :custom => '')
+                          
       #@countries = @url.countries
       #@referrers = @url.referrers
   end

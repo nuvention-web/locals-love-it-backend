@@ -37,6 +37,10 @@ html, body {
 
 }
 
+.graph-image{
+	margin: 5px;
+}
+
 #nav{
 	background-color: #FFFFFF;
 	box-shadow:1px 1px 12px #888888;

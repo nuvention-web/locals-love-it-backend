@@ -1,5 +1,15 @@
-<div class= "row"><h2> Stastics for: <%= @url.short_url %></h2></div>
+<div class= "row">
+  <div class = "col-md-12">
+    <h2> Stastics for: <%= @url.short_url %></h2>
+  </div>
+</div>
 <div class = "row">
+  <div class = "col-md-6">
+    <div class = "panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Numbers</h3>
+      </div>
+      <div class="panel-body">
       <ul>
         <li>Links To: <%= @long_url%></li>
         <li>Clicks: <%= @clicks %></li>
@@ -10,12 +20,22 @@
           <% end %>
         </ul>
       </ul>
+    </div>
+    </div>
+  </div>
+  <div class = "col-md-6">
+    <div class = "panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Graphs</h3>
+      </div>
+      <div class="panel-body">
+      <img class = "graph-image" src= <%= @graph_url%> />
+    </div>
+    </div>
+  </div>
 </div>
-
 <div class = "row">
-  <img src= <%= @graph_url%> />
-</div>
-
-<div class = "row">
-  <%= link_to "Create or view statstics on another URL", "/urls/new" %>
+  <div class = "col-md-3 col-md-offset-3">
+    <%= link_to "Create or view statstics on another URL", "/urls/new" %>
+  </div>
 </div>
