@@ -1,0 +1,21 @@
+<div class= "row"><h2> Stastics for: <%= @url.short_url %></h2></div>
+<div class = "row">
+      <ul>
+        <li>Links To: <%= @long_url%></li>
+        <li>Clicks: <%= @clicks %></li>
+        <li>By Day:
+          <ul>
+        <% @by_day.each do |element| %>
+          <li><%= element.day_start %> : <%= element.clicks %> </li>
+          <% end %>
+        </ul>
+      </ul>
+</div>
+
+<div class = "row">
+  <img src= <%= @graph_url%> />
+</div>
+
+<div class = "row">
+  <%= link_to "Create or view statstics on another URL", "/urls/new" %>
+</div>

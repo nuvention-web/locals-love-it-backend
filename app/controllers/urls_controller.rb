@@ -1,3 +1,4 @@
+require 'gchart'
 class UrlsController < ApplicationController
 
 
@@ -16,6 +17,12 @@ class UrlsController < ApplicationController
       @long_url = client.expand(u).long_url
       @clicks = @url.user_clicks
       @by_day = @url.clicks_by_day
+
+      click_array = Array.new
+      @by_day.each do |element|
+        click_array.push(element.clicks)
+      end
+      @graph_url = Gchart.bar(:data => click_array)
       #@countries = @url.countries
       #@referrers = @url.referrers
   end
