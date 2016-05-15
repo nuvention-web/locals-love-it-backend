@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   root 'influencers#search'
 	get '/influencers/search', to: 'influencers#search'
   resources :influencers, only: [:index, :show]
