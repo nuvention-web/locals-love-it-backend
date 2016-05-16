@@ -17,6 +17,10 @@ def makePassword(f_name,l_name, u_id)
 	p_word
 end
 
+def isEmail(str)
+	  not str.match(/@/).nil?
+end
+
 def seedInfluencers
 	fashion_industry = FactoryGirl.build(:industry, name: 'Fashion') 
 	fashion_industry.save! unless Industry.exists?(name: fashion_industry.name)
@@ -33,8 +37,19 @@ def seedInfluencers
 			f_name = u_name.partition(" ").first
 			l_name = u_name.partition(" ").last
 			pword = makePassword(f_name, l_name, c)
-			u = FactoryGirl.build(:user, role: :influencer, first_name: f_name, last_name: l_name, password: pword) 
+			email = nil
+			if not influencer["Contact Info"].nil?
+				puts influencer["Contact Info"]
+				puts isEmail(influencer["Contact Info"])
+				email = isEmail(influencer["Contact Info"]) ? influencer["Contact Info"] : nil
+			end
+			if email.nil?
+				u = FactoryGirl.build(:user, role: :influencer, first_name: f_name, last_name: l_name, password: pword) 
+			else
+				u = FactoryGirl.build(:user, role: :influencer, first_name: f_name, last_name: l_name, password: pword, email: email) 
+			end
 			puts pword
+			puts email
 			u.save! unless User.exists?(u)
 			puts u.inspect
 
