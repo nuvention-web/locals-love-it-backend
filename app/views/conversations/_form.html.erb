@@ -3,7 +3,7 @@
 			<%= f.label :recipients %>
 			<% if is_conversation[:to_single_influencer] %>
 				<% influencer_user = is_conversation[:to_single_influencer] -%>
-				<%= User.find(influencer_user).first_name%>
+				<%= User.find(influencer_user).name%>
 				<%= f.hidden_field(:recipients, {value: influencer_user}) %>
 			<% else %>
 				<%= f.select(:recipients, User.all.collect {|p| [ p.name, p.id ] }, {}, { multiple: true , class: "form-control" })%>
