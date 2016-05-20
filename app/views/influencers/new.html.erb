@@ -5,4 +5,15 @@
 		</div>
 	<% end %>
 
+    <div class='field'>
+	    <%= i.label :twitter_handle %><br/>
+		<%= i.text_field :twitter_handle %>
+	</div>
+
+	<div class='field'>
+		<%= i.label :short_bio %><br/>
+		<%= i.text_area :short_bio %>
+	</div>
+
+	<%= f.submit 'Submit form' %>
 <% end %>
