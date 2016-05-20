@@ -240,9 +240,19 @@ var SocialMedIcon = React.createClass({
 });
 
 var Profile = React.createClass({
-render: function(){
 
-  console.log(this.props.influencer.user.traits)
+parseTraits: function(traits){
+    var arr_traits = traits.split(",")
+    // arr_traits.map(function(s) { return s.trim() });
+    for (i = 0; i < arr_traits.length; i++) {
+    arr_traits[i] = arr_traits[i].trim()
+    arr_traits[i] = arr_traits[i].charAt(0).toUpperCase() + arr_traits[i].slice(1);
+    }
+    console.log(arr_traits)
+    return arr_traits
+  },
+
+render: function(){
 
   var contentStyle = {
     border: "solid",
@@ -268,7 +278,7 @@ render: function(){
   return (
     <div style = {contentStyle} className = "container contentContainer">
       <div className = "row">
-        <ProfileSidebar name = {this.props.influencer.user.first_name} numFollowers = {this.props.influencer.social_media_info.twitter_followers} bio = {this.props.influencer.short_bio} tags = {["Bubbly", "Quirky", "Funny"]}/>
+        <ProfileSidebar name = {this.props.influencer.user.first_name} numFollowers = {this.props.influencer.social_media_info.twitter_followers} bio = {this.props.influencer.short_bio} tags = {this.parseTraits(this.props.influencer.user.traits)}/>
         <div className = "col-md-6" style = {colStyle}>
           <div className="panel panel-default" >
             <div className="panel-body">
