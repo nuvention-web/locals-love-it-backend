@@ -242,6 +242,7 @@ var SocialMedIcon = React.createClass({
 var Profile = React.createClass({
 render: function(){
 
+  console.log(this.props.influencer.user.traits)
 
   var contentStyle = {
     border: "solid",

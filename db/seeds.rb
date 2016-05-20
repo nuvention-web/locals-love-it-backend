@@ -22,7 +22,7 @@ def isEmail(str)
 end
 
 def seedInfluencers
-	fashion_industry = FactoryGirl.build(:industry, name: 'Fashion') 
+	fashion_industry = FactoryGirl.build(:industry, name: 'Fashion')
 	fashion_industry.save! unless Industry.exists?(name: fashion_industry.name)
 
 	puts Dir.pwd
@@ -33,7 +33,8 @@ def seedInfluencers
 	influencers.each do |influencer|
 		c = 1
 		unless influencer["Twitter Handle #1"].nil?
-			u_name = influencer["Influencer Name"]	
+			u_name = influencer["Influencer Name"]
+			traits = influencer["Personality"]
 			f_name = u_name.partition(" ").first
 			l_name = u_name.partition(" ").last
 			pword = makePassword(f_name, l_name, c)
@@ -44,10 +45,11 @@ def seedInfluencers
 				email = isEmail(influencer["Contact Info"]) ? influencer["Contact Info"] : nil
 			end
 			if email.nil?
-				u = FactoryGirl.build(:user, role: :influencer, first_name: f_name, last_name: l_name, password: pword) 
+				u = FactoryGirl.build(:user, role: :influencer, first_name: f_name, last_name: l_name, password: pword, traits: traits)
 			else
-				u = FactoryGirl.build(:user, role: :influencer, first_name: f_name, last_name: l_name, password: pword, email: email) 
+				u = FactoryGirl.build(:user, role: :influencer, first_name: f_name, last_name: l_name, password: pword, traits: traits, email: email)
 			end
+
 			puts pword
 			puts email
 			u.save! unless User.exists?(u)
