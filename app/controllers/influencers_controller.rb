@@ -17,6 +17,10 @@ class InfluencersController < ApplicationController
 
 	end
 
+	def new
+
+	end
+
 
 	private
 
