@@ -18,6 +18,7 @@ class InfluencersController < ApplicationController
 	end
 
 	def new
+		@influencer = Influencer.new
 
 	end
 
