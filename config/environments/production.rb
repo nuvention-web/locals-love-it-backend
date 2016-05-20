@@ -5,6 +5,8 @@ class NoCompression
   end
 end
 
+ActionMailer::Base.perform_deliveries = true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -83,4 +85,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #config message host to point at heroku app
+  config.action_mailer.default_url_options = { :host => "http://localsloveit.herokuapp.com" }
 end

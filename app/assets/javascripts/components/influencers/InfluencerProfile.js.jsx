@@ -1,6 +1,6 @@
 var PricingResult = React.createClass({
   render: function(){
-    
+
 
     return(
       <div className = "row">
@@ -283,7 +283,7 @@ render: function(){
           </div>
         </div>
       </div>
-      <div className = "row">
+      {/*<div className = "row">
         <div className = "col-md-12">
           <div className = "panel panel-default">
             <div className = "panel-heading"> <h3>Campaign Results </h3> </div>
@@ -292,7 +292,7 @@ render: function(){
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
     </div>
   );
 }
