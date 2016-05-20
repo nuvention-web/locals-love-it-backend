@@ -9,6 +9,7 @@ class InfluencersSerializer < ActiveModel::Serializer
 			twitter_handle: twitter_handle,
 			twitter_followers: twitter_followers,
 			profile_pic: profile_pic,
+			twitter_bio: twitter_bio,
 
 		}
 	end
@@ -55,6 +56,7 @@ class InfluencersSerializer < ActiveModel::Serializer
 		twitter_user = object.twitter_user
 		@instance_options[:twitter_followers] = twitter_user.followers_count
 		@instance_options[:profile_pic] = twitter_user.profile_image_url_https
+		@instance_options[:twitter_bio] = twitter_user.description
 	end
 
 
@@ -69,6 +71,10 @@ class InfluencersSerializer < ActiveModel::Serializer
 
 	def twitter_handle
 		object.twitter_handle
+	end
+
+	def twitter_bio
+		@instance_options[:twitter_bio]
 	end
 
 end
