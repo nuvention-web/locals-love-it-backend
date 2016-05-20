@@ -248,7 +248,6 @@ parseTraits: function(traits){
     arr_traits[i] = arr_traits[i].trim()
     arr_traits[i] = arr_traits[i].charAt(0).toUpperCase() + arr_traits[i].slice(1);
     }
-    console.log(arr_traits)
     return arr_traits
   },
 
