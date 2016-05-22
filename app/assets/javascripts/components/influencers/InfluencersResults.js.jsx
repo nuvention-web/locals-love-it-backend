@@ -17,10 +17,10 @@ function getValuesArray(map){
   return result
 }
 
-function contains_multiple(a, obj) {
+function contains_multiple(a, obj){
   for (var p = 0; p < obj.length; p++){
     for (var i = 0; i < a.length; i++){
-        if (a[i] === obj[p]) {
+        if (a[i] === obj[p]){
             return true;
         }
     }
@@ -29,12 +29,12 @@ function contains_multiple(a, obj) {
 }
 
 function contains(a, obj) {
-  for (var i = 0; i < a.length; i++){
-    if (a[i] === obj[i]) {
-      return true;
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] === obj) {
+            return true;
+        }
     }
-  }
-  return false;
+    return false;
 }
 
 function remove(a, obj) {
@@ -74,15 +74,22 @@ var InfluencersResults = React.createClass({
         personality.push(name)
       }
     }else if (group == "frequency"){
+      console.log("frequency", frequency)
+      console.log("name", name)
       if (!contains(frequency, name)){
         if (frequency.length > 0){
           frequency.pop()
         }
+        else {
         frequency.push(m_frequency[name])
+        }
       }
     }else if (group == "promoType"){
-      if (contains(promoType, name)){
-        remove(promoType, name)
+      console.log("promoType", promoType)
+      console.log("name", name)
+      if (contains(promoType, m_promoType[name])){
+        console.log("Here")
+        remove(promoType, m_promoType[name])
       }else{
         promoType.push(m_promoType[name])
       }
@@ -126,13 +133,12 @@ var InfluencersResults = React.createClass({
     for (i = 0; i< this.props.influencers.length;i++){
 
       curr_traits = parseTraits(this.props.influencers[i].user.traits)
-      console.log("i:", i, "curr_traits", curr_traits)
 
       if (contains_multiple(_personality, curr_traits) && contains(_frequency, this.props.influencers[i].traits.frequency) && contains(_promoType, this.props.influencers[i].traits.type_of_promotion)){
         tmp.push(this.props.influencers[i])
       }
     }
-
+    console.log("tmp", tmp)
     this.setState({data: tmp});
   },
 

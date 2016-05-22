@@ -1,7 +1,6 @@
 var BadgeList = React.createClass({
   render: function(){
     var createBadge = function(tagName, index){
-       console.log(tagName);
 	return <span className = "badge" key={index} >{tagName}</span> ;
     };
 
