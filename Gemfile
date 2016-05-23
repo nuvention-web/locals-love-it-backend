@@ -14,8 +14,10 @@ gem 'pg'
 gem 'devise'
 gem 'puma'
 
-
+#Metrics
 gem 'bitly', '~> 0.10.0'
+gem 'social_shares'
+
 
 gem 'twitter'
 gem 'oauth'

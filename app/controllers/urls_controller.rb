@@ -1,4 +1,5 @@
 require 'gchart'
+require 'social_shares'
 class UrlsController < ApplicationController
 
 
@@ -10,9 +11,9 @@ class UrlsController < ApplicationController
   end
 
   def get_data
+    #From Bitly
     client = Bitly.client
     u = params[:u]
-    puts u
       @url = client.clicks(u)
       @long_url = client.expand(u).long_url
       @clicks = @url.user_clicks
@@ -28,5 +29,14 @@ class UrlsController < ApplicationController
       #@countries = @url.countries
       #@referrers = @url.referrers
       )
+
+      #From Social Shares
+      fb_shares = SocialShares.facebook(u)
+      pinterest_shares = SocialShares.pinterest(u)
+      reddit_shares = SocialShares.reddit(u)
+      linkedin_shares = SocialShares.linkedin(u)
+      google_shares = SocialShares.google(u)
+      puts fb_shares
+      puts pinterest_shares
   end
 end
