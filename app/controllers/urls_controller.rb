@@ -23,20 +23,30 @@ class UrlsController < ApplicationController
       @by_day.each do |element|
         click_array.push(element.clicks)
       end
+
+      test_click_array = [5, 6, 1, 6, 3, 5]
       @graph_url = Gchart.sparkline(:title => "Clicks per Day",
-                               :data => click_array,
-                               :bar_colors => "F04993",
+                               :data => test_click_array,
+                               :bar_colors => "F04993"
       #@countries = @url.countries
       #@referrers = @url.referrers
       )
-
+      shares_array = Array[]
       #From Social Shares
-      fb_shares = SocialShares.facebook(u)
-      pinterest_shares = SocialShares.pinterest(u)
-      reddit_shares = SocialShares.reddit(u)
-      linkedin_shares = SocialShares.linkedin(u)
-      google_shares = SocialShares.google(u)
-      puts fb_shares
-      puts pinterest_shares
+      #fb_shares = SocialShares.facebook(u)
+      #pinterest_shares = SocialShares.pinterest(u)
+      #reddit_shares = SocialShares.reddit(u)
+      #linkedin_shares = SocialShares.linkedin(u)
+      #google_shares = SocialShares.google(u)
+
+
+      #shares_array = Array[fb_shares, pinterest_shares, reddit_shares, linkedin_shares, google_shares]
+      test_array = Array[5, 3, 8, 0, 5]
+
+      @social_shares_graph = Gchart.bar(
+                            :title => "Shares per Platform",
+                            :data => test_array,
+                            :bar_colors => "F04993"
+      )
   end
 end
