@@ -8,11 +8,14 @@ gem 'spring', :group => :development
 
 gem 'active_model_serializers', '~> 0.10.0.rc1'
 
+gem "googlecharts", :require => "gchart"
 
 gem 'pg'
 gem 'devise'
 gem 'puma'
 
+
+gem 'bitly', '~> 0.10.0'
 
 gem 'twitter'
 gem 'oauth'

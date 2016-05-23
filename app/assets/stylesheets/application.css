@@ -37,6 +37,10 @@ html, body {
 
 }
 
+.graph-image{
+	margin: 5px;
+}
+
 #nav{
 	background-color: #FFFFFF;
 	box-shadow:1px 1px 12px #888888;
@@ -142,17 +146,19 @@ color:black;
 	text-align: left;
 }
 
-.panel-default {
+#home_panel {
 	box-shadow: 1px 1px 12px #888888;
 	border-color:none;
 }
 
-.panel-default>.panel-heading {
+
+#home_panel_header {
 	color: #00415d;
 	background-color: #fff;
 	border-color: #fff;
 	text-align:center;
 }
+
 
 #findInfluencers {
 	font-size: 14px;

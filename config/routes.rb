@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+
   devise_for :users, :controllers => { registrations: 'registrations' }
+
   root 'influencers#search'
 	get '/influencers/search', to: 'influencers#search'
   resources :influencers, only: [:index, :show]
@@ -16,5 +18,9 @@ Rails.application.routes.draw do
 		end
 	end
 
+  #Bitly Stuff
+  resources :urls, only: [:new, :create]
+  get '/get_data', to: "urls#get_data"
+  # root to: 'urls#new'
 
 end

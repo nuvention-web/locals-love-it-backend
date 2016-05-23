@@ -25,9 +25,8 @@ class UrlsController < ApplicationController
       @graph_url = Gchart.sparkline(:title => "Clicks per Day",
                                :data => click_array,
                                :bar_colors => "F04993",
-                               :custom => '')
-
       #@countries = @url.countries
       #@referrers = @url.referrers
+      )
   end
 end
