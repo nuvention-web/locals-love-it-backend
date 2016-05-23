@@ -6,9 +6,17 @@ class RegistrationsController < Devise::RegistrationsController
 		render 'influencers/new'
 	end
 
+	def create_influencer
+		create
+	end
+
 	private
 
 	def sign_up_params
-		params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+		if params[:user]
+			params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+		else
+			params[:influencer][:user].permit(:first_name, :last_name, :email, :password, :password_confirmation)
+		end
 	end
 end
