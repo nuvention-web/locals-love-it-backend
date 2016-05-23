@@ -8,6 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
 
 	def create_influencer
 		create
+		redirect_to 'influencers/join'
 	end
 
 	private
@@ -16,7 +17,7 @@ class RegistrationsController < Devise::RegistrationsController
 		if params[:user]
 			params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
 		else
-			params[:influencer][:user].permit(:first_name, :last_name, :email, :password, :password_confirmation)
+			params[:influencer][:user].permit(:first_name, :last_name, :email, :password, :password_confirmation).merge({role: 'influencer'})
 		end
 	end
 end
