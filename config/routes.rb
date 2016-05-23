@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
 	as :user do	
-		get 'influencers/new' => 'registrations#new_influencer', user: {user_type: 'influencer'}
+		get 'influencers/new', to: 'registrations#new_influencer'
 	end
   root 'influencers#search'
 	get '/influencers/search', to: 'influencers#search'
