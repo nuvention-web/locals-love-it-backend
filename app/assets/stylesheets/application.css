@@ -210,6 +210,10 @@ hr {
    margin:10px;
 }
 
+.big-text {
+	font-size: 130%
+}
+
 .filterFixed {
  height:100%;
  overflow:hidden;
