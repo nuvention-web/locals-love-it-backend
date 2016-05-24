@@ -260,7 +260,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (~> 3.2.0)
   browserify-rails (~> 3.0.1)
-  devise (~> 3.5.6)
+  devise
   factory_girl_rails
   faker
   mailboxer
