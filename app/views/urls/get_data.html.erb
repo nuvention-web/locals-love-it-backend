@@ -1,3 +1,7 @@
+<head>
+  <%= javascript_include_tag "https://www.google.com/jsapi" %>
+</head>
+
 <div class= "row">
   <div class = "col-md-12">
     <h2> Stastics for: <%= @url.short_url %></h2>
@@ -29,12 +33,21 @@
         <h3 class="panel-title">Graphs</h3>
       </div>
       <div class="panel-body">
-        <div class = "col-md-6">
-          <img class = "graph-image" src= <%= @graph_url%> />
+        <div class = "row">
+          <div class = "col-md-12">
+            <%= line_chart(@click_array) %>
+          </div>
         </div>
-        <div class = "col-md-6">
-          <img class = "graph-image" src = <%= @social_shares_graph%> />
+        <div class = "row">
+        <div class = "col-md-12">
+          <%= column_chart({"Facebook" => @fb_shares,
+                            "Pinterest" => @pinterest_shares,
+                            "Reddit" => @reddit_shares,
+                            "Linked In" => @linkedin_shares,
+                            "Google+" => @google_shares
+                            }) %>
         </div>
+      </div>
     </div>
     </div>
   </div>

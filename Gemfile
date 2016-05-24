@@ -17,6 +17,7 @@ gem 'puma'
 #Metrics
 gem 'bitly', '~> 0.10.0'
 gem 'social_shares'
+gem 'chartkick'
 
 
 gem 'twitter'
