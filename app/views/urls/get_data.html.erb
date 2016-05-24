@@ -31,7 +31,7 @@
         <div class = "row">
           <div class = "col-md-12">
             <center> <h3>Visits By Day</h3></center>
-            <%= line_chart(@click_array) %>
+            <%= line_chart(@click_data) %>
           </div>
         </div>
         <div class = "row">
@@ -49,7 +49,7 @@
       <div class = "row">
       <div class = "col-md-12">
         <center><h3>Visits by Country</h3></center>
-        <%= geo_chart({"USA" => 5, "China" => 2}) %>
+        <%= geo_chart(@countries) %>
       </div>
     </div>
     </div>
