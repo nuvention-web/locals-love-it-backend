@@ -104,6 +104,7 @@ GEM
       activerecord (>= 3.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    googlecharts (1.6.12)
     hashdiff (0.3.0)
     http (1.0.4)
       addressable (~> 2.3)
@@ -278,6 +279,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   faker
+  googlecharts
   mailboxer
   oauth
   pg
