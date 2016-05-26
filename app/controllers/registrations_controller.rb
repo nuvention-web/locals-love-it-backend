@@ -12,10 +12,13 @@ class RegistrationsController < Devise::RegistrationsController
     resource.save
     yield resource if block_given?
     if resource.persisted?
+			influencer = Influencer.new(influencer_params(resource))
+			influencer.save
       if resource.active_for_authentication?
         set_flash_message! :notice, :signed_up
         sign_up(resource_name, resource)
-				redirect_to 'influencers/'
+				puts influencer.inspect
+				redirect_to '/influencers/' + influencer.id.to_s
       else
         set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
         expire_data_after_sign_in!
@@ -43,4 +46,10 @@ class RegistrationsController < Devise::RegistrationsController
       set_flash_message(key, kind, options)
     end
   end
+
+	def influencer_params(user)
+		params.require(:influencer).
+			permit(:twitter_handle, :short_bio).
+			merge({user: user})
+	end
 end
