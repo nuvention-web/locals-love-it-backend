@@ -5,7 +5,6 @@ var NavBar = React.createClass({
 	  var signed_in = this.props.link == '/users/sign_in';
     var text = signed_in ? 'Sign in' : 'Sign Out';
     var text2 = 'Inbox'
-	  this.props.inbox = '/mailbox/inbox'
 
     return (
       <div className = "navbar navbar-default navbar-fixed-top" id = "nav">
@@ -15,7 +14,7 @@ var NavBar = React.createClass({
           </div>
           <div className = "nav navbar-nav navbar-right">
             <ul className="nav navbar-nav">
-		          <li> <a href ={this.props.inbox}>
+		          <li> <a href ='/mailbox/inbox'>
 		            {(() => {
                   switch (signed_in) {
                     case false:   return <button type="button" className="btn btn-primary navbar-btn">{text2}</button>
