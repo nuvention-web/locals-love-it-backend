@@ -1,35 +1,57 @@
+<head>
+  <%= javascript_include_tag "https://www.google.com/jsapi" %>
+</head>
+
 <div class= "row">
   <div class = "col-md-12">
     <h2> Stastics for: <%= @url.short_url %></h2>
   </div>
 </div>
 <div class = "row">
-  <div class = "col-md-6">
+  <div class = "col-md-4">
     <div class = "panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Numbers</h3>
       </div>
-      <div class="panel-body">
+      <div class="panel-body big-text">
       <ul>
         <li>Links To: <%= @long_url%></li>
-        <li>Clicks: <%= @clicks %></li>
-        <li>By Day:
-          <ul>
-        <% @by_day.each do |element| %>
-          <li><%= element.day_start %> : <%= element.clicks %> </li>
-          <% end %>
-        </ul>
+        <li>Total Clicks: <%= @clicks %></li>
+
       </ul>
     </div>
     </div>
   </div>
-  <div class = "col-md-6">
+  <div class = "col-md-8">
     <div class = "panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Graphs</h3>
       </div>
       <div class="panel-body">
-      <img class = "graph-image" src= <%= @graph_url%> />
+        <div class = "row">
+          <div class = "col-md-12">
+            <center> <h3>Visits By Day</h3></center>
+            <%= line_chart(@click_data) %>
+          </div>
+        </div>
+        <div class = "row">
+        <div class = "col-md-12">
+          <center><h3>Visits by Platform</h3></center>
+          <%= column_chart({"Facebook" => @fb_shares,
+                            "Pinterest" => @pinterest_shares,
+                            "Reddit" => @reddit_shares,
+                            "Linked In" => @linkedin_shares,
+                            "Google+" => @google_shares
+                            }) %>
+        </div>
+      </div>
+
+      <div class = "row">
+      <div class = "col-md-12">
+        <center><h3>Visits by Country</h3></center>
+        <%= geo_chart(@countries) %>
+      </div>
+    </div>
     </div>
     </div>
   </div>
