@@ -16,11 +16,17 @@ var NavBar = React.createClass({
 		  <a href ={this.props.inbox}>
 		 {(() => {
         switch (signed_in) {
-          case false:   return <button type="button" className="btn btn-primary navbar-btn">{text2}</button>;
+          case false:   return <button type="button" className="btn btn-primary navbar-btn">{text2}</button>
           default:
         }
       	})()}
 		  </a>
+      <a href ='/urls/new'><button type="button" className="btn btn-primary navbar-btn">Campaigns</button>
+		  </a>
+
+
+
+
             <a href = {this.props.link}><button type="button" className="btn btn-primary navbar-btn">{text}</button></a>
           </div>
         </div>
