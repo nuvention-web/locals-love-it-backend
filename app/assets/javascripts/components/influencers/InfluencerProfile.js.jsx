@@ -277,7 +277,7 @@ render: function(){
   return (
     <div style = {contentStyle} className = "container contentContainer">
       <div className = "row">
-        <ProfileSidebar name = {this.props.influencer.user.first_name} numFollowers = {this.props.influencer.social_media_info.twitter_followers} bio = {this.props.influencer.short_bio} tags = {this.parseTraits(this.props.influencer.user.traits)}/>
+        <ProfileSidebar name = {this.props.influencer.user.first_name} numFollowers = {this.props.influencer.social_media_info.twitter_followers} bio = {this.props.influencer.short_bio} tags = {this.parseTraits(this.props.influencer.traits.personality)}/>
         <div className = "col-md-6" style = {colStyle}>
           <div className="panel panel-default" >
             <div className="panel-body">

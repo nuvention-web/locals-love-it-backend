@@ -34,7 +34,7 @@ def seedInfluencers
 		c = 1
 		unless influencer["Twitter Handle #1"].nil?
 			u_name = influencer["Influencer Name"]
-			traits = influencer["Personality"]
+			personalities = influencer["Personality"]
 			f_name = u_name.partition(" ").first
 			l_name = u_name.partition(" ").last
 			pword = makePassword(f_name, l_name, c)
@@ -45,9 +45,9 @@ def seedInfluencers
 				email = isEmail(influencer["Contact Info"]) ? influencer["Contact Info"] : nil
 			end
 			if email.nil?
-				u = FactoryGirl.build(:user, role: :influencer, first_name: f_name, last_name: l_name, password: pword, traits: traits)
+				u = FactoryGirl.build(:user, role: :influencer, first_name: f_name, last_name: l_name, password: pword)
 			else
-				u = FactoryGirl.build(:user, role: :influencer, first_name: f_name, last_name: l_name, password: pword, traits: traits, email: email)
+				u = FactoryGirl.build(:user, role: :influencer, first_name: f_name, last_name: l_name, password: pword, email: email)
 			end
 
 			puts pword
@@ -59,7 +59,7 @@ def seedInfluencers
 			t_h_with_symbol = influencer["Twitter Handle #1"].tr(' ', '')
 			t_h = t_h_with_symbol.tr('@', '')
 
-			i = FactoryGirl.build(:influencer, user: u, short_bio: bio, twitter_handle: t_h)
+			i = FactoryGirl.build(:influencer, user: u, short_bio: bio, twitter_handle: t_h, personalities: personalities)
 			i.save! unless Influencer.exists?(i)
 
 			i.industries << fashion_industry

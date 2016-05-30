@@ -91,7 +91,7 @@ var InfluencersResultsRow = React.createClass({
 				influencer_id = {inf.user.id}
         first_name = {inf.user.first_name}
 				imageLink = {inf.social_media_info.profile_pic}
-        badges = {parseTraits(inf.user.traits)}
+        badges = {parseTraits(inf.traits.personality)}
         socialLinks = {inf.socialLinks}
         industry = {inf.industries[0].name}
       />;

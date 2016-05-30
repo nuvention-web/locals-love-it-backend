@@ -132,7 +132,7 @@ var InfluencersResults = React.createClass({
 
     for (i = 0; i< this.props.influencers.length;i++){
 
-      curr_traits = parseTraits(this.props.influencers[i].user.traits)
+      curr_traits = parseTraits(this.props.influencers[i].traits.personality)
 
       if (contains_multiple(_personality, curr_traits) && contains(_frequency, this.props.influencers[i].traits.frequency) && contains(_promoType, this.props.influencers[i].traits.type_of_promotion)){
         tmp.push(this.props.influencers[i])
