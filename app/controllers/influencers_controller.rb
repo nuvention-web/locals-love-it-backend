@@ -10,15 +10,9 @@ class InfluencersController < ApplicationController
 	end
 
 	def search
-
 	end
 
 	def join
-
-	end
-
-	def new
-		@influencer = Influencer.new
 
 	end
 

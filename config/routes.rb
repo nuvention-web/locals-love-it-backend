@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, :controllers => { registrations: 'registrations' }
 	as :user do	
 		get 'influencers/new', to: 'registrations#new_influencer'
@@ -21,5 +22,9 @@ Rails.application.routes.draw do
 		end
 	end
 
+  #Bitly Stuff
+  resources :urls, only: [:new, :create]
+  get '/get_data', to: "urls#get_data"
+  # root to: 'urls#new'
 
 end

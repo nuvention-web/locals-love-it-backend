@@ -26,7 +26,7 @@ class InfluencersSerializer < ActiveModel::Serializer
 		{
 			type_of_promotion: type_of_promotion,
 			frequency: frequency,
-			personality: personality,
+			personality: object.personalities,
 		}
 
 	end
