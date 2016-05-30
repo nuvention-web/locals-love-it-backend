@@ -22,10 +22,20 @@ var NavBar = React.createClass({
                   }
       	        })()}
 		          </a></li>
-              <li>
-                <a href ='/urls/new'><button type="button" className="btn btn-primary navbar-btn">Campaigns</button>
-		          </a></li>
-                          <li><a href = {this.props.link}><button type="button" className="btn btn-primary navbar-btn">{text}</button></a></li>
+
+
+              <li> <a href = 'urls/new'>
+                {(() => {
+                  switch (signed_in) {
+                    case false:   return <button type="button" className="btn btn-primary navbar-btn">Campaigns</button>
+                    default:
+                  }
+                })()}
+              </a></li>
+
+
+
+              <li><a href = {this.props.link}><button type="button" className="btn btn-primary navbar-btn">{text}</button></a></li>
             </ul>
 
           </div>
