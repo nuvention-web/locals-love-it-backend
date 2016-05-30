@@ -1,0 +1,37 @@
+<div class = "container mainContainer">
+<div class = "row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Create a new Bit.ly URL:</h3>
+      </div>
+      <div class="panel-body">
+
+        <%= form_for "", url: urls_path, method: :post do |f| %>
+        <%= f.label :url, "URL:" %>
+        <%= f.text_field :url %>
+        <%= f.submit "Create Url" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Check the Statistics on a previous URL:</h3>
+      </div>
+      <div class="panel-body">
+
+        <%= form_for "", url: get_data_path, method: :get do |f| %>
+          <%= label_tag(:u, "URL:") %>
+          <%= text_field_tag(:u) %>
+          <%= submit_tag("Get Statistics") %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>

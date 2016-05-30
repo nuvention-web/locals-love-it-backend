@@ -17,6 +17,17 @@ function getValuesArray(map){
   return result
 }
 
+function contains_multiple(a, obj){
+  for (var p = 0; p < obj.length; p++){
+    for (var i = 0; i < a.length; i++){
+        if (a[i] === obj[p]){
+            return true;
+        }
+    }
+  }
+  return false;
+}
+
 function contains(a, obj) {
     for (var i = 0; i < a.length; i++) {
         if (a[i] === obj) {
@@ -63,15 +74,22 @@ var InfluencersResults = React.createClass({
         personality.push(name)
       }
     }else if (group == "frequency"){
+      console.log("frequency", frequency)
+      console.log("name", name)
       if (!contains(frequency, name)){
         if (frequency.length > 0){
           frequency.pop()
         }
+        else {
         frequency.push(m_frequency[name])
+        }
       }
     }else if (group == "promoType"){
-      if (contains(promoType, name)){
-        remove(promoType, name)
+      console.log("promoType", promoType)
+      console.log("name", name)
+      if (contains(promoType, m_promoType[name])){
+        console.log("Here")
+        remove(promoType, m_promoType[name])
       }else{
         promoType.push(m_promoType[name])
       }
@@ -98,13 +116,29 @@ var InfluencersResults = React.createClass({
       _promoType = getValuesArray(m_promoType)
     }
 
+    console.log("_personality", _personality)
+    console.log("_frequency", _frequency)
+    console.log("_promoType", _promoType)
+
+
+    var parseTraits = function(traits){
+      var arr_traits = traits.split(",")
+      for (j = 0; j < arr_traits.length; j++) {
+      arr_traits[j] = arr_traits[j].trim()
+      arr_traits[j] = arr_traits[j].charAt(0).toUpperCase() + arr_traits[j].slice(1);
+      }
+      return arr_traits
+    };
+
     for (i = 0; i< this.props.influencers.length;i++){
 
-      if (contains(_personality, this.props.influencers[i].traits.personality) && contains(_frequency, this.props.influencers[i].traits.frequency) && contains(_promoType, this.props.influencers[i].traits.type_of_promotion)){
+      curr_traits = parseTraits(this.props.influencers[i].traits.personality)
+
+      if (contains_multiple(_personality, curr_traits) && contains(_frequency, this.props.influencers[i].traits.frequency) && contains(_promoType, this.props.influencers[i].traits.type_of_promotion)){
         tmp.push(this.props.influencers[i])
       }
     }
-
+    console.log("tmp", tmp)
     this.setState({data: tmp});
   },
 

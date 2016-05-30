@@ -1,7 +1,7 @@
 
 var PricingResult = React.createClass({
   render: function(){
-    
+
 
     return(
       <div className = "row">
@@ -241,8 +241,18 @@ var SocialMedIcon = React.createClass({
 });
 
 var Profile = React.createClass({
-render: function(){
 
+parseTraits: function(traits){
+    var arr_traits = traits.split(",")
+    // arr_traits.map(function(s) { return s.trim() });
+    for (i = 0; i < arr_traits.length; i++) {
+    arr_traits[i] = arr_traits[i].trim()
+    arr_traits[i] = arr_traits[i].charAt(0).toUpperCase() + arr_traits[i].slice(1);
+    }
+    return arr_traits
+  },
+
+render: function(){
 
   var contentStyle = {
     border: "solid",
@@ -268,7 +278,7 @@ render: function(){
   return (
     <div style = {contentStyle} className = "container contentContainer">
       <div className = "row">
-        <ProfileSidebar name = {this.props.influencer.user.first_name} numFollowers = {this.props.influencer.social_media_info.twitter_followers} bio = {this.props.influencer.short_bio} tags = {["Bubbly", "Quirky", "Funny"]}/>
+        <ProfileSidebar name = {this.props.influencer.user.first_name} numFollowers = {this.props.influencer.social_media_info.twitter_followers} bio = {this.props.influencer.short_bio} tags = {this.parseTraits(this.props.influencer.traits.personality)}/>
         <div className = "col-md-6" style = {colStyle}>
           <div className="panel panel-default" >
             <div className="panel-body">
@@ -284,7 +294,7 @@ render: function(){
           </div>
         </div>
       </div>
-      <div className = "row">
+      {/*<div className = "row">
         <div className = "col-md-12">
           <div className = "panel panel-default">
             <div className = "panel-heading"> <h3>Campaign Results </h3> </div>
@@ -293,7 +303,7 @@ render: function(){
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
     </div>
   );
 }

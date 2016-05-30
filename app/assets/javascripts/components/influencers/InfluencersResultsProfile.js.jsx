@@ -1,7 +1,6 @@
 var BadgeList = React.createClass({
   render: function(){
     var createBadge = function(tagName, index){
-       console.log(tagName);
 	return <span className = "badge" key={index} >{tagName}</span> ;
     };
 
@@ -72,20 +71,29 @@ var InfluencersResultsProfile = React.createClass({
 });
 
 var InfluencersResultsRow = React.createClass({
+
   render: function(){
 
+  var parseTraits = function(traits){
+    var arr_traits = traits.split(",")
+    // arr_traits.map(function(s) { return s.trim() });
+    for (i = 0; i < arr_traits.length; i++) {
+    arr_traits[i] = arr_traits[i].trim()
+    arr_traits[i] = arr_traits[i].charAt(0).toUpperCase() + arr_traits[i].slice(1);
+    }
+    return arr_traits
+  };
 
    var InfluencerInfo = this.props.influencers;
-    var createInfluencerProfile = function(inf, index){
+   var createInfluencerProfile = function(inf, index){
       return <InfluencersResultsProfile
 				key = {index}
 				influencer_id = {inf.user.id}
         first_name = {inf.user.first_name}
 				imageLink = {inf.social_media_info.profile_pic}
-        badges = {[inf.traits.personality]}
+        badges = {parseTraits(inf.traits.personality)}
         socialLinks = {inf.socialLinks}
         industry = {inf.industries[0].name}
-
       />;
     };
 

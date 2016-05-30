@@ -1,23 +1,18 @@
 class InfluencersController < ApplicationController
-	def index 
+	def index
 		@influencers = Influencer.all.collect do |i|
 			serialize i, is_single: false
 		end
-
-		render 
-
 	end
 
 	def show
 		@influencer = serialize Influencer.find(params[:id])
-
-		render 
-
 	end
 
 	def search
+	end
 
-		render
+	def join
 
 	end
 

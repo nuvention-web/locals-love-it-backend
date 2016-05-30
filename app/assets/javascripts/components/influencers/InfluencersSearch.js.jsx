@@ -72,8 +72,8 @@ var InfluencersSearch = React.createClass({
 				      </div>
 				     </div>
 				      <div className = "col-md-4" style={padding}>
-				       <div className = "panel panel-default">
-				        <div className = "panel-heading">
+				       <div className = "panel panel-default" id = "home_panel">
+				        <div className = "panel-heading" id = "home_panel_header">
 				         <p className = "lead" > There is strength in the small </p>
 				        </div>
 
@@ -100,7 +100,7 @@ var InfluencersSearch = React.createClass({
            <div className = "row frontSecondRow" id = "secondRow">
 		   <div className = "row howItWorks">
 			<div className = "col-md-12 col-lg-12 col-sm-12">
-				<h1>How It Works!</h1>
+				<h1>How It Works! - Steps:</h1>
 			</div>
 		   </div>
            <div className = "col-md-3 frontColumns" >
@@ -116,7 +116,7 @@ var InfluencersSearch = React.createClass({
            <div id = "row">
            <div className = "col-md-12">
            <div className = "row">
-           <h3>Search</h3>
+           <h3>(1) Search</h3>
            </div>
            <div className = "row">
            <div className = "col-md-8 col-md-offset-2">
@@ -141,7 +141,7 @@ var InfluencersSearch = React.createClass({
 					<div id = "row">
 					<div className = "col-md-12">
 					<div className = "row">
-					<h3>Communicate</h3>
+					<h3>(2) Communicate</h3>
 					</div>
 					<div className = "row">
 					<div className = "col-md-8 col-md-offset-2">
@@ -167,7 +167,7 @@ var InfluencersSearch = React.createClass({
                       <div id = "row">
                       <div className = "col-md-12">
                       <div className = "row">
-                      <h3>Pay</h3>
+                      <h3>(3) Pay</h3>
                       </div>
                       <div className = "row">
                       <div className = "col-md-8 col-md-offset-2">
@@ -192,7 +192,7 @@ var InfluencersSearch = React.createClass({
           <div id = "row">
           <div className = "col-md-12">
           <div className = "row">
-          <h3>Measure</h3>
+          <h3>(4) Measure</h3>
           </div>
           <div className = "row">
           <div className = "col-md-8 col-md-offset-2">

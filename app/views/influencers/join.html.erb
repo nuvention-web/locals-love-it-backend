@@ -1,0 +1,5 @@
+<%= form_tag('/influencers/new', method: "get") do %>
+	<%= label_tag(:twitter_handle, "Enter your twitter handle in order to begin:") %>
+	<%= text_field_tag(:twitter_handle) %>
+	<%= submit_tag("Go!") %>
+<% end %>
