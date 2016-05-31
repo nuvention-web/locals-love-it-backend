@@ -1,7 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 
 	def new_influencer
-		@influencer = Influencer.new
+		@influencer = Influencer.new({twitter_handle: params[:twitter_handle]})
 		@user = User.new
 		render 'influencers/new'
 	end
