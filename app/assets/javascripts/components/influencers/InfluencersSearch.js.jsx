@@ -10,52 +10,149 @@ var SearchField = React.createClass({
   }
 });
 
+var titleStyle = {
+		fontWeight: "bold"
+};
+
+var btnStyle = {
+};
+var fauxColor1 = {
+	backgroundColor:"#bfd8d2",
+};
+var fauxColor2 = {
+	backgroundColor:"#fedcd2",
+};
+
+var styleforGlyph1 = {
+	color:"#bfd8d2",
+	fontSize: "50px",
+};
+
+var styleforGlyph2 = {
+	color: "#fedcd2",
+	fontSize: "50px",
+};
+
+var styleforGlyph3 = {
+  color:"#df744a",
+	fontSize: "50px",
+};
+var styleforGlyph4 = {
+  color:"#e5e338",
+	fontSize: "50px",
+};
+var fauxColor3 = {
+	backgroundColor:"#df744a",
+};
+var fauxColor4 = {
+	backgroundColor:"#e5e338",
+};
+var padding = {
+	paddingTop: "6%",
+};
+var mainStyle = {
+	height:"100%",
+};
+/*
+IsAnInfluencerCliked: function () {
+
+	this.setState({
+		userFlow: "BeginningInfluencer"
+	})
+}
+*/
+var InfluencerHandlePrompt = React.createClass({
+
+	render: function() {
+		return(
+
+		  <div className = "col-md-4" style={padding}>
+		   <div className = "panel panel-default" id = "home_panel">
+				<div className = "panel-heading" id = "home_panel_header">
+				 <h1 className = "lead" >Please input your twitter handle</h1>
+				</div>
+
+				<div className = "panel panel-body">
+						 <div className = "row">
+							<div className = "col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+							 <SearchField name = {"Twitter Handle"} ref = "location" />
+							</div>
+						</div>
+				  <div className = "row">
+					<div className = "col-md-8 col-md-offset-2">
+						<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers/new" role="button" id = "makeNewInfluencers" onClick = {this.props.onSubmit} value = "Sumbit"/></form>
+					</div>
+				  </div>
+
+			</div>
+			</div>
+			</div>
+		);
+	}
+})
+
+var WelcomeBoxForInfluencer = React.createClass({
+	render: function() {
+		return(
+				  <div className = "col-md-4" style={padding}>
+				   <div className = "panel panel-default" id = "home_panel">
+						<div className = "panel-heading" id = "home_panel_header">
+						 <h1 className = "lead" >Welcome Influencer!</h1>
+						</div>
+
+						<div className = "panel panel-body">
+						  <div className = "row">
+							<div className = "col-md-8 col-md-offset-2">
+								<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "Go to Inbox"/></form>
+							</div>
+						  </div>
+
+					</div>
+					</div>
+					</div>
+		);
+	}
+})
+
+var InfluencerSearchBox = React.createClass({
+	render: function() {
+		return(
+
+				  <div className = "col-md-4" style={padding}>
+				   <div className = "panel panel-default" id = "home_panel">
+				   <br/><button type="button" className="btn btn-primary navbar-btn">I'm an influencer</button> <br/>
+						<div className = "panel-heading" id = "home_panel_header">
+						 <p className = "lead" > There is strength in the small </p>
+						</div>
+
+						<div className = "panel panel-body">
+						 <div className = "row">
+							<div className = "col-md-6 col-lg-6">
+							 <SearchField name = {"Location"} ref = "location" />
+							</div>
+
+							<div className = "col-md-6 col-lg-6">
+							 <SearchField name = {"Industry"} ref = "industry" />
+							</div>
+						</div>
+
+						  <div className = "row">
+							<div className = "col-md-8 col-md-offset-2">
+								<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "find influencers"/></form>
+							</div>
+						  </div>
+
+					</div>
+					</div>
+					</div>
+		);
+	}
+})
+
 var InfluencersSearch = React.createClass({
 	render: function(){
-			var titleStyle = {
-					fontWeight: "bold"
-			};
-
-			var btnStyle = {
-			};
-      var fauxColor1 = {
-				backgroundColor:"#bfd8d2",
-			};
-			var fauxColor2 = {
-				backgroundColor:"#fedcd2",
-			};
-
-			var styleforGlyph1 = {
-				color:"#bfd8d2",
-				fontSize: "50px",
-			};
-
-			var styleforGlyph2 = {
-				color: "#fedcd2",
-				fontSize: "50px",
-			};
-
-			var styleforGlyph3 = {
-			  color:"#df744a",
-				fontSize: "50px",
-			};
-			var styleforGlyph4 = {
-			  color:"#e5e338",
-				fontSize: "50px",
-			};
-			var fauxColor3 = {
-				backgroundColor:"#df744a",
-			};
-			var fauxColor4 = {
-				backgroundColor:"#e5e338",
-			};
-			var padding = {
-				paddingTop: "6%",
-			};
-			var mainStyle = {
-				height:"100%",
-			};
 			this.style={mainStyle};
+			var userRole = this.props.userRole
 			return(
 				<div className = "contentContainer"  id = "topContainer" style = {mainStyle}>
 					<div className ="row" id = "topRow">
@@ -71,30 +168,17 @@ var InfluencersSearch = React.createClass({
 				       </div>
 				      </div>
 				     </div>
-				      <div className = "col-md-4" style={padding}>
-				       <div className = "panel panel-default" id = "home_panel">
-				        <div className = "panel-heading" id = "home_panel_header">
-				         <p className = "lead" > There is strength in the small </p>
-				        </div>
+					 {(() => {
 
-				        <div className = "panel panel-body">
-				         <div className = "row">
-			  	           <div className = "col-md-6 col-lg-6">
-					     <SearchField name = {"Location"} ref = "location" />
-					     </div>
-			         	   <div className = "col-md-6 col-lg-6">
-					     <SearchField name = {"Industry"} ref = "industry" />
-			  		   </div>
-		       		          </div>
-					  <div className = "row">
-					<div className = "col-md-8 col-md-offset-2">
-						<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "find influencers"/></form>
-					</div>
-				 </div>
+						 if (userRole == "influencer"){
+							return <WelcomeBoxForInfluencer/>
+						 }
+						 else {
+							return <InfluencerHandlePrompt/>
+						 }
+					 }
+					  )()}
 
-				        </div>
-				       </div>
-				       </div>
 		       		       <br/>
 				 </div>
            <div className = "row frontSecondRow" id = "secondRow">
