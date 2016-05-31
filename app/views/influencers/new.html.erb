@@ -1,3 +1,5 @@
+<h2> Sign up as Influencer</h2> 
+<h3>All fields required </h3>
 <%= form_for @influencer do |i| %>
 	<%= i.fields_for(resource, as: resource_name, url: registration_path(resource_name)) do |u| %>
 		<div id="registration_fields">
@@ -12,7 +14,7 @@
 
 	<div class='field'>
 		<%= i.label :short_bio %><br/>
-		<%= i.text_area :short_bio, value: @influencer.twitter_user.description %>
+		<%= i.text_area :short_bio, rows: "10", cols:"50", value: @influencer.twitter_user.description %>
 	</div>
 
 	<%= i.submit 'Join as influencer' %>
