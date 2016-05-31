@@ -61,66 +61,109 @@ IsAnInfluencerCliked: function () {
 	})
 }
 */
-var InfluencerHandlePrompt = React.createClass({
 
-	render: function() {
-		return(
+var onClickInfluencer = function() {
+ this.setState({userIsInfluencer: true})
+};
 
-		  <div className = "col-md-4" style={padding}>
-		   <div className = "panel panel-default" id = "home_panel">
-				<div className = "panel-heading" id = "home_panel_header">
-				 <h1 className = "lead" >Please input your twitter handle</h1>
-				</div>
+var onClickSMB = function() {
+ this.setState({userIsInfluencer: false})
+};
 
-				<div className = "panel panel-body">
-						 <div className = "row">
-							<div className = "col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
-							 <SearchField name = {"Twitter Handle"} ref = "location" />
-							</div>
-						</div>
-				  <div className = "row">
-					<div className = "col-md-8 col-md-offset-2">
-						<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers/new" role="button" id = "makeNewInfluencers" onClick = {this.props.onSubmit} value = "Sumbit"/></form>
+var InfluencersSearch = React.createClass({
+
+	getInitialState:function(){
+		return {UserIsInfluencer: false};
+	},
+
+	//handleFieldString: document.getElementById('handleField'),
+    handleFieldFocus: function() {
+	 this.refs.handleField.value()
+	},
+
+	render: function(){
+			this.style={mainStyle};
+			var userRole = this.props.userRole
+			return(
+				<div className = "contentContainer"  id = "topContainer" style = {mainStyle}>
+					<div className ="row" id = "topRow">
+						 <div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+					       	 </div>
 					</div>
-				  </div>
 
-			</div>
-			</div>
-			</div>
-		);
-	}
-})
+				     <div className ="row" id = "majorRow">
+				     <div className = "col-md-4 col-lg-4 explainerHolder">
+				      <div className = "row explainer">
+				       <div className = "col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+				        <p1>Locals Love It provides an easy way for small businesses to discover, communicate with and pay local-level influencers</p1>
+				       </div>
+				      </div>
+				     </div>
+					 {(() => {
 
-var WelcomeBoxForInfluencer = React.createClass({
-	render: function() {
-		return(
+						 if (userRole == "influencer"){
+							return(
+												  <div className = "col-md-4" style={padding}>
+												   <div className = "panel panel-default" id = "home_panel">
+														<div className = "panel-heading" id = "home_panel_header">
+														 <h1 className = "lead" >Welcome Influencer!</h1>
+														</div>
+
+														<div className = "panel panel-body">
+														  <div className = "row">
+															<div className = "col-md-8 col-md-offset-2">
+																<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "Go to Inbox"/></form>
+															</div>
+														  </div>
+
+													</div>
+													</div>
+													</div>
+					  ) } else {
+							if (this.state.userIsInfluencer) {
+								return(
+
+								  <div className = "col-md-4" style={padding}>
+								   <div className = "panel panel-default" id = "home_panel">
+										<div className = "panel-heading" id = "home_panel_header">
+										 <h1 className = "lead" >Please input your twitter handle</h1>
+										</div>
+
+										   <br/><div className = "row">
+													<div className = "col-md-4 col-md-offser-4 col-lg-4 col-lg-offset-4">
+														<button type="button" className="btn btn-primary navbar-btn" onClick = {onClickSMB.bind(this)}>I'm an SMB</button>
+													</div>
+												</div> 
+										   <br/>
+
+										<div className = "panel panel-body">
+												 <div className = "row">
+													<div className = "col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+													 <input name = {"Twitter Handle"} ref="handleField" />
+													</div>
+												</div>
+										  <div className = "row">
+											<div className = "col-md-8 col-md-offset-2">
+												<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href={"/influencers/new?twitter_handle="+this.refs.handleField.getInput()} role="button" id = "makeNewInfluencers" onClick = {this.props.onSubmit} value = "Sumbit"/></form>
+											</div>
+										  </div>
+
+									</div>
+									</div>
+									</div>
+					  )	}
+							else {
+								return(
 				  <div className = "col-md-4" style={padding}>
 				   <div className = "panel panel-default" id = "home_panel">
-						<div className = "panel-heading" id = "home_panel_header">
-						 <h1 className = "lead" >Welcome Influencer!</h1>
-						</div>
 
-						<div className = "panel panel-body">
-						  <div className = "row">
-							<div className = "col-md-8 col-md-offset-2">
-								<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "Go to Inbox"/></form>
+				   <br/><div className = "row">
+							<div className = "col-md-4 col-md-offser-4 col-lg-4 col-lg-offset-4">
+								<button type="button" className="btn btn-primary navbar-btn" onClick = {onClickInfluencer.bind(this)}>I'm an influencer</button>
 							</div>
-						  </div>
+				        </div> 
+				   <br/>
 
-					</div>
-					</div>
-					</div>
-		);
-	}
-})
-
-var InfluencerSearchBox = React.createClass({
-	render: function() {
-		return(
-
-				  <div className = "col-md-4" style={padding}>
-				   <div className = "panel panel-default" id = "home_panel">
-				   <br/><button type="button" className="btn btn-primary navbar-btn">I'm an influencer</button> <br/>
 						<div className = "panel-heading" id = "home_panel_header">
 						 <p className = "lead" > There is strength in the small </p>
 						</div>
@@ -145,36 +188,8 @@ var InfluencerSearchBox = React.createClass({
 					</div>
 					</div>
 					</div>
-		);
-	}
-})
 
-var InfluencersSearch = React.createClass({
-	render: function(){
-			this.style={mainStyle};
-			var userRole = this.props.userRole
-			return(
-				<div className = "contentContainer"  id = "topContainer" style = {mainStyle}>
-					<div className ="row" id = "topRow">
-						 <div className = "col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-					       	 </div>
-					</div>
-
-				     <div className ="row" id = "majorRow">
-				     <div className = "col-md-4 col-lg-4 explainerHolder">
-				      <div className = "row explainer">
-				       <div className = "col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-				        <p1>Locals Love It provides an easy way for small businesses to discover, communicate with and pay local-level influencers</p1>
-				       </div>
-				      </div>
-				     </div>
-					 {(() => {
-
-						 if (userRole == "influencer"){
-							return <WelcomeBoxForInfluencer/>
-						 }
-						 else {
-							return <InfluencerHandlePrompt/>
+					  )}
 						 }
 					 }
 					  )()}
