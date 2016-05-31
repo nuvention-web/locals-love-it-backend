@@ -5,6 +5,6 @@
 
 In order to run locally on localhost:3000 -
 1. "npm install"
-1. "bundle install"
-1. "rake db:schema:load"
-1. "rails s"
+2. "bundle install"
+3. "rake db:schema:load"
+4. "rails s"
