@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :campaigns, except: [:new, :edit]
   devise_for :users, :controllers => { registrations: 'registrations' }
 	as :user do	
 		get 'influencers/new', to: 'registrations#new_influencer'

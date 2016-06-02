@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable
   has_one :influencer, :dependent => :destroy
   enum role: [:admin, :influencer, :business_owner]
+	has_many :campaigns
   validates :role, presence: true
 
 	acts_as_messageable
