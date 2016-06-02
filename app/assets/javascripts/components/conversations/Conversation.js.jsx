@@ -1,7 +1,6 @@
 var Conversation = React.createClass({
 
   render: function(){
-    console.log("Originator")
     var conversation = this.props.conversation
 
     return (
