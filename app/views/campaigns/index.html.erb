@@ -1,7 +1,19 @@
-<%= @campaigns %>
-</br>
+<div class = "row">
+  <div class = "col-md-6">
+    <h1> My Campaigns </h1>
+  </div>
+</div>
 
-<%= @campaigns1 %>
-</br>
-
-<%= @campaigns2 %>
+<div class = "row">
+  <div class = "col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <ul>
+        <% @campaigns.each do |campaign| %>
+          <li><%= campaign.name %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
