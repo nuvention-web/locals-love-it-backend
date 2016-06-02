@@ -1,8 +1,6 @@
-var Conversation = React.createClass({
+var Form = React.createClass({
 
   render: function(){
-    var conversation = this.props.conversation
-
     return (
 
     <div className="media">
@@ -40,4 +38,4 @@ var Conversation = React.createClass({
   }
 });
 
-module.exports = Conversation;
+module.exports = Form;

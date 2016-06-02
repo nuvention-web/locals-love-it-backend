@@ -1,19 +1,12 @@
 var Folders = require('./Folders.js.jsx');
-var Conversation = require('./Conversation.js.jsx')
+var Form = require('./Form.js.jsx')
 
 var SendMessage = React.createClass({
   render: function() {
 
   var path_new = '/conversations/new'
   console.log(this.props.is_conversation)
-  console.log(this.props.conversation)
-
-  var conversation;
-  if (this.props.conversation) {
-    conversation = <Conversation conversation={this.props.conversation} originator={this.props.originator}/>;
-  } else {
-    conversation = <Conversation conversation={this.props.conversation}/>;
-  }
+  console.log(this.props.recipient)
 
   return (
     <div className="row">
@@ -35,7 +28,6 @@ var SendMessage = React.createClass({
       <div className="col-md-8">
         <div className="panel panel-default">
           <div className="panel-body">
-            {conversation}
             {/*
             <% if is_conversation %>
               <%= render partial: 'conversations/form', locals: { is_conversation: is_conversation } %>
