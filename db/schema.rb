@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602033358) do
+ActiveRecord::Schema.define(version: 20160602045458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160602033358) do
     t.integer  "influencer_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "name"
   end
 
   add_index "campaigns", ["influencer_id"], name: "index_campaigns_on_influencer_id", using: :btree
