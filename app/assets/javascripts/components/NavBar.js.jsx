@@ -24,7 +24,7 @@ var NavBar = React.createClass({
 		          </a></li>
 
 
-              <li> <a href = 'urls/new'>
+              <li> <a href = '/campaigns'>
                 {(() => {
                   switch (signed_in) {
                     case false:   return <button type="button" className="btn btn-primary navbar-btn">Campaigns</button>
