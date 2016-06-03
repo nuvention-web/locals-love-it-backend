@@ -12,7 +12,13 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <div class = "row">
-          <div class = "col-md-12">
+          <div class = "col-md-3">
+            <ul class = "big-text">
+              <li>Links To: <%= @long_url%></li>
+              <li>Total Clicks: <%= @clicks %></li>
+            </ul>
+          </div>
+          <div class = "col-md-9">
             <center> <h3>Visits By Day</h3></center>
             <%= line_chart(@click_data) %>
           </div>
