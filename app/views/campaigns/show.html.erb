@@ -1,6 +1,35 @@
+<%= javascript_include_tag "https://www.google.com/jsapi" %>
+
 <div class = "row">
   <div class = "col-md-6">
     <h1><%= @campaign.name %></h1>
     <h3><%= @i_name %> for <%= @smb.first_name %> <%= @smb.last_name %></h3>
   </div>
+</div>
+
+<div class = "row">
+  <div class = "col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class = "row">
+          <div class = "col-md-12">
+            <center> <h3>Visits By Day</h3></center>
+            <%= line_chart(@click_data) %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</br>
+</br>
+
+<div class = "row">
+  <div class = "col-md-6 col-md-offset-5">
+    <%= link_to "Back to My Campaigns", "/campaigns" %>
+  </div>
+</div>
 </div>
