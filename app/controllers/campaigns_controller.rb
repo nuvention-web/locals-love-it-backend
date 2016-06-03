@@ -36,9 +36,22 @@ class CampaignsController < ApplicationController
       click_data[element.day_start] = element.clicks
     end
 
-
     #Test Data
-    puts @click_data
      @click_data = click_array
+
+
+     # Real Data
+     #@fb_shares = SocialShares.facebook(@campaign.link)
+     #@pinterest_shares = SocialShares.pinterest(@campaign.link)
+     #@reddit_shares = SocialShares.reddit(@campaign.link)
+     #@linkedin_shares = SocialShares.linkedin(@campaign.link)
+     #@@google_shares = SocialShares.google(@campaign.link)
+
+     #Test Data
+     @fb_shares = 12
+     @pinterest_shares = 5
+     @reddit_shares = 3
+     @linkedin_shares = 0
+     @google_shares = 8
   end
 end

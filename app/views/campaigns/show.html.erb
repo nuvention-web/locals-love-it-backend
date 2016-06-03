@@ -19,8 +19,19 @@
             </ul>
           </div>
           <div class = "col-md-9">
-            <center> <h3>Visits By Day</h3></center>
+            <div class = "row">
+              <center> <h3>Visits By Day</h3></center>
             <%= line_chart(@click_data) %>
+           </div>
+           <div class = "row">
+             <center><h3>Visits by Platform</h3></center>
+             <%= column_chart({"Facebook" => @fb_shares,
+                               "Pinterest" => @pinterest_shares,
+                               "Reddit" => @reddit_shares,
+                               "Linked In" => @linkedin_shares,
+                               "Google+" => @google_shares
+                               }) %>
+           </div>
           </div>
         </div>
 
