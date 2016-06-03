@@ -8,43 +8,40 @@
 </div>
 
 <div class = "row">
-  <div class = "col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <div class = "row">
-          <div class = "col-md-3">
-            <ul class = "big-text">
-              <li>Links To: <%= @long_url%></li>
-              <li>Total Clicks: <%= @clicks %></li>
-            </ul>
-          </div>
-          <div class = "col-md-9">
-            <div class = "row">
-              <center> <h3>Visits By Day</h3></center>
-            <%= line_chart(@click_data) %>
-           </div>
-           <div class = "row">
-             <center><h3>Visits by Platform</h3></center>
-             <%= column_chart({"Facebook" => @fb_shares,
-                               "Pinterest" => @pinterest_shares,
-                               "Reddit" => @reddit_shares,
-                               "Linked In" => @linkedin_shares,
-                               "Google+" => @google_shares
-                               }) %>
-           </div>
-           <div class = "row">
-           <div class = "col-md-12">
-             <center><h3>Visits by Country</h3></center>
-             <%= geo_chart(@countries) %>
-           </div>
-         </div>
-          </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class = "row">
+        <div class = "col-md-6">
+          <ul class = "big-text">
+            <li>Links To: <%= @long_url%></li>
+            <li>Total Clicks: <%= @clicks %></li>
+          </ul>
         </div>
-
+        <div class = "col-md-6">
+          <center> <h3>Visits By Day</h3></center>
+          <%= line_chart(@click_data) %>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col-md-6">
+          <center><h3>Visits by Platform</h3></center>
+          <%= column_chart({"Facebook" => @fb_shares,
+                            "Pinterest" => @pinterest_shares,
+                            "Reddit" => @reddit_shares,
+                            "Linked In" => @linkedin_shares,
+                            "Google+" => @google_shares
+                            }) %>
+        </div>
+        <div class = "col-md-6">
+          <center><h3>Visits by Country</h3></center>
+          <%= geo_chart(@countries) %>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
 
 
 </br>
