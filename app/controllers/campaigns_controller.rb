@@ -31,7 +31,6 @@ class CampaignsController < ApplicationController
 
     @link.clicks_by_day().each do |element|
       click_array[element.day_start] = rand(0...5)
-      puts "HERE"
       puts click_array[element.day_start]
       click_data[element.day_start] = element.clicks
     end
@@ -53,5 +52,21 @@ class CampaignsController < ApplicationController
      @reddit_shares = 3
      @linkedin_shares = 0
      @google_shares = 8
+
+
+     #### Countries Graph ####
+     country_hash = Hash.new
+     @link.countries().each do |element|
+       country_hash[element.country] = element.clicks
+       puts element.country
+       puts element.clicks
+     end
+     #Real Data
+     #@countries = country_hash
+
+     #Test Data
+     @countries = {"US" => 12, "China" =>5, "Canada" => 8, "France" => 10}
+
+
   end
 end
