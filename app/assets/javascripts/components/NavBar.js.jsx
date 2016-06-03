@@ -23,7 +23,6 @@ var NavBar = React.createClass({
       	        })()}
 		          </a></li>
 
-
               <li> <a href = 'urls/new'>
                 {(() => {
                   switch (signed_in) {
@@ -32,8 +31,6 @@ var NavBar = React.createClass({
                   }
                 })()}
               </a></li>
-
-
 
               <li><a href = {this.props.link}><button type="button" className="btn btn-primary navbar-btn">{text}</button></a></li>
             </ul>

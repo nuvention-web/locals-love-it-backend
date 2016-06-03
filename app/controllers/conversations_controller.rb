@@ -4,7 +4,11 @@ class ConversationsController < ApplicationController
 	def new
 		if params[:id]
 			@influencer = params[:id]
-      @recipient = User.find(@influencer)
+      if @influencer
+        @recipient = User.find(@influencer)
+      elsif
+        @recipient = nil
+      end
 		end
 	end
 

@@ -28,6 +28,7 @@ var SendMessage = React.createClass({
       <div className="col-md-8">
         <div className="panel panel-default">
           <div className="panel-body">
+          <Form recipient={this.props.recipient}/>
             {/*
             <% if is_conversation %>
               <%= render partial: 'conversations/form', locals: { is_conversation: is_conversation } %>

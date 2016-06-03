@@ -1,41 +1,70 @@
 var Form = React.createClass({
 
+  getInitialState: function() {
+      return {
+          blank : true,
+          t1 : false,
+          template : ""
+        }
+    },
+
+  handleSubmit: function(type) {
+    console.log(type)
+    if (type == "blank"){
+      this.setState({ blank : true})
+      this.setState({ t1 : false })
+      this.setState({ template : "" })
+    }else if (type == "t1"){
+      this.setState({ blank : false})
+      this.setState({ t1 : true })
+      this.setState({ template : "this is a template" })
+    }
+  },
+
+  getTemplate: function() {
+    if (this.state.blank) {
+      return ""
+    } else if (this.state.t1) {
+      console.log("hereere")
+      return "This is template #1"
+    } else {
+      return "???"
+    }
+  },
+
   render: function(){
+    var recipient = this.props.recipient
+
     return (
 
-    <div className="media">
-      <div className="media-left">
-        <a href="#">
-        {/*
-          <% if conversation.originator.influencer? %>
-            <%image_url = conversation.originator.influencer.twitter_user.profile_image_url_https -%>
-            <%= image_tag image_url, style:"height: 64; width: 64;" %>
-          <% else %>
-            <img className="media-object" src="http://s31.postimg.org/8zhj7as2f/LLI_logo_final_small.png">
-          <% end %>
-        */}
-        </a>
-      </div>
-      <div className="media-body">
-        <div className="media-heading">
-        </div>
+    <div>
+    <div className="form-group">
+      To: {recipient.first_name}<br/>
+      Subject:<br/>
+        <textarea name="subject" defaultValue="Subject line." />
+      <br/>
+      Message:<br/>
+      <textarea name="message" defaultValue={this.state.template} />
+    </div>
+    <div>
+      Templates
+      <ul>
+        <input type="radio" onChange={this.handleSubmit.bind(this, "blank")} checked = {this.state.blank}/> Blank <br/>
+        <input type="radio" onChange={this.handleSubmit.bind(this, "t1")} checked = {this.state.t1}/> Template #1 <br/>
+      </ul>
       </div>
     </div>
-        )
-
-      {/*
-      <div className="media-body">
-        <div className="media-heading">
-          {originator.name} <br>
-          Subject: {conversation.subject}<br>
-          Date: {conversation.messages.last.created_at}<br>
-          strftime("%A, %b %d, %Y at %I:%M%p"
-        </div>
-        {conversation.messages.last.body}
-        <%= truncate conversation.messages.last.body, length: 145 %>
-        <%= link_to "View", conversation_path(conversation)  %>
-      */}
+    )
   }
 });
 
 module.exports = Form;
+
+/*
+      <%= f.label :subject %>
+      <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
+    <div className"form-group">
+      <%= f.label :message %>
+      <%= f.text_area :body, class: 'form-control',placeholder: "Type your message here", rows: 4  %>
+    </div>
+    */
