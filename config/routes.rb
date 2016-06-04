@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
+
   devise_for :users, :controllers => { registrations: 'registrations' }
-	as :user do	
+	as :user do
 		get 'influencers/new', to: 'registrations#new_influencer'
 		post 'influencers/', to: 'registrations#create_influencer'
 	end
@@ -26,5 +27,9 @@ Rails.application.routes.draw do
   resources :urls, only: [:new, :create]
   get '/get_data', to: "urls#get_data"
   # root to: 'urls#new'
+
+
+  #Campaigns Stuff
+  resources :campaigns, except: [:new, :edit]
 
 end
