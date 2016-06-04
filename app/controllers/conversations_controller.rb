@@ -10,6 +10,10 @@ class ConversationsController < ApplicationController
         @recipient = nil
       end
 		end
+    if !params[:url].blank?
+      client = Bitly.client
+      @url = client.shorten(params[:url])
+    end
 	end
 
   def create
