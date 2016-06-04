@@ -1,3 +1,18 @@
+var TextArea = React.createClass({
+
+  getInitialState: function() {
+    return {value: 'Hello!'};
+  },
+  handleChange: function(event) {
+    this.setState({value: event.target.value});
+  },
+  render: function() {
+    return (
+      <textarea name="message" onChange = {this.handleChange} placeholder={this.props.temp} />
+    );
+  }
+});
+
 var Form = React.createClass({
 
   getInitialState: function() {
@@ -21,17 +36,6 @@ var Form = React.createClass({
     }
   },
 
-  getTemplate: function() {
-    if (this.state.blank) {
-      return ""
-    } else if (this.state.t1) {
-      console.log("hereere")
-      return "This is template #1"
-    } else {
-      return "???"
-    }
-  },
-
   render: function(){
     var recipient = this.props.recipient
 
@@ -44,7 +48,7 @@ var Form = React.createClass({
         <textarea name="subject" defaultValue="Subject line." />
       <br/>
       Message:<br/>
-      <textarea name="message" defaultValue={this.state.template} />
+      <TextArea temp={this.state.template}/>
     </div>
     <div>
       Templates
