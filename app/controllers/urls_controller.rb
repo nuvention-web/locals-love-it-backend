@@ -4,7 +4,6 @@ class UrlsController < ApplicationController
 
 
   def create
-    puts params[:url]
     if !params[:url].blank?
       client = Bitly.client
       @url = client.shorten(params[:url])

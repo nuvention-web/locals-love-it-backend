@@ -8,6 +8,11 @@ var SendMessage = React.createClass({
   console.log(this.props.is_conversation)
   console.log(this.props.recipient)
 
+  var bitlyLink;
+  if (this.props.url != null) {
+    bitlyLink = <div>{this.props.url.short_url}</div>
+  }
+
   return (
     <div className="row">
       <div className="spacer"></div>
@@ -38,6 +43,16 @@ var SendMessage = React.createClass({
             */}
           </div>
         </div>
+        <div>
+        <form accept-charset="UTF-8" action="" method="get">
+          <input name="utf8" type="hidden" value={this.props.authenticity_token}  />
+          <label for="url">URL:</label>
+          <input id="url" name="url" type="text"/>
+          <input id="id" name="id" type="hidden" value={this.props.recipient.id}/>
+          <input name="commit" type="submit" value="Create Bitly link" />
+        </form>
+        </div>
+        {bitlyLink}
       </div>
 
     </div>

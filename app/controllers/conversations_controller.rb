@@ -2,6 +2,7 @@ class ConversationsController < ApplicationController
 	before_action :authenticate_user!
 
 	def new
+    @url = nil
 		if params[:id]
 			@influencer = params[:id]
       if @influencer
