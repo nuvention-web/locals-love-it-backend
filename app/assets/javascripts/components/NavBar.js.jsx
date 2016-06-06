@@ -4,7 +4,8 @@ var NavBar = React.createClass({
   render: function(){
 	  var signed_in = this.props.link == '/users/sign_in';
     var text = signed_in ? 'Sign in' : 'Sign Out';
-    var text2 = 'Inbox'
+    var text2 = 'Inbox';
+		var is_influencer = this.props.is_influencer;
 
     return (
       <div className = "navbar navbar-default navbar-fixed-top" id = "nav">
@@ -14,6 +15,24 @@ var NavBar = React.createClass({
           </div>
           <div className = "nav navbar-nav navbar-right">
             <ul className="nav navbar-nav">
+		          <li> <a href ='/users/edit'>
+		            {(() => {
+                  switch (is_influencer) {
+                    case true:   return <button type="button" className="btn btn-primary navbar-btn">{'Edit Profile'}</button>
+                    default:
+                  }
+      	        })()}
+		          </a></li>
+
+		          <li> <a href ='/users/edit'>
+		            {(() => {
+                  switch (signed_in) {
+                    case false:   return <button type="button" className="btn btn-primary navbar-btn">{'Edit User Info'}</button>
+                    default:
+                  }
+      	        })()}
+		          </a></li>
+
 		          <li> <a href ='/mailbox/inbox'>
 		            {(() => {
                   switch (signed_in) {
