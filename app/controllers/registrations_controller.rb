@@ -42,6 +42,9 @@ class RegistrationsController < Devise::RegistrationsController
 			params[:influencer][:user].permit(:first_name, :last_name, :email, :password, :password_confirmation).merge({role: 'influencer'})
 		end
 	end	
+	def account_update_params
+		params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password)
+	end
 
   def set_flash_message!(key, kind, options = {})
     if is_flashing_format?
