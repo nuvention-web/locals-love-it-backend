@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root 'influencers#search'
 	get '/influencers/search', to: 'influencers#search'
 	get '/influencers/join', to: 'influencers#join'
-  resources :influencers, only: [:index, :show]
+  resources :influencers, only: [:index, :show, :edit, :update]
 
   # mailbox folder routes
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
