@@ -1,5 +1,5 @@
 <% link = user_signed_in? ? '/users/sign_out' : '/users/sign_in'-%>
-
+<% is_influencer = user_signed_in? ? current_user.role == 'influencer' : false -%>
 
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
 	<div class='container mainContainer'>
 	      <div class = 'row navRow'>
 		<div id = 'NavBar' class = 'navContainer'>
-			<%= react_component( 'NavBar', {link: link} ,{prerender: true} ) %>
+			<%= react_component( 'NavBar', {link: link, is_influencer: is_influencer} ,{prerender: true} ) %>
 		</div>
               </div>
 
