@@ -143,12 +143,12 @@ var WelcomingMainBox = React.createClass({
 	if (this.props.role=='influencer'){
 		return isInfluencerLogged;
 	}else {
-			if(userIsInfluencer){
+			if(this.state.userIsInfluencer){
 
-			return IsInfluencerNew;
+			return isInfluencerNew;
 			}else{
 
-			return IsSMB;
+			return isSMB;
 			}
 	}
 
