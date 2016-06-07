@@ -6,6 +6,7 @@ var NavBar = React.createClass({
     var text = signed_in ? 'Sign in' : 'Sign Out';
     var text2 = 'Inbox';
 		var is_influencer = this.props.is_influencer;
+		var influencer_link = '/influencers/' + this.props.influencer_id + '/edit';
 
     return (
       <div className = "navbar navbar-default navbar-fixed-top" id = "nav">
@@ -15,7 +16,6 @@ var NavBar = React.createClass({
           </div>
           <div className = "nav navbar-nav navbar-right">
             <ul className="nav navbar-nav">
-
 		            {(() => {
                   switch (is_influencer) {
                     case true:   return <li><a href ='/users/edit'>{'Edit Profile'}</a></li>
