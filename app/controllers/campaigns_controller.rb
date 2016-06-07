@@ -14,7 +14,7 @@ class CampaignsController < ApplicationController
     c = Campaign.new
     client = Bitly.client
     c.user_id = current_user.id
-    c.link = client.shorten(params[:campaign][:url])
+    c.link = client.shorten(params[:campaign][:url]).short_url
     c.influencer_id = params[:campaign][:id]
     c.name = params[:campaign][:campaign_name]
     c.save
@@ -26,8 +26,11 @@ class CampaignsController < ApplicationController
 
   def show
     @campaign = Campaign.find(params[:id])
-    #@i = Influencer.find(@campaign.influencer_id)
-    @i_name = "Influencer Name"
+    if @campaign.influencer_id != nil
+      @i_name = Influencer.find(@campaign.influencer_id).twitter_handle
+    else
+      @i_name = "Jamie"
+    end
     @smb = User.find(@campaign.user_id)
 
     ##Bitly Jawn
@@ -46,27 +49,27 @@ class CampaignsController < ApplicationController
 
     @link.clicks_by_day().each do |element|
       click_array[element.day_start] = rand(0...5)
-      puts click_array[element.day_start]
       click_data[element.day_start] = element.clicks
     end
 
     #Test Data
-     @click_data = click_array
-
+     #@click_data = click_array
+    #Real Data
+     @click_data = click_data
 
      # Real Data
-     #@fb_shares = SocialShares.facebook(@campaign.link)
-     #@pinterest_shares = SocialShares.pinterest(@campaign.link)
-     #@reddit_shares = SocialShares.reddit(@campaign.link)
-     #@linkedin_shares = SocialShares.linkedin(@campaign.link)
-     #@@google_shares = SocialShares.google(@campaign.link)
+     @fb_shares = SocialShares.facebook(@campaign.link)
+     @pinterest_shares = SocialShares.pinterest(@campaign.link)
+     @reddit_shares = SocialShares.reddit(@campaign.link)
+     @linkedin_shares = SocialShares.linkedin(@campaign.link)
+     @google_shares = SocialShares.google(@campaign.link)
 
      #Test Data
-     @fb_shares = 12
-     @pinterest_shares = 5
-     @reddit_shares = 3
-     @linkedin_shares = 0
-     @google_shares = 8
+     #@fb_shares = 12
+     #@pinterest_shares = 5
+     #@reddit_shares = 3
+     #@linkedin_shares = 0
+     #@google_shares = 8
 
 
      #### Countries Graph ####
@@ -77,9 +80,9 @@ class CampaignsController < ApplicationController
        puts element.clicks
      end
      #Real Data
-     #@countries = country_hash
+     @countries = country_hash
 
      #Test Data
-     @countries = {"US" => 12, "China" =>5, "Canada" => 8, "France" => 10}
+     #@countries = {"US" => 12, "China" =>5, "Canada" => 8, "France" => 10}
   end
 end
