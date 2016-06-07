@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
     helper_method :mailbox, :conversation
 
     def mailbox
-	@mailbox ||= current_user.mailbox
+	   @mailbox ||= current_user.mailbox
     end
 
 		def conversation
