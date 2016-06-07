@@ -10,6 +10,9 @@ class ConversationsController < ApplicationController
       elsif
         @recipient = nil
       end
+    else
+      @influencer = nil
+      @recipient = nil
 		end
     if !params[:url].blank?
       client = Bitly.client
