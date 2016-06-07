@@ -12,10 +12,15 @@ class CampaignsController < ApplicationController
   def create
 
     c = Campaign.new
+    client = Bitly.client
     c.user_id = current_user.id
-    c.link = client.shorten(params[:url])
-    c.influencer_id = params[:id]
-    c.name = params[:campaign_name]
+    puts "campaign"
+    puts params[:campaign][:url]
+    puts params[:campaign][:id]
+    puts params[:campaign][:campaign_name]
+    c.link = client.shorten(params[:campaign][:url])
+    c.influencer_id = params[:campaign][:id]
+    c.name = params[:campaign][:campaign_name]
     c.save
 
   end
