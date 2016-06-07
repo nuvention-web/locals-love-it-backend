@@ -21,7 +21,11 @@ class CampaignsController < ApplicationController
     c.link = client.shorten(params[:campaign][:url])
     c.influencer_id = params[:campaign][:id]
     c.name = params[:campaign][:campaign_name]
-    c.save
+    if c.save
+      redirect_to action: "index"
+    else
+      redirect_to action: "index"
+    end
 
   end
 
