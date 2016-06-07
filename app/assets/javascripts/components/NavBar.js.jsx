@@ -16,46 +16,38 @@ var NavBar = React.createClass({
           </div>
           <div className = "nav navbar-nav navbar-right">
             <ul className="nav navbar-nav">
-		          <li> <a href ={influencer_link}>
 		            {(() => {
                   switch (is_influencer) {
-                    case true:   return <button type="button" className="btn btn-primary navbar-btn">{'Edit Profile'}</button>
+                    case true:   return <li><a href ='/users/edit'>{'Edit Profile'}</a></li>
                     default:
                   }
       	        })()}
-		          </a></li>
 
-		          <li> <a href ='/users/edit'>
+
 		            {(() => {
                   switch (signed_in) {
-                    case false:   return <button type="button" className="btn btn-primary navbar-btn">{'Edit User Info'}</button>
+                    case false:   return <li><a href ='/users/edit'>{'Edit User Info'}</a></li>
                     default:
                   }
       	        })()}
-		          </a></li>
 
-		          <li> <a href ='/mailbox/inbox'>
+
 		            {(() => {
                   switch (signed_in) {
-                    case false:   return <button type="button" className="btn btn-primary navbar-btn">{text2}</button>
+                    case false:   return <li><a href ='/mailbox/inbox'>{text2}</a></li>
                     default:
                   }
       	        })()}
-		          </a></li>
 
 
-              <li> <a href = '/campaigns'>
                 {(() => {
                   switch (signed_in) {
-                    case false:   return <button type="button" className="btn btn-primary navbar-btn">Campaigns</button>
+                    case false:   return <li><a href = '/campaigns'>Campaigns</a></li>
                     default:
                   }
                 })()}
-              </a></li>
 
-
-
-              <li><a href = {this.props.link}><button type="button" className="btn btn-primary navbar-btn">{text}</button></a></li>
+              <li><a href = {this.props.link}>{text}</a></li>
             </ul>
 
           </div>

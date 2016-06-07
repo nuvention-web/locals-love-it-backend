@@ -9,6 +9,21 @@ class CampaignsController < ApplicationController
     @campaigns = Campaign.where("user_id = ? OR influencer_id = ?", current_user.id, current_user.id)
   end
 
+  def create
+
+    c = Campaign.new
+    client = Bitly.client
+    c.user_id = current_user.id
+    c.link = client.shorten(params[:campaign][:url])
+    c.influencer_id = params[:campaign][:id]
+    c.name = params[:campaign][:campaign_name]
+    c.save
+
+    redirect_to action: "index"
+
+  end
+
+
   def show
     @campaign = Campaign.find(params[:id])
     #@i = Influencer.find(@campaign.influencer_id)
@@ -66,7 +81,5 @@ class CampaignsController < ApplicationController
 
      #Test Data
      @countries = {"US" => 12, "China" =>5, "Canada" => 8, "France" => 10}
-
-
   end
 end

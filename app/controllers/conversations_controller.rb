@@ -2,9 +2,22 @@ class ConversationsController < ApplicationController
 	before_action :authenticate_user!
 
 	def new
+    @url = nil
 		if params[:id]
 			@influencer = params[:id]
+      if @influencer
+        @recipient = User.find(@influencer)
+      elsif
+        @recipient = nil
+      end
+    else
+      @influencer = nil
+      @recipient = nil
 		end
+    if !params[:url].blank?
+      client = Bitly.client
+      @url = client.shorten(params[:url])
+    end
 	end
 
   def create
