@@ -9,6 +9,18 @@ class CampaignsController < ApplicationController
     @campaigns = Campaign.where("user_id = ? OR influencer_id = ?", current_user.id, current_user.id)
   end
 
+  def create
+
+    c = Campaign.new
+    c.user_id = current_user.id
+    c.link = client.shorten(params[:url])
+    c.influencer_id = params[:id]
+    c.name = params[:campaign_name]
+    c.save
+
+  end
+
+
   def show
     @campaign = Campaign.find(params[:id])
     #@i = Influencer.find(@campaign.influencer_id)
