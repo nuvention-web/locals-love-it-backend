@@ -56,7 +56,7 @@ var Form = React.createClass({
       <div className="form-group">
         <b>To:</b> {recipient.first_name}<br/><br/>
         <b>Subject:</b>
-          <input type="text" name="subject" value="" className="form-control"/>
+          <input type="text" name="subject" className="form-control"/>
         <br/>
         <TextArea temp={this.state.template} className="form-control"/>
       </div>
