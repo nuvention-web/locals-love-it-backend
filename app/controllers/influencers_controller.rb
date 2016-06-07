@@ -16,6 +16,20 @@ class InfluencersController < ApplicationController
 
 	end
 
+	def edit
+		@influencer = Influencer.find(params[:id])
+	end
+
+	def update
+    @influencer = Influencer.find(params[:id])
+    if @influencer.update_attributes(influencer_params)
+      flash[:success] = "Profile updated"
+      redirect_to @influencer
+    else
+      render 'edit'
+    end
+	end
+
 
 	private
 
@@ -25,5 +39,9 @@ class InfluencersController < ApplicationController
 			serializer = InfluencersSerializer.new(influencer, is_single: options[:is_single])
 			serialization = ActiveModel::Serializer::Adapter.create(serializer)
 			serialization.as_json
+	end
+
+	def influencer_params
+			params.require(:influencer).permit(:twitter_handle, :short_bio)
 	end
 end

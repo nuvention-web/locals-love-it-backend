@@ -1,8 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
 
 	def new_influencer
-		@influencer = Influencer.new
-		@user = User.new
+		@influencer = Influencer.new({twitter_handle: params[:twitter_handle]})
+		user_name_array = Namae.parse @influencer.twitter_user.name
+		user_name = user_name_array[0]
+		@user = User.new({first_name: user_name.given, last_name: user_name.family})
 		render 'influencers/new'
 	end
 
@@ -40,6 +42,9 @@ class RegistrationsController < Devise::RegistrationsController
 			params[:influencer][:user].permit(:first_name, :last_name, :email, :password, :password_confirmation).merge({role: 'influencer'})
 		end
 	end	
+	def account_update_params
+		params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password)
+	end
 
   def set_flash_message!(key, kind, options = {})
     if is_flashing_format?

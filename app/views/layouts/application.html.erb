@@ -1,5 +1,6 @@
 <% link = user_signed_in? ? '/users/sign_out' : '/users/sign_in'-%>
-
+<% is_influencer = user_signed_in? ? current_user.role == 'influencer' : false -%>
+<% influencer_id = is_influencer ? current_user.influencer.id : nil -%>
 
 
 <!DOCTYPE html>
@@ -19,19 +20,24 @@
 	<div class='container mainContainer'>
 	      <div class = 'row navRow'>
 		<div id = 'NavBar' class = 'navContainer'>
-			<%= react_component( 'NavBar', {link: link} ,{prerender: true} ) %>
+			<%= react_component( 'NavBar', {link: link, is_influencer: is_influencer, influencer_id: influencer_id} ,{prerender: true} ) %>
 		</div>
               </div>
-		<div class="container">
-			<% flash.each do |key, value| %>
-				<div class="alert alert-<%= key %> alert-info">
-					<%= value %>
-				</div>
-			<% end %>
-		</div>
+
 
 	      <div class = 'row yieldContentRow'>
+
+
 		<div id = 'content' class = 'yieldContent'>
+			<div class="container">
+				<% flash.each do |key, value| %>
+					<div class="alert alert-<%= key %> alert-info">
+						<%= value %>
+
+					</div>
+				<% end %>
+			</div>
+
 			<%= yield %>
 		</div>
 	      </div>

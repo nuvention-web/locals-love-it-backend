@@ -23,6 +23,9 @@ gem 'chartkick'
 gem 'twitter'
 gem 'oauth'
 
+# for twitter name
+gem 'namae'
+
 gem 'react-rails', '~> 1.6.1'
 
 gem 'sprockets', '>= 3.5.2', '< 4.0'
