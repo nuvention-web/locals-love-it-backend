@@ -40,8 +40,7 @@ var SendMessage = React.createClass({
         </div>
       </div>
       <div className="col-md-8">
-        <div className="panel panel-default">
-          <div className="panel-body">
+        <div className="">
           {conditionalForm}
             {/*
             <% if is_conversation %>
@@ -50,8 +49,6 @@ var SendMessage = React.createClass({
                 <%= render partial: 'conversations/conversation', collection: messages %>
             <% end %>
             */}
-          </div>
-        </div>
         {/*}
         <div>
         <form accept-charset="UTF-8" action="" method="get">
@@ -64,10 +61,8 @@ var SendMessage = React.createClass({
         </div>
         {bitlyLink}
         */}
-        <div>
         </div>
       </div>
-
     </div>
     );
   }

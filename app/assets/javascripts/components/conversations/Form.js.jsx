@@ -8,7 +8,10 @@ var TextArea = React.createClass({
   },
   render: function() {
     return (
-      <textarea name="message" onChange = {this.handleChange} placeholder={this.props.temp} />
+      <fieldset className="form-group">
+          <label for="body">Message: </label>
+          <textarea className="form-control" id="body" rows="3" placeholder={this.props.temp} onChange = {this.handleChange}></textarea>
+        </fieldset>
     );
   }
 });
@@ -19,6 +22,7 @@ var Form = React.createClass({
       return {
           blank : true,
           t1 : false,
+          t2 : false,
           template : ""
         }
     },
@@ -28,11 +32,18 @@ var Form = React.createClass({
     if (type == "blank"){
       this.setState({ blank : true})
       this.setState({ t1 : false })
+      this.setState({ t2 : false })
       this.setState({ template : "" })
     }else if (type == "t1"){
       this.setState({ blank : false})
       this.setState({ t1 : true })
-      this.setState({ template : "this is a template" })
+      this.setState({ t2 : false })
+      this.setState({ template : "Hello, I’m ____. My business website is _______ We’re a small business that sells ______. I reached out to you because I liked _______. Are you interested in working together?" })
+    }else if (type == "t2"){
+      this.setState({ blank : false})
+      this.setState({ t1 : false })
+      this.setState({ t2 : true })
+      this.setState({ template : "I’m excited to work with you! Our goal with this campaign is to________. We would you like to post ___ times and we’ll pay you ____. Your post should link to our Twitter handle _____ and include the hashtag ______." })
     }
   },
 
@@ -42,20 +53,30 @@ var Form = React.createClass({
     return (
 
     <div>
-    <div className="form-group">
-      To: {recipient.first_name}<br/>
-      Subject:<br/>
-        <textarea name="subject" defaultValue="Subject line." />
-      <br/>
-      Message:<br/>
-      <TextArea temp={this.state.template}/>
-    </div>
-    <div>
-      Templates
-      <ul>
-        <input type="radio" onChange={this.handleSubmit.bind(this, "blank")} checked = {this.state.blank}/> Blank <br/>
-        <input type="radio" onChange={this.handleSubmit.bind(this, "t1")} checked = {this.state.t1}/> Template #1 <br/>
-      </ul>
+      <div className="form-group">
+        <b>To:</b> {recipient.first_name}<br/><br/>
+        <b>Subject:</b>
+          <input type="text" name="subject" value="" className="form-control"/>
+        <br/>
+        <TextArea temp={this.state.template} className="form-control"/>
+      </div>
+      <div className="form-group">
+      <b>Templates</b>
+        <div className="radio">
+          <label>
+            <input type="radio" onChange={this.handleSubmit.bind(this, "blank")} checked = {this.state.blank}/> Empty
+          </label>
+        </div>
+        <div className="radio">
+          <label>
+            <input type="radio" onChange={this.handleSubmit.bind(this, "t1")} checked = {this.state.t1}/> Introduction
+          </label>
+        </div>
+        <div className="radio">
+          <label>
+            <input type="radio" onChange={this.handleSubmit.bind(this, "t2")} checked = {this.state.t2}/> Detailed
+          </label>
+        </div>
       </div>
     </div>
     )
