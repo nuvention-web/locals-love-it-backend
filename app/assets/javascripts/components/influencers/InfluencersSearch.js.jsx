@@ -71,94 +71,102 @@ var WelcomingMainBox = React.createClass({
 	handleUserRole: function() {
 
 
-    var isSMB=			 <div className = "panel panel-default" id = "home_panel">
-							<br/><div className = "row">
-							<div className = "col-md-4 col-md-offser-4 col-lg-4 col-lg-offset-4">
-								<button type="button" className="btn btn-primary navbar-btn" onClick = {onClickInfluencer.bind(this)}>I'm an influencer</button>
-							</div>
-				        </div> 
-				   <br/>
+	var IsSMB=		 (<div className = "panel panel-default" id = "home_panel">
+						<br/>
+							<div className = "row">
+								<div className = "col-md-4 col-md-offser-4 col-lg-4 col-lg-offset-4">
+									 <button type="button" className="btn btn-primary navbar-btn" onClick = {onClickInfluencer.bind(this)}>I'm an influencer</button>
+								</div>
+							</div> 
+					    <br/>
 
 						<div className = "panel-heading" id = "home_panel_header">
-						 <p className = "lead" > There is strength in the small </p>
+							<p className = "lead" > There is strength in the small </p>
 						</div>
 
 						<div className = "panel panel-body">
-						 <div className = "row">
-							<div className = "col-md-6 col-lg-6">
-							 <SearchField name = {"Location"} ref = "location" />
-							</div>
 
-							<div className = "col-md-6 col-lg-6">
-							 <SearchField name = {"Industry"} ref = "industry" />
-							</div>
+								 <div className = "row">
+									<div className = "col-md-6 col-lg-6">
+										<SearchField name = {"Location"} ref = "location" />
+									</div>
+
+									<div className = "col-md-6 col-lg-6">
+										<SearchField name = {"Industry"} ref = "industry" />
+									</div>
+								</div>
+
+								<div className = "row">
+								   <div className = "col-md-8 col-md-offset-2">
+										 <form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "find influencers"/></form>
+								   </div>
+								</div>
+
 						</div>
+				  </div>);
 
-						  <div className = "row">
-							<div className = "col-md-8 col-md-offset-2">
-								<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "find influencers"/></form>
-							</div>
-						  </div>
-
-					</div>;
-	var isInfluencerLogged= <div className = "panel-heading" id = "home_panel_header">
-							 <h1 className = "lead" >Welcome Influencer!</h1>
+	var IsInfluencerLogged= (<div className = "panel panel-dafault">
+							 <div className = "panel-heading" id = "home_panel_header">
+								 <h1 className = "lead" >Welcome Influencer!</h1>
 							</div>
 
 							<div className = "panel panel-body">
 							  <div className = "row">
 								<div className = "col-md-8 col-md-offset-2">
-									<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "Go to Inbox"/></form>
+									<form action ='/mailbox/inbox' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/mailbox/inbox" role="button" id = "gotoMailbox" onClick = {this.props.onSubmit} value = "Go to Inbox"/></form>
 								</div>
 							  </div>
 
 						</div>
-					</div>;
+					</div>);
 
-	var isInfluencerNew	=	<div className = "panel panel-default" id = "home_panel">
-			                <div className = "panel-heading" id = "home_panel_header">
-										 <h1 className = "lead" >Please input your twitter handle</h1>
+	var IsInfluencerNew	=	(<div className = "panel panel-default" id = "home_panel">
+
+								<div className = "panel-heading" id = "home_panel_header">
+									 <h1 className = "lead" >Please input your twitter handle</h1>
+								</div>
+
+							   <br/><div className = "row">
+										<div className = "col-md-4 col-md-offser-4 col-lg-4 col-lg-offset-4">
+											<button type="button" className="btn btn-primary navbar-btn" onClick = {onClickSMB.bind(this)}>I'm an SMB</button>
+										</div>
+									</div> 
+							   <br/>
+
+								<div className = "panel panel-body">
+
+										 <div className = "row">
+											<div className = "col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+												 <SearchField name = {"Twitter Handle"} ref="handleField" />
+											</div>
 										</div>
 
-										   <br/><div className = "row">
-													<div className = "col-md-4 col-md-offser-4 col-lg-4 col-lg-offset-4">
-														<button type="button" className="btn btn-primary navbar-btn" onClick = {onClickSMB.bind(this)}>I'm an SMB</button>
-													</div>
-												</div> 
-										   <br/>
-
-										<div className = "panel panel-body">
-												 <div className = "row">
-													<div className = "col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
-														 <SearchField name = {"Twitter Handle"} ref="handleField" />
-													</div>
-												</div>
 										  <div className = "row">
 											<div className = "col-md-8 col-md-offset-2">
 												<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href={"/influencers/new?twitter_handle="} role="button" id = "makeNewInfluencers" onClick = {this.props.onSubmit} value = "Sumbit"/></form>
 											</div>
 										  </div>
 
-									</div></div>;
+								</div>
+
+									</div>);
+
 	if (this.props.role=='influencer'){
-		return isInfluencerLogged;
+			return IsInfluencerLogged;
+	}else if(this.state.userIsInfluencer){
+
+			return IsInfluencerNew;
 	}else {
-			if(this.state.userIsInfluencer){
 
-			return isInfluencerNew;
-			}else{
-
-			return isSMB;
-			}
+			return IsSMB;
 	}
+	
 
 },
 	render: function () {
 				return(
 						<div className = "col-md-4" style={padding}>
-							<div className = "panel panel-default" id = "home_panel">
 							{this.handleUserRole()}
-							</div>
 						</div>);
 }
 
@@ -400,11 +408,11 @@ var MainFooter = React.createClass({
 });
 
 var InfluencersSearch = React.createClass({
-
+/*
 	getInitialState:function(){
 		return {UserIsInfluencer: false};
 	},
-
+*/
 
 	render: function(){
 			this.style={mainStyle};
@@ -424,104 +432,9 @@ var InfluencersSearch = React.createClass({
 				       </div>
 				      </div>
 				     </div>
-					 {(() => {
-
-						 if (userRole == "influencer"){
-							return(
-												  <div className = "col-md-4" style={padding}>
-												   <div className = "panel panel-default" id = "home_panel">
-														<div className = "panel-heading" id = "home_panel_header">
-														 <h1 className = "lead" >Welcome Influencer!</h1>
-														</div>
-
-														<div className = "panel panel-body">
-														  <div className = "row">
-															<div className = "col-md-8 col-md-offset-2">
-																<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "Go to Inbox"/></form>
-															</div>
-														  </div>
-
-													</div>
-													</div>
-													</div>
-					  ) } else {
-							if (this.state.userIsInfluencer) {
-								return(
-
-								  <div className = "col-md-4" style={padding}>
-								   <div className = "panel panel-default" id = "home_panel">
-										<div className = "panel-heading" id = "home_panel_header">
-										 <h1 className = "lead" >Please input your twitter handle</h1>
-										</div>
-
-										   <br/><div className = "row">
-													<div className = "col-md-4 col-md-offser-4 col-lg-4 col-lg-offset-4">
-														<button type="button" className="btn btn-primary navbar-btn" onClick = {onClickSMB.bind(this)}>I'm an SMB</button>
-													</div>
-												</div> 
-										   <br/>
-
-										<div className = "panel panel-body">
-												 <div className = "row">
-													<div className = "col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
-														 <SearchField name = {"Twitter Handle"} ref="handleField" />
-													</div>
-												</div>
-										  <div className = "row">
-											<div className = "col-md-8 col-md-offset-2">
-												<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href={"/influencers/new?twitter_handle="} role="button" id = "makeNewInfluencers" onClick = {this.props.onSubmit} value = "Sumbit"/></form>
-											</div>
-										  </div>
-
-									</div>
-									</div>
-									</div>
-					  )	}
-							else {
-								return(
-				  <div className = "col-md-4" style={padding}>
-				   <div className = "panel panel-default" id = "home_panel">
-
-				   <br/><div className = "row">
-							<div className = "col-md-4 col-md-offser-4 col-lg-4 col-lg-offset-4">
-								<button type="button" className="btn btn-primary navbar-btn" onClick = {onClickInfluencer.bind(this)}>I'm an influencer</button>
-							</div>
-				        </div> 
-				   <br/>
-
-						<div className = "panel-heading" id = "home_panel_header">
-						 <p className = "lead" > There is strength in the small </p>
-						</div>
-
-						<div className = "panel panel-body">
-						 <div className = "row">
-							<div className = "col-md-6 col-lg-6">
-							 <SearchField name = {"Location"} ref = "location" />
-							</div>
-
-							<div className = "col-md-6 col-lg-6">
-							 <SearchField name = {"Industry"} ref = "industry" />
-							</div>
-						</div>
-
-						  <div className = "row">
-							<div className = "col-md-8 col-md-offset-2">
-								<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href="/influencers" role="button" id = "findInfluencers" onClick = {this.props.onSubmit} value = "find influencers"/></form>
-							</div>
-						  </div>
-
-					</div>
-					</div>
-					</div>
-
-					  )}
-						 }
-					 }
-					  )()}
-
+				 <WelcomingMainBox role={this.props.userRole} />
 		       		       <br/>
 				 </div>
-				 <WelcomingMainBox role={this.props.userRole} />
 				 <FrontSecondRow/>
 				 <FrontThirdRow />
 				 <Front4thRow />
