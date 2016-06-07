@@ -3,7 +3,7 @@ var SearchField = React.createClass({
     return(
 
         <div className="form-group form-group-lg">
-          <input type="text" className="form-control" placeholder={this.props.name}/>
+          <input type="text" className="form-control" placeholder={this.props.name} onChange={this.onChange} value={this.props.value}/>
         </div>
 
     );
@@ -66,6 +66,19 @@ var returnNewHandle = function(event) {
  this.setState({InfluencerValue: event.target.value})
 };
 
+var handleInfluencerSubmit = function(event) {
+ event.preventDefault()
+ //console.log(returnNewInfluencerRoute.bind(this))
+ console.log(this.state.InfluencerValue)
+ newWindow='/influencers/new?twitter_handle=' + this.state.InfluencerValue;
+ this.setState({InfluencerValue: ""});
+ window.location=newWindow;
+};
+
+var returnNewInfluencerRoute = function(){
+ return ('/influencers/new/?twitter_handle=' + this.state.InfluencerValue);
+};
+
 var WelcomingMainBox = React.createClass({
 
 	getInitialState:function(){
@@ -78,7 +91,7 @@ var WelcomingMainBox = React.createClass({
 	var IsSMB=		 (<div className = "panel panel-default" id = "home_panel">
 						<br/>
 							<div className = "row">
-								<div className = "col-md-4 col-md-offser-4 col-lg-4 col-lg-offset-4">
+								<div className = "col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
 									 <button type="button" className="btn btn-primary navbar-btn" onClick = {onClickInfluencer.bind(this)}>I'm an influencer</button>
 								</div>
 							</div> 
@@ -124,6 +137,8 @@ var WelcomingMainBox = React.createClass({
 						</div>
 					</div>);
 
+/*onSubmit={handleInfluencerSubmit.bind(this)}*/
+//returnNewInfluencerRoute.bind(this)
 	var IsInfluencerNew	=	(<div className = "panel panel-default" id = "home_panel">
 
 								<div className = "panel-heading" id = "home_panel_header">
@@ -131,7 +146,7 @@ var WelcomingMainBox = React.createClass({
 								</div>
 
 							   <br/><div className = "row">
-										<div className = "col-md-4 col-md-offser-4 col-lg-4 col-lg-offset-4">
+										<div className = "col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
 											<button type="button" className="btn btn-primary navbar-btn" onClick = {onClickSMB.bind(this)}>I'm an SMB</button>
 										</div>
 									</div> 
@@ -141,13 +156,14 @@ var WelcomingMainBox = React.createClass({
 
 										 <div className = "row">
 											<div className = "col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
-												 <SearchField name = {"Twitter Handle"} ref="handleField" value ={this.state.InfluencerValue} onChange={this.returnNewHandle}/>
+												<div className="form-group form-group-lg">
+													 <input name = {"Twitter Handle"} ref="handleField" value ={this.state.InfluencerValue} onChange={returnNewHandle.bind(this)}/>
+												</div>
 											</div>
 										</div>
-
 										  <div className = "row">
 											<div className = "col-md-8 col-md-offset-2">
-												<form action = {'/influencers/new?twitter_handle='+this.state.InfluencerValue} method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href={"/influencers/new?twitter_handle="} role="button" id = "makeNewInfluencers" onClick = {this.props.onSubmit} value = "Sumbit"/></form>
+												<form><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href={'/influencers/new?twitter_handle=' + this.state.InfluencerValue} role="button" id = "makeNewInfluencers" onClick = {handleInfluencerSubmit.bind(this)} value = "Sumbit"/></form>
 											</div>
 										  </div>
 
