@@ -39,7 +39,6 @@ var SendMessage = React.createClass({
           </div>
         </div>
       </div>
-
       <div className="col-md-8">
         <div className="panel panel-default">
           <div className="panel-body">
@@ -53,6 +52,7 @@ var SendMessage = React.createClass({
             */}
           </div>
         </div>
+        {/*}
         <div>
         <form accept-charset="UTF-8" action="" method="get">
           <input name="utf8" type="hidden" value={this.props.authenticity_token}  />
@@ -63,6 +63,9 @@ var SendMessage = React.createClass({
         </form>
         </div>
         {bitlyLink}
+        */}
+        <div>
+        </div>
       </div>
 
     </div>

@@ -66,7 +66,5 @@ class CampaignsController < ApplicationController
 
      #Test Data
      @countries = {"US" => 12, "China" =>5, "Canada" => 8, "France" => 10}
-
-
   end
 end
