@@ -23,6 +23,7 @@ var Form = React.createClass({
           blank : true,
           t1 : false,
           t2 : false,
+          t3 : false,
           template : ""
         }
     },
@@ -33,17 +34,26 @@ var Form = React.createClass({
       this.setState({ blank : true})
       this.setState({ t1 : false })
       this.setState({ t2 : false })
+      this.setState({ t3 : false })
       this.setState({ template : "" })
     }else if (type == "t1"){
       this.setState({ blank : false})
       this.setState({ t1 : true })
       this.setState({ t2 : false })
+      this.setState({ t3 : false })
       this.setState({ template : "Hello, I’m ____. My business website is _______ We’re a small business that sells ______. I reached out to you because I liked _______. Are you interested in working together?" })
     }else if (type == "t2"){
       this.setState({ blank : false})
       this.setState({ t1 : false })
       this.setState({ t2 : true })
+      this.setState({ t3 : false })
       this.setState({ template : "I’m excited to work with you! Our goal with this campaign is to________. We would you like to post ___ times and we’ll pay you ____. Your post should link to our Twitter handle _____ and include the hashtag ______." })
+    }else if (type == "t3"){
+      this.setState({ blank : false})
+      this.setState({ t1 : false })
+      this.setState({ t2 : false })
+      this.setState({ t3 : true })
+      this.setState({ template : "Thank you so much for posting! Please click on “My Campaigns” to see performance information." })
     }
   },
 
@@ -74,7 +84,12 @@ var Form = React.createClass({
         </div>
         <div className="radio">
           <label>
-            <input type="radio" onChange={this.handleSubmit.bind(this, "t2")} checked = {this.state.t2}/> Detailed
+            <input type="radio" onChange={this.handleSubmit.bind(this, "t2")} checked = {this.state.t2}/> Campaign Details
+          </label>
+        </div>
+        <div className="radio">
+          <label>
+            <input type="radio" onChange={this.handleSubmit.bind(this, "t3")} checked = {this.state.t3}/> Campaign Results
           </label>
         </div>
       </div>
