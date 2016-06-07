@@ -14,18 +14,12 @@ class CampaignsController < ApplicationController
     c = Campaign.new
     client = Bitly.client
     c.user_id = current_user.id
-    puts "campaign"
-    puts params[:campaign][:url]
-    puts params[:campaign][:id]
-    puts params[:campaign][:campaign_name]
     c.link = client.shorten(params[:campaign][:url])
     c.influencer_id = params[:campaign][:id]
     c.name = params[:campaign][:campaign_name]
-    if c.save
-      redirect_to action: "index"
-    else
-      redirect_to action: "index"
-    end
+    c.save
+
+    redirect_to action: "index"
 
   end
 
