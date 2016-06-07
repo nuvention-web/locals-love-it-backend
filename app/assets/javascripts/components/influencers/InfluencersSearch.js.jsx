@@ -3,7 +3,7 @@ var SearchField = React.createClass({
     return(
 
         <div className="form-group form-group-lg">
-          <input type="text" className="form-control" placeholder={this.props.name} onChange={this.onChange} value = {this.props.value}/>
+          <input type="text" className="form-control" placeholder={this.props.name}/>
         </div>
 
     );
@@ -62,10 +62,14 @@ var onClickSMB = function() {
  this.setState({userIsInfluencer: false})
 };
 
+var returnNewHandle = function(event) {
+ this.setState({InfluencerValue: event.target.value})
+};
+
 var WelcomingMainBox = React.createClass({
 
 	getInitialState:function(){
-		return {UserIsInfluencer: false};
+		return {UserIsInfluencer: false, InfluencerValue: ""};
 	},
  
 	handleUserRole: function() {
@@ -137,13 +141,13 @@ var WelcomingMainBox = React.createClass({
 
 										 <div className = "row">
 											<div className = "col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
-												 <SearchField name = {"Twitter Handle"} ref="handleField" />
+												 <SearchField name = {"Twitter Handle"} ref="handleField" value ={this.state.InfluencerValue} onChange={this.returnNewHandle}/>
 											</div>
 										</div>
 
 										  <div className = "row">
 											<div className = "col-md-8 col-md-offset-2">
-												<form action ='/influencers' method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href={"/influencers/new?twitter_handle="} role="button" id = "makeNewInfluencers" onClick = {this.props.onSubmit} value = "Sumbit"/></form>
+												<form action = {'/influencers/new?twitter_handle='+this.state.InfluencerValue} method = 'get'><input type = "submit" className=" form-control btn btn-default btn-lg btn-block" href={"/influencers/new?twitter_handle="} role="button" id = "makeNewInfluencers" onClick = {this.props.onSubmit} value = "Sumbit"/></form>
 											</div>
 										  </div>
 
