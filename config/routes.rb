@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
 
+
   devise_for :users, :controllers => { registrations: 'registrations' }
-	as :user do	
+	as :user do
 		get 'influencers/new', to: 'registrations#new_influencer'
 		post 'influencers/', to: 'registrations#create_influencer'
 	end
   root 'influencers#search'
 	get '/influencers/search', to: 'influencers#search'
 	get '/influencers/join', to: 'influencers#join'
-  resources :influencers, only: [:index, :show]
+  resources :influencers, only: [:index, :show, :edit, :update]
 
   # mailbox folder routes
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
@@ -26,5 +27,9 @@ Rails.application.routes.draw do
   resources :urls, only: [:new, :create]
   get '/get_data', to: "urls#get_data"
   # root to: 'urls#new'
+
+
+  #Campaigns Stuff
+  resources :campaigns, except: [:new, :edit]
 
 end

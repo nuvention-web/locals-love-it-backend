@@ -24,6 +24,10 @@ module Twitterable
 		def profile_image_url_https
 			nil
 		end
+
+		def description
+			nil
+		end
 	end
 
 	def twitter_user
