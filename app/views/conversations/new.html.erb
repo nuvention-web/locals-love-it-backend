@@ -1,1 +1,1 @@
-<%= render partial: 'mailbox/folder_view', locals: { is_conversation: {to_single_influencer: @influencer} } %>
+<%= react_component('SendMessage', {is_conversation: {to_single_influencer: @influencer}, recipient: @recipient, authenticity_token: form_authenticity_token, url: @url}, {prerender: true}) %>
